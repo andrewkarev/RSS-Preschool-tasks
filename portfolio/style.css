@@ -216,9 +216,39 @@ body {
 }
 
 .portfolio {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 20px 0;
 }
+
 .portfolio-buttons {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0 0 60px;
 }
+
+.btn-type-two {
+  width: 220px;
+  height: 55px;
+  background: transparent;
+  border: 2px solid #bdae82;
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 40px;
+  color: #bdae82;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-type-two:hover {
+  color: #ffffff;
+}
+
+.btn-type-two:active {
+  background: #bdae82;
+  color: #000000;
+}
+
 .portfolio-items {
 }
 .video {
