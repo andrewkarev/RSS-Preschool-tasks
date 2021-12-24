@@ -268,8 +268,24 @@ body {
 }
 
 .video-player {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 1400px;
   height: 705px;
+}
+
+.btn-type-three {
+  position: absolute;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-type-three:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
 .price {
