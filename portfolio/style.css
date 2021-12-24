@@ -250,7 +250,17 @@ body {
 }
 
 .portfolio-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
 }
+
+.portfolio-item {
+  width: 450px;
+  height: 560px;
+}
+
 .video {
 }
 .video-player {
