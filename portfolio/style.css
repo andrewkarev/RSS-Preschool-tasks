@@ -8,6 +8,7 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 20px;
   line-height: 50px;
+  font-weight: 300;
 }
 
 .wrapper {
@@ -156,22 +157,39 @@ body {
   color: #bdae82;
 }
 
-.skills-item-container {
+.skills-items {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.skills-items {
-}
 .skills-item {
+  width: 320px;
+  padding: 100px 20px 8px;
+  background-position: center top;
 }
+
+.skill-item:nth-child(1) {
+  background-image: url("./assets/svg/camera.svg");
+  background-size: 62px 50px;
+}
+
 .skills-item-img {
 }
 .skills-item-title {
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
 }
+
 .skills-item-text {
+  font-size: 18px;
+  line-height: 36px;
+  text-align: center;
 }
+
 .portfolio {
 }
 .portfolio-buttons {
