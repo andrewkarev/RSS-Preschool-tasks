@@ -80,6 +80,7 @@ body {
 
 .lang-switcher {
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .lang-switcher:hover {
@@ -139,6 +140,7 @@ body {
 .section-title-container {
   width: 50%;
   margin: 0 auto;
+  margin-bottom: 60px;
   background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
 }
 
@@ -152,6 +154,12 @@ body {
   font-size: 40px;
   line-height: 80px;
   color: #bdae82;
+}
+
+.skills-item-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .skills-items {
