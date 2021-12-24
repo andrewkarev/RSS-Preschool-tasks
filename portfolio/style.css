@@ -134,11 +134,26 @@ body {
 }
 
 .skills {
+  padding-top: 100px;
 }
 .section-title-container {
+  width: 50%;
+  margin: 0 auto;
+  background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
 }
+
 .section-title {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0 22px;
+  background-color: #000000;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 80px;
+  color: #bdae82;
 }
+
 .skills-items {
 }
 .skills-item {
