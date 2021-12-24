@@ -165,17 +165,37 @@ body {
 
 .skills-item {
   width: 320px;
-  padding: 100px 20px 8px;
+  padding: 0 20px 8px;
   background-position: center top;
 }
 
-.skill-item:nth-child(1) {
-  background-image: url("./assets/svg/camera.svg");
-  background-size: 62px 50px;
+.skills-item-img {
+  width: 66px;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  transition: 0.3s;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.skills-item-img {
+.item-img-camera {
+  background-image: url("./assets/svg/camera 1.svg");
 }
+
+.item-img-video {
+  background-image: url("./assets/svg/video 1.svg");
+}
+
+.item-img-retouch {
+  background-image: url("./assets/svg/image 1.svg");
+}
+
+.item-img-audio {
+  background-image: url("./assets/svg/mic 1.svg");
+}
+
 .skills-item-title {
   padding-bottom: 20px;
   font-weight: bold;
