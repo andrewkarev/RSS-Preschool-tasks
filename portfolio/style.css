@@ -367,9 +367,8 @@ body {
   padding-bottom: 20px;
 }
 
-.contacts-form-control {
+.form-item {
   width: 450px;
-  height: 50px;
   padding: 5px 20px;
   background: rgba(0, 0, 0, 0.5);
   border: 2px solid #bdae82;
@@ -379,16 +378,12 @@ body {
   color: #bdae82;
 }
 
-.contacts-form-textarea {
-  width: 450px;
+.control {
+  height: 50px;
+}
+
+.textarea {
   height: 100px;
-  padding: 5px 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 2px solid #bdae82;
-  font-family: inherit;
-  font-size: 20px;
-  line-height: 40px;
-  color: #bdae82;
   resize: none;
 }
 
