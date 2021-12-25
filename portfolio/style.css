@@ -37,12 +37,12 @@ body {
   background-image: url("./assets/svg/logo 1.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
   transition: 0.3s;
 }
 
 .header-logo:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-  cursor: pointer;
 }
 
 .header-navigation {
@@ -405,9 +405,79 @@ body {
 
 .footer {
 }
-.footer-data {
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 50px 20px;
 }
+
+.footer-container a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.footer-container a:hover {
+  text-decoration: none;
+  color: #bdae82;
+}
+
+.footer-data {
+  display: flex;
+}
+
+.footer-data-item {
+  display: inline-block;
+  padding-right: 20px;
+}
+
 .footer-rss {
 }
+
 .footer-social-list {
+}
+
+.footer-list {
+  display: flex;
+  list-style: none;
+}
+
+.footer-list-item {
+  margin: 9px 20px 9px 0;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-list-item:last-child {
+  margin-right: 0;
+}
+
+.instagram {
+  background-image: url("./assets/svg/inst\ 1.svg");
+}
+
+.facebook {
+  background-image: url("./assets/svg/fb\ 1.svg");
+}
+
+.twitter {
+  background-image: url("./assets/svg/tw\ 1.svg");
+}
+
+.pinterest {
+  background-image: url("./assets/svg/pinterest\ 1.svg");
+}
+
+.instagram:hover,
+.facebook:hover,
+.twitter:hover,
+.pinterest:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
