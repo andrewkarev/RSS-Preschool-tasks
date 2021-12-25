@@ -56,11 +56,9 @@ body {
 
 .navigation-list {
   display: flex;
+  justify-content: space-between;
+  gap: 30px;
   list-style: none;
-}
-
-.navigation-item {
-  padding: 0 15px;
 }
 
 .navigation-item a {
@@ -76,7 +74,7 @@ body {
 
 .header-language-switch {
   padding-top: 20px;
-  padding-left: 15px;
+  padding-left: 31px;
   font-weight: bold;
 }
 
@@ -89,7 +87,8 @@ body {
   color: #bdae82;
 }
 
-.main-content {
+.slash {
+  padding: 0 9px;
 }
 
 .hero {
@@ -112,13 +111,11 @@ body {
   font-size: 60px;
   line-height: 120px;
 }
+
 .hero-text {
   width: 470px;
   padding-bottom: 25px;
   line-height: 40px;
-}
-
-.btn-wrapper {
 }
 
 .btn-type-one {
@@ -310,7 +307,7 @@ body {
   width: 450px;
   height: 505px;
   border: 3px solid #bdae82;
-  padding: 43px 0;
+  padding: 40px 0;
 }
 
 .price-item-title {
@@ -372,9 +369,6 @@ body {
   padding: 0;
 }
 
-.contacts-form {
-}
-
 .form-control-wrapper {
   padding-bottom: 20px;
 }
@@ -385,7 +379,7 @@ body {
 
 .form-item {
   width: 450px;
-  padding: 5px 20px;
+  padding: 3px 18px;
   background: rgba(0, 0, 0, 0.5);
   border: 2px solid #bdae82;
   font-family: inherit;
@@ -405,9 +399,6 @@ body {
 
 ::placeholder {
   color: #bdae82;
-}
-
-.footer {
 }
 
 .footer-container {
@@ -436,12 +427,6 @@ body {
 .footer-data-item {
   display: inline-block;
   padding-right: 20px;
-}
-
-.footer-rss {
-}
-
-.footer-social-list {
 }
 
 .footer-list {

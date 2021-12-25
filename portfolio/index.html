@@ -8,7 +8,6 @@
   <title>portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" sizes="48x48" href="assets/img/icons/favicon.ico">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap"
@@ -20,7 +19,7 @@
 <body>
   <div class="wrapper">
     <header class="header">
-      <div class="container header-container">
+      <div class="header-container">
         <div class="header-logo"></div>
         <nav class="header-navigation">
           <ul class="navigation-list">
@@ -31,7 +30,7 @@
             <li class="navigation-item"><a href="#contacts-section">Contacts</a></li>
           </ul>
         </nav>
-        <div class="header-language-switch"><span class="lang-switcher">en</span> &sol; <span
+        <div class="header-language-switch"><span class="lang-switcher">en</span><span class="slash">&sol;</span><span
             class="lang-switcher">ru</span></div>
       </div>
     </header>
@@ -44,7 +43,6 @@
           <div class="btn-wrapper">
             <button class="btn-type-one" type="button">Hire me</button>
           </div>
-          </form>
         </div>
       </section>
       <section class="skills" id="skills-section">
@@ -169,12 +167,14 @@
           </div>
           <div class="contacts-form">
             <form action="#">
-              <div class="form-control-wrapper"><input type="email" name="" placeholder="E-mail"
-                  class="form-item control"></div>
-              <div class="form-control-wrapper"><input type="tel" name="" placeholder="Phone" class="form-item control">
+              <div class="form-control-wrapper"><input type="email" name="email-address" placeholder="E-mail"
+                  class="form-item control">
+              </div>
+              <div class="form-control-wrapper"><input type="tel" name="telephone-number" placeholder="Phone"
+                  class="form-item control">
               </div>
               <div class="form-control-wrapper">
-                <textarea name="" id="" cols="" rows="10" placeholder="Messege" class="form-item textarea"></textarea>
+                <textarea name="message" placeholder="Message" class="form-item textarea"></textarea>
               </div>
               <div class="btn-wrapper">
                 <button class="btn-type-one" type="button">Send message</button>
@@ -191,7 +191,9 @@
           <span class="footer-data-item">2022 </span>
           <span class="footer-data-item"><a href="https://github.com/andrewkarev">github</a></span>
         </div>
-        <div class="footer-rss"><a href="https://rs.school/js-stage0/">Rolling Scopes School</a></div>
+        <div class="footer-rss">
+          <a href="https://rs.school/js-stage0/">Rolling Scopes School</a>
+        </div>
         <div class="footer-social-list">
           <ul class="footer-list">
             <li class="footer-list-item instagram"></li>
