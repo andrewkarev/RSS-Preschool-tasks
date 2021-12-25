@@ -342,12 +342,18 @@ body {
 }
 
 .contacts {
+  position: relative;
   max-width: 1440px;
   height: 700px;
   margin: 0 auto;
-  padding: 60px 20px 195px 970px;
   background-image: url("./assets/img/contacts.jpg");
   background-repeat: no-repeat;
+}
+
+.contacts-conteiner {
+  position: absolute;
+  top: 60px;
+  right: 20px;
 }
 
 .contacts-title-container {
@@ -365,6 +371,10 @@ body {
 
 .form-control-wrapper {
   padding-bottom: 20px;
+}
+
+.form-control-wrapper:nth-child(3) {
+  height: 130px;
 }
 
 .form-item {
