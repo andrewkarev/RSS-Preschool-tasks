@@ -272,8 +272,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1400px;
+  max-width: 1400px;
   height: 705px;
+  background-image: url("./assets/img/video-player.jpg");
+  background-repeat: no-repeat;
 }
 
 .btn-type-three {
