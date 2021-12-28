@@ -12,7 +12,7 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 20px;
   line-height: 50px;
-  font-weight: 400;
+  font-weight: 300;
   color: #ffffff;
   background-color: #000000;
 }
@@ -20,6 +20,13 @@ body {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: 0 1 90px;
 }
 
 .header-container {
@@ -92,6 +99,10 @@ body {
   padding: 0 4px 0 5px;
 }
 
+.main-content {
+  flex: 0 1 auto;
+}
+
 .hero-container {
   height: 820px;
   padding: 160px 20px 0 80px;
@@ -162,7 +173,7 @@ body {
 
 .skills-item {
   width: 320px;
-  padding: 0 20px 8px;
+  padding: 0 20px 7px;
   background-position: center top;
 }
 
@@ -196,7 +207,7 @@ body {
 }
 
 .skills-item-title {
-  padding-bottom: 20px;
+  padding-bottom: 21px;
   font-weight: bold;
   font-size: 20px;
   line-height: 40px;
@@ -298,7 +309,7 @@ body {
 }
 
 .price-item-title {
-  padding-bottom: 20px;
+  padding-bottom: 21px;
   font-family: Merriweather;
   font-weight: bold;
   font-size: 28px;
@@ -385,6 +396,10 @@ body {
   color: #bdae82;
 }
 
+.footer {
+  flex: 0 1 auto;
+}
+
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -408,7 +423,7 @@ body {
 
 .footer-data-item {
   display: inline-block;
-  padding-right: 20px;
+  padding-right: 21px;
 }
 
 .footer-list {
