@@ -13,25 +13,22 @@ body {
   font-size: 20px;
   line-height: 50px;
   font-weight: 400;
-}
-
-.wrapper {
   color: #ffffff;
   background-color: #000000;
 }
 
-.header {
-  height: 90px;
-  background: url("./assets/img/header-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center 0;
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .header-container {
   display: flex;
-  max-width: 1440px;
-  margin: 0 auto;
   padding: 0 20px;
+  height: 90px;
+  background: url("./assets/img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
 }
 
 .header-logo {
@@ -91,17 +88,12 @@ body {
   padding: 0 9px;
 }
 
-.hero {
+.hero-container {
+  height: 820px;
+  padding: 160px 20px 0 80px;
   background-image: url("./assets/img/header-bg.jpg");
   background-position: center -90px;
   background-repeat: no-repeat;
-}
-
-.hero-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 160px 20px 0 80px;
-  height: 820px;
 }
 
 .hero-title {
@@ -136,9 +128,6 @@ body {
 }
 
 .skills {
-  padding-top: 100px;
-  max-width: 1440px;
-  margin: 0 auto;
   padding: 100px 20px 2px;
 }
 
@@ -217,8 +206,6 @@ body {
 }
 
 .portfolio {
-  max-width: 1440px;
-  margin: 0 auto;
   padding: 100px 20px 0;
 }
 
@@ -263,8 +250,6 @@ body {
 }
 
 .video {
-  max-width: 1440px;
-  margin: 0 auto;
   padding: 100px 20px 0;
 }
 
@@ -292,8 +277,6 @@ body {
 }
 
 .price {
-  max-width: 1440px;
-  margin: 0 auto;
   padding: 100px 20px;
 }
 
@@ -346,9 +329,7 @@ body {
 
 .contacts {
   position: relative;
-  max-width: 1440px;
   height: 700px;
-  margin: 0 auto;
   background-image: url("./assets/img/contacts.jpg");
   background-repeat: no-repeat;
 }
@@ -404,8 +385,6 @@ body {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  max-width: 1440px;
-  margin: 0 auto;
   padding: 50px 20px;
 }
 
