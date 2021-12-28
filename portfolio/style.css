@@ -12,7 +12,7 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 20px;
   line-height: 50px;
-  font-weight: 300;
+  font-weight: 400;
   color: #ffffff;
   background-color: #000000;
 }
@@ -328,7 +328,7 @@ body {
 }
 
 .price-item-includes {
-  padding-bottom: 40px;
+  padding-bottom: 39px;
 }
 
 .price-item-line {
