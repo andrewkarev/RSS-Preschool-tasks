@@ -308,6 +308,14 @@ body {
   flex-wrap: wrap;
 }
 
+@media (max-width: 1440px) {
+  .price-items {
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
 .price-item {
   width: 450px;
   height: 505px;
