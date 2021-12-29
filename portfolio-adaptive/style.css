@@ -506,7 +506,7 @@ body {
   }
 
   .portfolio {
-    padding: 80px 64px 0 60px;
+    padding-top: 80px;
   }
 
   .video {
@@ -514,5 +514,18 @@ body {
   }
   .price {
     padding: 80px 64px 80px 60px;
+  }
+}
+
+@media (max-width: 937px) {
+  .portfolio {
+    padding: 80px 64px 0 60px;
+  }
+
+  .portfolio-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 445px;
   }
 }
