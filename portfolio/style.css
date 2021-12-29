@@ -175,7 +175,6 @@ body {
 .skills-item {
   width: 320px;
   padding: 0 20px 7px;
-  background-position: center top;
 }
 
 .skills-item-img {
@@ -183,8 +182,6 @@ body {
   margin: 0 auto;
   margin-bottom: 50px;
   background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .item-img-camera {
