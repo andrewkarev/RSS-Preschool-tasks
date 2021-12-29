@@ -31,8 +31,9 @@ body {
 
 .header-container {
   display: flex;
-  padding: 20px 18px 0 20px;
+  align-items: center;
   height: 90px;
+  padding: 0 18px 0 20px;
   background: url("./assets/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
