@@ -175,7 +175,6 @@ body {
 .skills-item {
   width: 320px;
   padding: 0 20px 7px;
-  background-position: center top;
 }
 
 .skills-item-img {
@@ -184,7 +183,6 @@ body {
   margin-bottom: 50px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
 }
 
 .item-img-camera {
@@ -260,12 +258,6 @@ body {
   gap: 25px;
 }
 
-@media (max-width: 1440px) {
-  .portfolio-items {
-    justify-content: center;
-  }
-}
-
 .portfolio-item {
   width: 450px;
   height: 560px;
@@ -306,14 +298,6 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-@media (max-width: 1440px) {
-  .price-items {
-    align-items: center;
-    flex-direction: column;
-    gap: 50px;
-  }
 }
 
 .price-item {
@@ -481,4 +465,54 @@ body {
 .twitter:hover,
 .pinterest:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+@media (max-width: 1440px) {
+  .portfolio-items {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1400px) {
+  .price-items {
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .skills {
+    padding: 80px 64px 4px 60px;
+  }
+
+  .skills-items {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 9px;
+  }
+
+  .skills-item {
+    padding: 0 20px 7px;
+    padding-bottom: 36px;
+  }
+
+  .skills-item-img {
+    margin-bottom: 30px;
+  }
+
+  .skills-item-text {
+    padding-bottom: 40px;
+  }
+
+  .portfolio {
+    padding: 80px 64px 0 60px;
+  }
+
+  .video {
+    padding-top: 80px;
+  }
+  .price {
+    padding: 80px 64px 80px 60px;
+  }
 }
