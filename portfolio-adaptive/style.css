@@ -483,7 +483,7 @@ body {
 
 @media (max-width: 1320px) {
   .skills {
-    padding: 80px 64px 4px 60px;
+    padding: 80px 20px 4px;
   }
 
   .skills-items {
@@ -512,15 +512,11 @@ body {
     padding-top: 80px;
   }
   .price {
-    padding: 80px 64px 80px 60px;
+    padding: 80px 20px 80px;
   }
 }
 
 @media (max-width: 937px) {
-  .portfolio {
-    padding: 80px 64px 0 60px;
-  }
-
   .portfolio-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -563,7 +559,7 @@ body {
   }
 
   .skills {
-    padding: 80px 20px 13px;
+    padding-bottom: 13px;
   }
 
   .skills-items {
@@ -584,5 +580,14 @@ body {
 
   .skills-item-text {
     line-height: 22px;
+  }
+  /*.video  */
+
+  .price-item {
+    width: 420px;
+  }
+
+  .price-btn-wrapper {
+    padding: 0 97px;
   }
 }
