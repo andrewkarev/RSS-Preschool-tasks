@@ -590,4 +590,22 @@ body {
   .price-btn-wrapper {
     padding: 0 97px;
   }
+
+  .contacts {
+    justify-content: center;
+  }
+
+  .contacts-conteiner {
+    padding: 60px 0 0;
+    margin: 0;
+  }
+
+  .contacts-title {
+    margin: 0 auto;
+    line-height: 64px;
+  }
+
+  form .btn-wrapper:last-child {
+    padding: 0 115px;
+  }
 }
