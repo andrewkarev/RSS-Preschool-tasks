@@ -531,16 +531,24 @@ body {
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    max-width: none;
+    margin: 0;
+  }
+
   .header-container {
     padding: 0 64px 0 60px;
+
+    background-size: auto 620px;
+    background-position: -5px -30px;
   }
 
   .hero {
     padding: 78px 64px 0 60px;
-
     height: 500px;
-    background-size: cover;
-    background-position: center -90px;
+
+    background-size: auto 620px;
+    background-position: -5px bottom;
   }
 
   .hero-title {
@@ -595,7 +603,7 @@ body {
   }
 
   .video-player {
-    background-size: cover;
+    background-image: url("assets/img/video-player768x418.jpg");
     height: 418px;
   }
 
@@ -633,7 +641,7 @@ body {
   form .btn-wrapper:last-child {
     padding: 0 115px;
   }
-  /*  */
+
   .footer-container {
     display: block;
     padding-top: 28px;
