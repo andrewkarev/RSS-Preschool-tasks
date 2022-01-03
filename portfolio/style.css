@@ -20,7 +20,6 @@ body {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
 }
@@ -93,6 +92,8 @@ body {
 }
 
 .header-language-switch label:hover {
+  transition: 0.3s;
+  opacity: 0.5;
   color: #bdae82;
 }
 
@@ -245,9 +246,13 @@ body {
   color: #ffffff;
 }
 
-.btn-type-two:active {
+.portfolio-buttons .btn-type-two:nth-child(4) {
   background: #bdae82;
   color: #000000;
+}
+
+.portfolio-buttons .btn-type-two:nth-child(4):hover {
+  color: #ffffff;
 }
 
 .portfolio-items {
