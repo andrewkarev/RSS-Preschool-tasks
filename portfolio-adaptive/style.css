@@ -118,9 +118,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.hero-container {
-}
-
 .hero-title {
   padding-bottom: 10px;
   font-family: "Merriweather", serif;
@@ -792,6 +789,12 @@ body {
     background: #ffffff;
     z-index: 15;
     transition: all 0.3s ease-in-out;
+  }
+
+  .line1.active,
+  .line2.active,
+  .line3.active {
+    background: #bdae82;
   }
 
   .hamburger.open .line1 {
