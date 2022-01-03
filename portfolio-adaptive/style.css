@@ -255,9 +255,13 @@ body {
   color: #ffffff;
 }
 
-.btn-type-two:active {
+.portfolio-buttons .btn-type-two:nth-child(4) {
   background: #bdae82;
   color: #000000;
+}
+
+.portfolio-buttons .btn-type-two:nth-child(4):hover {
+  color: #ffffff;
 }
 
 .portfolio-items {
