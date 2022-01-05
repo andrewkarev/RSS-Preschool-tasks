@@ -40,13 +40,12 @@ hamburger.addEventListener('click', toggleMenu);
 navMenu.addEventListener("click", closeMenu);
 
 
-//**********************************
+//Shifting photos in portfolio section
 
-const portfolioBtn = document.querySelector('.portfolio-btn');
+const portfolioBtn = document.querySelectorAll('.portfolio-btn');
 const portfolioImages = document.querySelectorAll('.portfolio-item img');
 const portfolioBtns = document.querySelector('.portfolio-buttons');
 const seasons = ['winter', 'spring', 'summer', 'autumn'];
-
 
 
 function changeImage(event) {
@@ -68,9 +67,6 @@ function changeImage(event) {
   }
 }
 
-portfolioBtns.addEventListener('click', changeImage);
-
-
 function preloadImages() {
   for (let season of seasons) {
     for (let i = 1; i <= 6; i++) {
@@ -80,4 +76,16 @@ function preloadImages() {
   }
 }
 
+function changeClassActive() {
+  if (event.target.classList.contains('portfolio-btn')) {
+    portfolioBtn.forEach(btn => btn.classList.remove('active'));
+
+    let target = event.target
+    target.classList.toggle('active');
+  }
+}
+
+
+portfolioBtns.addEventListener('click', changeImage);
+portfolioBtns.addEventListener('click', changeClassActive);
 preloadImages();

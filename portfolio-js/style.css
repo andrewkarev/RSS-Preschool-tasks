@@ -252,12 +252,12 @@ body {
   color: #ffffff;
 }
 
-.portfolio-buttons .btn-type-two:nth-child(4) {
+.portfolio-btn.active {
   background: #bdae82;
   color: #000000;
 }
 
-.portfolio-buttons .btn-type-two:nth-child(4):hover {
+.portfolio-btn.active:hover {
   color: #ffffff;
 }
 
