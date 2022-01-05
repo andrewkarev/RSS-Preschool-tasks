@@ -40,3 +40,33 @@ hamburger.addEventListener('click', toggleMenu);
 navMenu.addEventListener("click", closeMenu);
 
 
+//**********************************
+
+const portfolioBtn = document.querySelector('.portfolio-btn');
+const portfolioImages = document.querySelectorAll('.portfolio-item img');
+const portfolioBtns = document.querySelector('.portfolio-buttons');
+const seasons = ['winter', 'spring', 'summer', 'autumn'];
+
+
+
+function changeImage(event) {
+  if (event.target.classList.contains('portfolio-btn')) {
+    let target = event.target
+
+    if (target.dataset.season === "spring") {
+      portfolioImages.forEach((img, index) => img.src = `./assets/img/spring/${index + 1}.jpg`);
+    }
+    if (target.dataset.season === "winter") {
+      portfolioImages.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`);
+    }
+    if (target.dataset.season === "summer") {
+      portfolioImages.forEach((img, index) => img.src = `./assets/img/summer/${index + 1}.jpg`);
+    }
+    if (target.dataset.season === "autumn") {
+      portfolioImages.forEach((img, index) => img.src = `./assets/img/autumn/${index + 1}.jpg`);
+    }
+  }
+}
+
+
+portfolioBtns.addEventListener('click', changeImage);
