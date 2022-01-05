@@ -68,5 +68,16 @@ function changeImage(event) {
   }
 }
 
-
 portfolioBtns.addEventListener('click', changeImage);
+
+
+function preloadImages() {
+  for (let season of seasons) {
+    for (let i = 1; i <= 6; i++) {
+      const img = new Image();
+      img.src = `./assets/img/${season}/${i}.jpg`;
+    }
+  }
+}
+
+preloadImages();
