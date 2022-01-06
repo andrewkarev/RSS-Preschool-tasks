@@ -1,3 +1,4 @@
+import i18Obj from './translate.js';
 const body = document.getElementById('body');
 const hamburger = document.querySelector('.hamburger');
 const headerNav = document.querySelector('.header-navigation');
@@ -5,6 +6,8 @@ const navMenu = document.querySelector('.navigation-list')
 const line1 = document.querySelector('.line1')
 const line2 = document.querySelector('.line2')
 const line3 = document.querySelector('.line3')
+const langSwitcher = document.querySelector('.header-language-switch')
+
 
 
 function toggleMenu() {
@@ -64,7 +67,7 @@ function preloadImages() {
   }
 }
 
-function changeClassActive() {
+function changeClassActive(event) {
   if (event.target.classList.contains('portfolio-btn')) {
     portfolioBtn.forEach(btn => btn.classList.remove('active'));
 
@@ -78,5 +81,15 @@ portfolioBtns.addEventListener('click', changeImage);
 portfolioBtns.addEventListener('click', changeClassActive);
 preloadImages();
 
+
 // internationalization ('i18n')
 
+function getTranslate(event) {
+  if (event.target.classList.contains('radio-btn')) {
+    const textParam = document.querySelectorAll('[data-i18]')
+    let lang = event.target.dataset.language
+    textParam.forEach(elem => elem.textContent = i18Obj[lang][elem.dataset.i18])
+  }
+}
+
+langSwitcher.addEventListener('click', getTranslate);
