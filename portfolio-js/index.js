@@ -77,3 +77,6 @@ function changeClassActive() {
 portfolioBtns.addEventListener('click', changeImage);
 portfolioBtns.addEventListener('click', changeClassActive);
 preloadImages();
+
+// internationalization ('i18n')
+
