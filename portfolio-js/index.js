@@ -72,7 +72,7 @@ function changeClassActive(event) {
     portfolioBtn.forEach(btn => btn.classList.remove('active'));
 
     let target = event.target
-    target.classList.toggle('active');
+    target.classList.add('active');
   }
 }
 
