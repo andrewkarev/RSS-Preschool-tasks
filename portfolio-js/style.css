@@ -15,6 +15,7 @@ body {
   font-weight: 400;
   color: #ffffff;
   background-color: #000000;
+  transition: all 0.3s ease-in-out;
 }
 
 body.light-theme {
@@ -41,6 +42,7 @@ body.light-theme {
   background: url("./assets/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .header-container.light-theme {
@@ -49,22 +51,19 @@ body.light-theme {
   background-position: center 0;
 }
 
-.header-logo {
-  width: 50px;
-  height: 50px;
-  background-image: url("./assets/svg/logo 1.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
+.icon {
+  display: block;
+  fill: #ffffff;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
-.header-logo.light-theme {
-  background-image: url("./assets/svg/logo 1-light.svg");
+.icon.light-theme {
+  fill: #000000;
 }
 
-.header-logo:hover {
-  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+.icon:hover {
+  fill: #bdae82;
 }
 
 .header-navigation {
@@ -81,7 +80,7 @@ body.light-theme {
 .navigation-item a {
   text-decoration: none;
   color: #ffffff;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .navigation-item.light-theme a {
@@ -104,7 +103,7 @@ body.light-theme {
 
 .header-language-switch .radio-btn {
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .header-language-switch input[type="radio"]:checked + .radio-btn {
@@ -149,6 +148,7 @@ body.light-theme {
   background-image: url("./assets/img/header-bg.jpg");
   background-position: center -90px;
   background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
 }
 
 .hero.light-theme {
@@ -179,7 +179,7 @@ body.light-theme {
   line-height: 40px;
   color: #000000;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-type-one.light-theme {
@@ -202,19 +202,21 @@ body.light-theme {
   right: 18px;
   width: 32px;
   height: 32px;
-  background-image: url("./assets/svg/theme-switcher.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
+}
+
+.theme-switcher-btn {
+  display: block;
+  fill: #ffffff;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.theme-switcher.light-theme {
-  background-image: url("./assets/svg/theme-switcher-light.svg");
+.theme-switcher-btn.light-theme {
+  fill: #000000;
 }
 
-.theme-switcher:hover {
-  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+.theme-switcher-btn:hover {
+  fill: #bdae82;
 }
 
 .skills {
@@ -226,10 +228,12 @@ body.light-theme {
   margin: 0 auto;
   margin-bottom: 60px;
   background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
+  transition: all 0.3s ease-in-out;
 }
 
 .section-title-container.light-theme {
   background-image: linear-gradient(to top, #fff 39px, #000 39px, #000 41px, #fff 41px);
+  transition: all 0.3s ease-in-out;
 }
 
 .section-title {
@@ -242,6 +246,7 @@ body.light-theme {
   font-size: 40px;
   line-height: 80px;
   color: #bdae82;
+  transition: all 0.3s ease-in-out;
 }
 
 .section-title.light-theme {
@@ -322,7 +327,7 @@ body.light-theme {
   line-height: 40px;
   color: #bdae82;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-type-two.light-theme {
@@ -421,6 +426,7 @@ body.light-theme {
   line-height: 48px;
   text-align: center;
   color: #bdae82;
+  transition: all 0.3s ease-in-out;
 }
 
 .price-item-cost.light-theme {
@@ -456,6 +462,10 @@ body.light-theme {
 }
 
 .price-btn:hover {
+  color: #ffffff;
+}
+
+.price-btn.light-theme:hover {
   color: #bdae82;
   background-color: #000000;
 }
@@ -467,6 +477,7 @@ body.light-theme {
   background-repeat: no-repeat;
   background-size: auto 700px;
   background-position: center center;
+  transition: all 0.3s ease-in-out;
 }
 
 .contacts.light-theme {
@@ -486,6 +497,7 @@ body.light-theme {
   background: transparent;
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .contacts-title.light-theme {
@@ -509,6 +521,7 @@ body.light-theme {
   font-size: 20px;
   line-height: 40px;
   color: #bdae82;
+  transition: all 0.3s ease-in-out;
 }
 
 .form-item.light-theme {
@@ -553,7 +566,7 @@ body.light-theme {
 .footer-container a {
   text-decoration: none;
   color: #ffffff;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .footer-container.light-theme a {
@@ -581,55 +594,25 @@ body.light-theme {
 
 .footer-list-item {
   margin: 9px 20px 9px 0;
-  width: 32px;
-  height: 32px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
 .footer-list-item:last-child {
   margin-right: 0;
 }
 
-.instagram {
-  background-image: url("./assets/svg/inst\ 1.svg");
+.footer-icon {
+  display: block;
+  fill: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
-.instagram.light-theme {
-  background-image: url("./assets/svg/inst\ 1-light.svg");
+.footer-icon.light-theme {
+  fill: #000000;
 }
 
-.facebook {
-  background-image: url("./assets/svg/fb\ 1.svg");
-}
-
-.facebook.light-theme {
-  background-image: url("./assets/svg/fb\ 1-light.svg");
-}
-
-.twitter {
-  background-image: url("./assets/svg/tw\ 1.svg");
-}
-
-.twitter.light-theme {
-  background-image: url("./assets/svg/tw\ 1-light.svg");
-}
-
-.pinterest {
-  background-image: url("./assets/svg/pinterest\ 1.svg");
-}
-
-.pinterest.light-theme {
-  background-image: url("./assets/svg/pinterest\ 1-light.svg");
-}
-
-.instagram:hover,
-.facebook:hover,
-.twitter:hover,
-.pinterest:hover {
-  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+.footer-icon:hover {
+  fill: #bdae82;
 }
 
 @media (max-width: 1440px) {
@@ -866,6 +849,7 @@ body.light-theme {
     margin-left: auto;
     padding: 134px 0 0 127px;
     background-color: #000000;
+    transition: all 0.3s ease-in-out;
   }
 
   .navigation-list.light-theme {
