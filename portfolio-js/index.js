@@ -106,6 +106,7 @@ const facebookIcon = document.querySelector('.facebook');
 const twitterIcon = document.querySelector('.twitter');
 const pinterestIcon = document.querySelector('.pinterest');
 const footerContainer = document.querySelector('.footer-container');
+const navigationList = document.querySelector('.navigation-list');
 
 const sectionTitleContainer = document.querySelectorAll('.section-title-container');
 const navigationItem = document.querySelectorAll('.navigation-item');
@@ -116,9 +117,10 @@ const sectionTitle = document.querySelectorAll('.section-title');
 const priceItemCost = document.querySelectorAll('.price-item-cost');
 const formItem = document.querySelectorAll('.form-item');
 const formControlWrapper = document.querySelectorAll('.form-control-wrapper');
+const burgerMenuLine = document.querySelectorAll('.line');
 
-const lightThemeSingleElement = [body, headerContainer, headerLogo, heroSection, themeSwitcher, contactsSection, instagramIcon, facebookIcon, twitterIcon, pinterestIcon, footerContainer];
-const lightThemeGroupsOfElements = [sectionTitleContainer, navigationItem, radioButton, buttonTypeOne, buttonTypeTwo, sectionTitle, priceItemCost, formItem, formControlWrapper]
+const lightThemeSingleElement = [body, headerContainer, headerLogo, heroSection, themeSwitcher, contactsSection, instagramIcon, facebookIcon, twitterIcon, pinterestIcon, footerContainer, navigationList];
+const lightThemeGroupsOfElements = [sectionTitleContainer, navigationItem, radioButton, buttonTypeOne, buttonTypeTwo, sectionTitle, priceItemCost, formItem, formControlWrapper, burgerMenuLine]
 
 
 

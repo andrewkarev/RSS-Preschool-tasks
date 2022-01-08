@@ -45,6 +45,8 @@ body.light-theme {
 
 .header-container.light-theme {
   background: url("./assets/img/header-bg-light.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
 }
 
 .header-logo {
@@ -696,7 +698,12 @@ body.light-theme {
 
   .header-container {
     padding: 0 64px 0 60px;
+    background-size: auto 620px;
+    background-position: -5px -30px;
+  }
 
+  .header-container.light-theme {
+    padding: 0 64px 0 60px;
     background-size: auto 620px;
     background-position: -5px -30px;
   }
@@ -704,7 +711,6 @@ body.light-theme {
   .hero {
     padding: 78px 64px 0 60px;
     height: 500px;
-
     background-size: auto 620px;
     background-position: -5px bottom;
   }
@@ -719,6 +725,10 @@ body.light-theme {
     width: 390px;
     padding-bottom: 60px;
     line-height: 24px;
+  }
+
+  .theme-switcher {
+    right: 64px;
   }
 
   .section-title-container {
@@ -780,7 +790,6 @@ body.light-theme {
 
   .contacts {
     justify-content: center;
-
     height: 600px;
     background-size: auto 600px;
     background-position: center center;
@@ -859,6 +868,10 @@ body.light-theme {
     background-color: #000000;
   }
 
+  .navigation-list.light-theme {
+    background-color: #ffffff;
+  }
+
   .navigation-item {
     font-size: 34.8235px;
     line-height: 73px;
@@ -921,6 +934,8 @@ body.light-theme {
     padding-right: 20px;
   }
 
+  /*Burger menu*/
+
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -940,6 +955,10 @@ body.light-theme {
     background: #ffffff;
     z-index: 15;
     transition: all 0.3s ease-in-out;
+  }
+
+  .line.light-theme {
+    background: #000000;
   }
 
   .line1.-active,
