@@ -93,3 +93,46 @@ function getTranslate(event) {
 }
 
 langSwitcher.addEventListener('click', getTranslate);
+
+
+// Changing theme mode
+const headerContainer = document.querySelector('.header-container');
+const headerLogo = document.querySelector('.header-logo');
+const heroSection = document.querySelector('.hero');
+const themeSwitcher = document.querySelector('.theme-switcher');
+const contactsSection = document.querySelector('.contacts');
+const instagramIcon = document.querySelector('.instagram');
+const facebookIcon = document.querySelector('.facebook');
+const twitterIcon = document.querySelector('.twitter');
+const pinterestIcon = document.querySelector('.pinterest');
+const footerContainer = document.querySelector('.footer-container');
+
+const sectionTitleContainer = document.querySelectorAll('.section-title-container');
+const navigationItem = document.querySelectorAll('.navigation-item');
+const radioButton = document.querySelectorAll('.radio-btn');
+const buttonTypeOne = document.querySelectorAll('.btn-type-one');
+const buttonTypeTwo = document.querySelectorAll('.btn-type-two');
+const sectionTitle = document.querySelectorAll('.section-title');
+const priceItemCost = document.querySelectorAll('.price-item-cost');
+const formItem = document.querySelectorAll('.form-item');
+const formControlWrapper = document.querySelectorAll('.form-control-wrapper');
+
+const lightThemeSingleElement = [body, headerContainer, headerLogo, heroSection, themeSwitcher, contactsSection, instagramIcon, facebookIcon, twitterIcon, pinterestIcon, footerContainer];
+const lightThemeGroupsOfElements = [sectionTitleContainer, navigationItem, radioButton, buttonTypeOne, buttonTypeTwo, sectionTitle, priceItemCost, formItem, formControlWrapper]
+
+
+
+function changeTheme(event) {
+  if (event.target.classList.contains('theme-switcher')) {
+    lightThemeSingleElement.forEach(elem => elem.classList.toggle('light-theme'));
+    lightThemeGroupsOfElements.forEach(elem => elem.forEach(e => e.classList.toggle('light-theme')))
+  }
+}
+
+
+themeSwitcher.addEventListener('click', changeTheme)
+
+
+// TODO
+// Изменить hover эффекты svg изображений
+
