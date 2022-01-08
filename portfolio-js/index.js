@@ -1,5 +1,5 @@
 import i18Obj from './translate.js';
-const body = document.getElementById('body');
+const body = document.querySelector('#body');
 const hamburger = document.querySelector('.hamburger');
 const headerNav = document.querySelector('.header-navigation');
 const navMenu = document.querySelector('.navigation-list')
@@ -11,29 +11,29 @@ const langSwitcher = document.querySelector('.header-language-switch')
 
 
 function toggleMenu() {
-  hamburger.classList.toggle('open');
-  headerNav.classList.toggle('open');
-  body.classList.toggle("lock");
+  hamburger.classList.toggle('-open');
+  headerNav.classList.toggle('-open');
+  body.classList.toggle("-lock");
 }
 
 function closeMenu(event) {
   if (event.target.classList.contains('nav-link')) {
-    hamburger.classList.remove('open');
-    headerNav.classList.remove('open');
-    body.classList.remove("lock");
+    hamburger.classList.remove('-open');
+    headerNav.classList.remove('-open');
+    body.classList.remove("-lock");
   }
 }
 
 function hoverButton() {
-  line1.classList.toggle('active');
-  line2.classList.toggle('active');
-  line3.classList.toggle('active');
+  line1.classList.toggle('-active');
+  line2.classList.toggle('-active');
+  line3.classList.toggle('-active');
 }
 
 function stopHovering() {
-  line1.classList.remove('active');
-  line2.classList.remove('active');
-  line3.classList.remove('active');
+  line1.classList.remove('-active');
+  line2.classList.remove('-active');
+  line3.classList.remove('-active');
 }
 
 
@@ -69,10 +69,10 @@ function preloadImages() {
 
 function changeClassActive(event) {
   if (event.target.classList.contains('portfolio-btn')) {
-    portfolioBtn.forEach(btn => btn.classList.remove('active'));
+    portfolioBtn.forEach(btn => btn.classList.remove('-active'));
 
     let target = event.target
-    target.classList.add('active');
+    target.classList.add('-active');
   }
 }
 
