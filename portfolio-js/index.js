@@ -37,9 +37,6 @@ const footerIcon = document.querySelectorAll('.footer-icon');
 const burgerMenuLine = document.querySelectorAll('.line');
 const lightThemeSingleElement = [body, headerContainer, headerLogo, heroSection, themeSwitcher, themeSwitcherButton, contactsSection, footerContainer, navigationList];
 const lightThemeGroupsOfElements = [sectionTitleContainer, navigationItem, radioButton, buttonTypeOne, buttonTypeTwo, sectionTitle, priceItemCost, priceButton, formItem, formControlWrapper, footerIcon, burgerMenuLine];
-// SAVING USERS SETTINGS IN LOCAL STORAGE
-let lang = 'en';
-let theme = 'light';
 
 // BURGER MENU
 function toggleMenu() {
@@ -104,20 +101,35 @@ portfolioBtns.addEventListener('click', changeClassActive);
 preloadImages();
 
 // INTERNATIONALIZATION ('i18n')
-function getTranslate(event) {
-  if (event.target.classList.contains('radio-btn')) {
-    const textParam = document.querySelectorAll('[data-i18]');
-    let toLang = event.target.dataset.language;
-    textParam.forEach(elem => elem.textContent = i18Obj[toLang][elem.dataset.i18]);
+function getTranslate(currLang) {
+  const textParam = document.querySelectorAll('[data-i18]');
+  textParam.forEach(elem => elem.textContent = i18Obj[currLang][elem.dataset.i18]);
+}
 
-    lang = toLang;
+function setLocalStorageLang(event) {
+  if (event.target.classList.contains('radio-btn')) {
+    let toLang = event.target.dataset.language;
+
+    if (event.target.classList.contains('radio-btn-2')) {
+      if (localStorage.getItem('lang') !== 'ru') {
+        localStorage.setItem('lang', 'ru');
+      }
+    } else {
+      localStorage.removeItem('lang');
+    }
+    getTranslate(toLang)
   }
 }
 
-langSwitcher.addEventListener('click', getTranslate);
+langSwitcher.addEventListener('click', setLocalStorageLang);
 
 // CHANGINH THEME
-function setLocalStorage() {
+function changeTheme() {
+  lightThemeSingleElement.forEach(elem => elem.classList.toggle('light-theme'));
+  lightThemeGroupsOfElements.forEach(elem => elem.forEach(e => e.classList.toggle('light-theme')));
+}
+
+function setLocalStorageTheme() {
   if (localStorage.getItem('theme') === 'light') {
     localStorage.removeItem('theme');
   } else {
@@ -126,44 +138,21 @@ function setLocalStorage() {
   changeTheme()
 }
 
-function changeTheme() {
-  lightThemeSingleElement.forEach(elem => elem.classList.toggle('light-theme'));
-  lightThemeGroupsOfElements.forEach(elem => elem.forEach(e => e.classList.toggle('light-theme')));
-}
+themeSwitcher.addEventListener('click', setLocalStorageTheme);
 
+// SAVING USERS SETTINGS IN LOCAL STORAGE
 function getLocalStorage() {
   if (localStorage.getItem('theme') === 'light') {
     changeTheme()
   }
+  if (localStorage.getItem('lang') === 'ru') {
+    const rafioBtn1 = document.querySelector('#radio1');
+    const rafioBtn2 = document.querySelector('#radio2');
+
+    rafioBtn1.removeAttribute('checked');
+    rafioBtn2.setAttribute('checked', 'checked');
+    getTranslate(localStorage.getItem('lang'));
+  }
 }
 
-themeSwitcher.addEventListener('click', setLocalStorage);
 window.addEventListener('load', getLocalStorage);
-
-// SAVING USERS SETTINGS IN LOCAL STORAGE
-// function setLocalStorage() {
-//   localStorage.setItem('theme', theme);
-//   localStorage.setItem('lang', lang);
-// }
-
-// window.addEventListener('click', setLocalStorage);
-// // beforeunload
-
-// function getLocalStorage() {
-//   const localStorageTheme = localStorage.getItem('theme');
-//   const localStorageLang = localStorage.getItem('lang');
-//   if (localStorageTheme !== null && localStorageTheme !== theme) {
-//     changeTheme()
-//   }
-//   // if (localStorageLang !== null && localStorageLang !== lang) {
-//   //   document.querySelector('#radio2').setAttribute('checked', 'checked');
-//   //   document.querySelector('#radio1').removeAttribute('checked');
-//   // }
-// }
-
-// window.addEventListener('load', getLocalStorage);
-
-// console.log(document.querySelector('#radio1'))
-// console.log(document.querySelector('#radio2'))
-// document.querySelector('#radio1').removeAttribute('checked')
-// document.querySelector('#radio2').setAttribute('checked', 'checked')
