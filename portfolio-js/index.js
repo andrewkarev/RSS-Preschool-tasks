@@ -1,15 +1,47 @@
+// INTERNATIONALIZATION ('i18n')
 import i18Obj from './translate.js';
+const langSwitcher = document.querySelector('.header-language-switch');
+// BURGER MENU
 const body = document.querySelector('#body');
 const hamburger = document.querySelector('.hamburger');
 const headerNav = document.querySelector('.header-navigation');
-const navMenu = document.querySelector('.navigation-list')
-const line1 = document.querySelector('.line1')
-const line2 = document.querySelector('.line2')
-const line3 = document.querySelector('.line3')
-const langSwitcher = document.querySelector('.header-language-switch')
+const navMenu = document.querySelector('.navigation-list');
+const line1 = document.querySelector('.line1');
+const line2 = document.querySelector('.line2');
+const line3 = document.querySelector('.line3');
+// SHIFTING PHOTOS IN PORTFOLIO SECTION
+const portfolioBtn = document.querySelectorAll('.portfolio-btn');
+const portfolioImages = document.querySelectorAll('.portfolio-item img');
+const portfolioBtns = document.querySelector('.portfolio-buttons');
+const seasons = ['winter', 'spring', 'summer', 'autumn'];
+// CHANGINH THEME
+const headerContainer = document.querySelector('.header-container');
+const headerLogo = document.querySelector('.icon');
+const heroSection = document.querySelector('.hero');
+const themeSwitcher = document.querySelector('.theme-switcher');
+const themeSwitcherButton = document.querySelector('.theme-switcher-btn');
+const contactsSection = document.querySelector('.contacts');
+const footerContainer = document.querySelector('.footer-container');
+const navigationList = document.querySelector('.navigation-list');
+const sectionTitleContainer = document.querySelectorAll('.section-title-container');
+const navigationItem = document.querySelectorAll('.navigation-item');
+const radioButton = document.querySelectorAll('.radio-btn');
+const buttonTypeOne = document.querySelectorAll('.btn-type-one');
+const buttonTypeTwo = document.querySelectorAll('.btn-type-two');
+const sectionTitle = document.querySelectorAll('.section-title');
+const priceItemCost = document.querySelectorAll('.price-item-cost');
+const priceButton = document.querySelectorAll('.price-btn');
+const formItem = document.querySelectorAll('.form-item');
+const formControlWrapper = document.querySelectorAll('.form-control-wrapper');
+const footerIcon = document.querySelectorAll('.footer-icon');
+const burgerMenuLine = document.querySelectorAll('.line');
+const lightThemeSingleElement = [body, headerContainer, headerLogo, heroSection, themeSwitcher, themeSwitcherButton, contactsSection, footerContainer, navigationList];
+const lightThemeGroupsOfElements = [sectionTitleContainer, navigationItem, radioButton, buttonTypeOne, buttonTypeTwo, sectionTitle, priceItemCost, priceButton, formItem, formControlWrapper, footerIcon, burgerMenuLine];
+// SAVING USERS SETTINGS IN LOCAL STORAGE
+let lang = 'en';
+let theme = 'light';
 
-
-
+// BURGER MENU
 function toggleMenu() {
   hamburger.classList.toggle('-open');
   headerNav.classList.toggle('-open');
@@ -36,24 +68,15 @@ function stopHovering() {
   line3.classList.remove('-active');
 }
 
-
 hamburger.addEventListener('mouseover', hoverButton);
 hamburger.addEventListener('mouseout', stopHovering);
 hamburger.addEventListener('click', toggleMenu);
 navMenu.addEventListener("click", closeMenu);
 
-
-//Shifting photos in portfolio section
-
-const portfolioBtn = document.querySelectorAll('.portfolio-btn');
-const portfolioImages = document.querySelectorAll('.portfolio-item img');
-const portfolioBtns = document.querySelector('.portfolio-buttons');
-const seasons = ['winter', 'spring', 'summer', 'autumn'];
-
-
+//SHIFTING PHOTOS IN PORTFOLIO SECTION
 function changeImage(event) {
   if (event.target.classList.contains('portfolio-btn')) {
-    let target = event.target
+    let target = event.target;
     portfolioImages.forEach((img, index) => img.src = `./assets/img/${target.dataset.season}/${index + 1}.jpg`);
   }
 }
@@ -71,60 +94,76 @@ function changeClassActive(event) {
   if (event.target.classList.contains('portfolio-btn')) {
     portfolioBtn.forEach(btn => btn.classList.remove('-active'));
 
-    let target = event.target
+    let target = event.target;
     target.classList.add('-active');
   }
 }
-
 
 portfolioBtns.addEventListener('click', changeImage);
 portfolioBtns.addEventListener('click', changeClassActive);
 preloadImages();
 
-
-// internationalization ('i18n')
-
+// INTERNATIONALIZATION ('i18n')
 function getTranslate(event) {
   if (event.target.classList.contains('radio-btn')) {
-    const textParam = document.querySelectorAll('[data-i18]')
-    let lang = event.target.dataset.language
-    textParam.forEach(elem => elem.textContent = i18Obj[lang][elem.dataset.i18])
+    const textParam = document.querySelectorAll('[data-i18]');
+    let toLang = event.target.dataset.language;
+    textParam.forEach(elem => elem.textContent = i18Obj[toLang][elem.dataset.i18]);
+
+    lang = toLang;
   }
 }
 
 langSwitcher.addEventListener('click', getTranslate);
 
-
-// Changing theme mode
-const headerContainer = document.querySelector('.header-container');
-const headerLogo = document.querySelector('.icon');
-const heroSection = document.querySelector('.hero');
-const themeSwitcher = document.querySelector('.theme-switcher');
-const themeSwitcherButton = document.querySelector('.theme-switcher-btn');
-const contactsSection = document.querySelector('.contacts');
-const footerContainer = document.querySelector('.footer-container');
-const navigationList = document.querySelector('.navigation-list');
-const sectionTitleContainer = document.querySelectorAll('.section-title-container');
-const navigationItem = document.querySelectorAll('.navigation-item');
-const radioButton = document.querySelectorAll('.radio-btn');
-const buttonTypeOne = document.querySelectorAll('.btn-type-one');
-const buttonTypeTwo = document.querySelectorAll('.btn-type-two');
-const sectionTitle = document.querySelectorAll('.section-title');
-const priceItemCost = document.querySelectorAll('.price-item-cost');
-const priceButton = document.querySelectorAll('.price-btn');
-const formItem = document.querySelectorAll('.form-item');
-const formControlWrapper = document.querySelectorAll('.form-control-wrapper');
-const footerIcon = document.querySelectorAll('.footer-icon');
-const burgerMenuLine = document.querySelectorAll('.line');
-
-const lightThemeSingleElement = [body, headerContainer, headerLogo, heroSection, themeSwitcher, themeSwitcherButton, contactsSection, footerContainer, navigationList];
-const lightThemeGroupsOfElements = [sectionTitleContainer, navigationItem, radioButton, buttonTypeOne, buttonTypeTwo, sectionTitle, priceItemCost, priceButton, formItem, formControlWrapper, footerIcon, burgerMenuLine]
-
+// CHANGINH THEME
+function setLocalStorage() {
+  if (localStorage.getItem('theme') === 'light') {
+    localStorage.removeItem('theme');
+  } else {
+    localStorage.setItem('theme', 'light')
+  }
+  changeTheme()
+}
 
 function changeTheme() {
   lightThemeSingleElement.forEach(elem => elem.classList.toggle('light-theme'));
-  lightThemeGroupsOfElements.forEach(elem => elem.forEach(e => e.classList.toggle('light-theme')))
+  lightThemeGroupsOfElements.forEach(elem => elem.forEach(e => e.classList.toggle('light-theme')));
 }
 
+function getLocalStorage() {
+  if (localStorage.getItem('theme') === 'light') {
+    changeTheme()
+  }
+}
 
-themeSwitcher.addEventListener('click', changeTheme)
+themeSwitcher.addEventListener('click', setLocalStorage);
+window.addEventListener('load', getLocalStorage);
+
+// SAVING USERS SETTINGS IN LOCAL STORAGE
+// function setLocalStorage() {
+//   localStorage.setItem('theme', theme);
+//   localStorage.setItem('lang', lang);
+// }
+
+// window.addEventListener('click', setLocalStorage);
+// // beforeunload
+
+// function getLocalStorage() {
+//   const localStorageTheme = localStorage.getItem('theme');
+//   const localStorageLang = localStorage.getItem('lang');
+//   if (localStorageTheme !== null && localStorageTheme !== theme) {
+//     changeTheme()
+//   }
+//   // if (localStorageLang !== null && localStorageLang !== lang) {
+//   //   document.querySelector('#radio2').setAttribute('checked', 'checked');
+//   //   document.querySelector('#radio1').removeAttribute('checked');
+//   // }
+// }
+
+// window.addEventListener('load', getLocalStorage);
+
+// console.log(document.querySelector('#radio1'))
+// console.log(document.querySelector('#radio2'))
+// document.querySelector('#radio1').removeAttribute('checked')
+// document.querySelector('#radio2').setAttribute('checked', 'checked')
