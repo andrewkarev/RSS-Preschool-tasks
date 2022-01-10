@@ -117,7 +117,7 @@ function setLocalStorageLang(event) {
     } else {
       localStorage.removeItem('lang');
     }
-    getTranslate(toLang)
+    getTranslate(toLang);
   }
 }
 
@@ -133,9 +133,9 @@ function setLocalStorageTheme() {
   if (localStorage.getItem('theme') === 'light') {
     localStorage.removeItem('theme');
   } else {
-    localStorage.setItem('theme', 'light')
+    localStorage.setItem('theme', 'light');
   }
-  changeTheme()
+  changeTheme();
 }
 
 themeSwitcher.addEventListener('click', setLocalStorageTheme);
@@ -143,7 +143,7 @@ themeSwitcher.addEventListener('click', setLocalStorageTheme);
 // SAVING USERS SETTINGS IN LOCAL STORAGE
 function getLocalStorage() {
   if (localStorage.getItem('theme') === 'light') {
-    changeTheme()
+    changeTheme();
   }
   if (localStorage.getItem('lang') === 'ru') {
     const rafioBtn1 = document.querySelector('#radio1');
@@ -156,3 +156,21 @@ function getLocalStorage() {
 }
 
 window.addEventListener('load', getLocalStorage);
+
+// BUTTONS ACTIVE EFFECT
+Array.from(buttonTypeOne).forEach(elem => elem.addEventListener('click', addElement));
+Array.from(priceButton).forEach(elem => elem.addEventListener('click', addElement));
+
+function addElement(event) {
+  const newElem = document.createElement('div');
+  const position = this.getBoundingClientRect();
+
+  newElem.style.left = event.clientX - position.left + 'px';
+  newElem.style.top = event.clientY - position.top + 'px';
+
+
+  newElem.classList.add('circle');
+  this.appendChild(newElem);
+
+  setTimeout(() => newElem.remove(), 500);
+}
