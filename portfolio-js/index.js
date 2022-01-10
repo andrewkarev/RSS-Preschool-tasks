@@ -158,8 +158,8 @@ function getLocalStorage() {
 window.addEventListener('load', getLocalStorage);
 
 // BUTTONS ACTIVE EFFECT
-Array.from(buttonTypeOne).forEach(elem => elem.addEventListener('click', addElement));
-Array.from(priceButton).forEach(elem => elem.addEventListener('click', addElement));
+buttonTypeOne.forEach(elem => elem.addEventListener('click', addElement));
+priceButton.forEach(elem => elem.addEventListener('click', addElement));
 
 function addElement(event) {
   const newElem = document.createElement('div');
@@ -167,7 +167,6 @@ function addElement(event) {
 
   newElem.style.left = event.clientX - position.left + 'px';
   newElem.style.top = event.clientY - position.top + 'px';
-
 
   newElem.classList.add('circle');
   this.appendChild(newElem);
