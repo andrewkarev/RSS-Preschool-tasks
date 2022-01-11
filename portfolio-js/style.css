@@ -193,7 +193,6 @@ body.light-theme {
   color: #ffffff;
 }
 
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 .circle {
   position: absolute;
   background-color: #ffffff;
@@ -210,7 +209,6 @@ body.light-theme {
     opacity: 0;
   }
 }
-/* xxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 .btn-type-one.light-theme:hover {
   background-color: #1c1c1c;
@@ -248,12 +246,12 @@ body.light-theme {
   width: 50%;
   margin: 0 auto;
   margin-bottom: 60px;
-  background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
+  display: flex;
+  align-items: center;
   transition: all 0.3s ease-in-out;
 }
 
 .section-title-container.light-theme {
-  background-image: linear-gradient(to top, #fff 39px, #1c1c1c 39px, #1c1c1c 41px, #fff 41px);
   transition: all 0.3s ease-in-out;
 }
 
@@ -270,9 +268,25 @@ body.light-theme {
   transition: all 0.3s ease-in-out;
 }
 
+.section-title-container::before,
+.section-title-container::after {
+  content: "";
+  background: #bdae82;
+  display: block;
+  height: 2px;
+  width: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
 .section-title.light-theme {
   background-color: #ffffff;
   color: #1c1c1c;
+}
+
+.section-title-container.light-theme::before,
+.section-title-container.light-theme::after {
+  background: #1c1c1c;
+  transition: all 0.3s ease-in-out;
 }
 
 .skills-items {
