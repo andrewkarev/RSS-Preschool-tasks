@@ -157,7 +157,7 @@ function getLocalStorage() {
 
 window.addEventListener('load', getLocalStorage);
 
-// BUTTONS ACTIVE EFFECT
+// RTPPLE EFFECT FOR ACTIVE BUTTONS
 buttonTypeOne.forEach(elem => elem.addEventListener('click', addElement));
 priceButton.forEach(elem => elem.addEventListener('click', addElement));
 
