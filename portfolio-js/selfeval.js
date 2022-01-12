@@ -1,4 +1,4 @@
-console.log(`
+const selfEvaluation = `
 Rolling Scopes School - Stage 0 Portfolio task
 
 Self-evaluation by Andrew Karev
@@ -8,4 +8,6 @@ Self-evaluation by Andrew Karev
 Total score:  points
 
 developed by andrewkarev - 2022
-`);
+`;
+
+export default selfEvaluation;

@@ -1,3 +1,5 @@
+// SELF-EVALUATION
+import selfEvaluation from './selfeval.js';
 // INTERNATIONALIZATION ('i18n')
 import i18Obj from './translate.js';
 const langSwitcher = document.querySelector('.header-language-switch');
@@ -157,7 +159,7 @@ function getLocalStorage() {
 
 window.addEventListener('load', getLocalStorage);
 
-// BUTTONS ACTIVE EFFECT
+// RTPPLE EFFECT FOR ACTIVE BUTTONS
 buttonTypeOne.forEach(elem => elem.addEventListener('click', addElement));
 priceButton.forEach(elem => elem.addEventListener('click', addElement));
 
@@ -173,3 +175,6 @@ function addElement(event) {
 
   setTimeout(() => newElem.remove(), 500);
 }
+
+// LOG THE SELF-EVALUATION
+console.log(selfEvaluation);
