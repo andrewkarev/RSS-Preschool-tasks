@@ -1,3 +1,4 @@
+import selfEvaluation from './selfeval.js'
 const body = document.querySelector('#body');
 const hamburger = document.querySelector('.hamburger');
 const headerNav = document.querySelector('.header-navigation');
@@ -39,4 +40,4 @@ hamburger.addEventListener('mouseout', stopHovering);
 hamburger.addEventListener('click', toggleMenu);
 navMenu.addEventListener("click", closeMenu);
 
-
+console.log(selfEvaluation)
