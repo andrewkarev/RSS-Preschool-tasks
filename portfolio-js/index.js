@@ -1,3 +1,5 @@
+// SELF-EVALUATION
+import selfEvaluation from './selfeval.js';
 // INTERNATIONALIZATION ('i18n')
 import i18Obj from './translate.js';
 const langSwitcher = document.querySelector('.header-language-switch');
@@ -173,3 +175,6 @@ function addElement(event) {
 
   setTimeout(() => newElem.remove(), 500);
 }
+
+// LOG THE SELF-EVALUATION
+console.log(selfEvaluation);
