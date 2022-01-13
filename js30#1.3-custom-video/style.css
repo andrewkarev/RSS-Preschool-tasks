@@ -42,7 +42,7 @@ body {
   width: 130px;
   height: 130px;
   z-index: 10;
-  background-image: url("./assets/svg/play-btn.svg");
+  background-image: url("./assets/svg/play-hover.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -53,7 +53,7 @@ body {
 .video-player-preview-btn:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
-/* Заменить цвет иконок на белый*/
+
 .video-player-controls {
   position: absolute;
   bottom: 0;
@@ -80,11 +80,19 @@ body {
 .progress,
 .volume,
 .speed {
+  background: linear-gradient(to right, #bdae82 0%, #bdae82 0%, #ffffff 0%, #ffffff 100%);
   height: 5px;
   outline: none;
-  background: linear-gradient(to right, #bdae82 0%, #bdae82 0%, #ffffff 0%, #ffffff 100%);
   transition: background 450ms ease-in;
   -webkit-appearance: none;
+}
+
+.speed {
+  background: linear-gradient(to right, #bdae82 0%, #bdae82 44%, #ffffff 44%, #ffffff 100%);
+}
+
+.volume {
+  background: linear-gradient(to right, #bdae82 0%, #bdae82 50%, #ffffff 50%, #ffffff 100%);
 }
 
 /* .progress::-webkit-slider-thumb {
@@ -137,7 +145,7 @@ body {
 }
 
 .controls-volume {
-  /* position: relative; */
+  position: relative;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -147,7 +155,23 @@ body {
   background-image: url("./assets/svg/volume.svg");
 }
 
+@keyframes showVolume {
+  from {
+    width: 0;
+  }
+  to {
+    width: 129px;
+  }
+}
+
 .volume {
+  display: none;
+  width: 129px;
+}
+
+.controls-volume:hover .volume {
+  display: block;
+  animation: showVolume 1s ease-in-out;
 }
 
 .controls-speed {
