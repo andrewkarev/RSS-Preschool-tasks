@@ -758,7 +758,6 @@ body.light-theme {
   .section-title-container {
     width: 364px;
     margin-bottom: 50px;
-    background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
   }
 
   .section-title {
