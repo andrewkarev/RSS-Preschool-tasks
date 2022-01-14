@@ -7,6 +7,7 @@ const sliders = player.querySelectorAll('.player-slider');
 const speedRate = player.querySelector('.speed-rate');
 const speedIcon = player.querySelector('.speed-icon');
 const speed = player.querySelector('.speed');
+const volumeIcon = player.querySelector('.volume-icon');
 
 
 const progress = player.querySelector('.progress');
@@ -52,6 +53,18 @@ function handleRangeUpdate() {
 
   if (this.name === 'playbackRate') {
     speedRate.textContent = `x${this.value}`
+  }
+
+  if (this.name === 'volume') {
+    if (this.value >= 0.5) {
+      volumeIcon.style.backgroundImage = 'url("./assets/svg/volume.svg")'
+    }
+    if (this.value <= 0.49) {
+      volumeIcon.style.backgroundImage = 'url("./assets/svg/volume-half.svg")'
+    }
+    if (this.value === '0') {
+      volumeIcon.style.backgroundImage = 'url("./assets/svg/mute.svg")'
+    }
   }
 }
 
