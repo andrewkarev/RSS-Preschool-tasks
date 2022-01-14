@@ -13,6 +13,9 @@ const volumeIcon = player.querySelector('.volume-icon');
 const progress = player.querySelector('.progress');
 const volume = player.querySelector('.volume');
 
+let previousVolumeValue
+let isMuted = false
+
 function trackProgress() {
   const value = this.value;
   const maxValue = this.max;
@@ -53,12 +56,15 @@ function handleRangeUpdate() {
   if (this.name === 'volume') {
     if (this.value >= 0.5) {
       volumeIcon.style.backgroundImage = 'url("./assets/svg/volume.svg")'
+      video.muted = false;
     }
     if (this.value <= 0.49) {
       volumeIcon.style.backgroundImage = 'url("./assets/svg/volume-half.svg")'
+      video.muted = false;
     }
     if (this.value === '0') {
       volumeIcon.style.backgroundImage = 'url("./assets/svg/mute.svg")'
+      video.muted = true;
     }
   }
 }
@@ -70,17 +76,32 @@ function speedNormalizer() {
   speed.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 44%, #fff 44%, #fff 100%)`;
 }
 
-
 function mute() {
-  if (video.muted === false) {
-    video.muted = true
-    volumeIcon.style.backgroundImage = 'url("./assets/svg/mute.svg")'
+  console.log(video.muted)
+  if (video.muted && isMuted === false) {
+    video.muted = true;
+    isMuted = false;
+  } else if (!video.muted) {
+    previousVolumeValue = volume.value
+    video.muted = true;
+    isMuted = true;
+    volume.value = 0;
+    volumeIcon.style.backgroundImage = 'url("./assets/svg/mute.svg")';
+    volume.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 0%, #fff 0%, #fff 100%)`;
   } else {
+    isMuted = false
     video.muted = false
+    volume.value = previousVolumeValue
+    const maxValue = volume.max;
+    const minValue = volume.min;
+    const percent = Math.round(((previousVolumeValue - minValue) / (maxValue - minValue)) * 100);
+
     if (volume.value >= 0.5) {
       volumeIcon.style.backgroundImage = 'url("./assets/svg/volume.svg")'
+      volume.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${percent}%, #fff ${percent}%, #fff 100%)`;
     } else if (volume.value <= 0.49) {
       volumeIcon.style.backgroundImage = 'url("./assets/svg/volume-half.svg")'
+      volume.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${percent}%, #fff ${percent}%, #fff 100%)`;
     }
   }
 }
@@ -97,7 +118,6 @@ speedIcon.addEventListener('click', speedNormalizer);
 volumeIcon.addEventListener('click', mute);
 
 // TODO
-// Добавить изменение роложения ползунка при mute/unmute
 // Добавить логику в progressBar
 // Добавить изменение currentTime
 // Добавить логику для fullscreen
