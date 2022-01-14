@@ -11,7 +11,7 @@ const volumeIcon = player.querySelector('.volume-icon');
 
 
 const progress = player.querySelector('.progress');
-// const volume = player.querySelector('.volume');
+const volume = player.querySelector('.volume');
 
 function trackProgress() {
   const value = this.value;
@@ -22,13 +22,8 @@ function trackProgress() {
   this.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${percent}%, #fff ${percent}%, #fff 100%)`;
 }
 
-
 progress.addEventListener('input', trackProgress);
-
 sliders.forEach(element => element.addEventListener('input', trackProgress))
-// volume.addEventListener('input', trackProgress);
-// speed.addEventListener('input', trackProgress);
-
 
 function togglePlay() {
   if (video.paused) {
@@ -75,12 +70,34 @@ function speedNormalizer() {
   speed.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 44%, #fff 44%, #fff 100%)`;
 }
 
+
+function mute() {
+  if (video.muted === false) {
+    video.muted = true
+    volumeIcon.style.backgroundImage = 'url("./assets/svg/mute.svg")'
+  } else {
+    video.muted = false
+    if (volume.value >= 0.5) {
+      volumeIcon.style.backgroundImage = 'url("./assets/svg/volume.svg")'
+    } else if (volume.value <= 0.49) {
+      volumeIcon.style.backgroundImage = 'url("./assets/svg/volume-half.svg")'
+    }
+  }
+}
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updatePlayButton);
 video.addEventListener('pause', updatePlayButton);
 previewBtn.addEventListener('click', togglePlay);
 play.addEventListener('click', togglePlay);
-
-sliders.forEach(element => element.addEventListener('change', handleRangeUpdate))
-sliders.forEach(element => element.addEventListener('mousemove', handleRangeUpdate))
+sliders.forEach(element => element.addEventListener('change', handleRangeUpdate));
+sliders.forEach(element => element.addEventListener('mousemove', handleRangeUpdate));
 speedIcon.addEventListener('click', speedNormalizer);
+
+volumeIcon.addEventListener('click', mute);
+
+// TODO
+// Добавить изменение роложения ползунка при mute/unmute
+// Добавить логику в progressBar
+// Добавить изменение currentTime
+// Добавить логику для fullscreen

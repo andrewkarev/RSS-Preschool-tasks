@@ -158,14 +158,6 @@ body {
 .volume-icon {
   background-image: url("./assets/svg/volume.svg");
 }
-/* Снижении звука ниже 50% */
-.volume-half-icon {
-  background-image: url("./assets/svg/volume-half.svg");
-}
-/* Звук отключен  */
-.volume-half-icon {
-  background-image: url("./assets/svg/mute.svg");
-}
 
 @keyframes showVolume {
   from {
