@@ -143,6 +143,10 @@ body {
 .play {
   background-image: url("./assets/svg/play.svg");
 }
+/* Класс для паузы */
+.pause {
+  background-image: url("./assets/svg/pause.svg");
+}
 
 .controls-volume {
   position: relative;
@@ -153,6 +157,14 @@ body {
 
 .volume-icon {
   background-image: url("./assets/svg/volume.svg");
+}
+/* Снижении звука ниже 50% */
+.volume-half-icon {
+  background-image: url("./assets/svg/volume-half.svg");
+}
+/* Звук отключен  */
+.volume-half-icon {
+  background-image: url("./assets/svg/mute.svg");
 }
 
 @keyframes showVolume {
@@ -171,7 +183,7 @@ body {
 
 .controls-volume:hover .volume {
   display: block;
-  animation: showVolume 1s ease-in-out;
+  animation: showVolume 0.5s ease-in-out;
 }
 
 .controls-speed {
