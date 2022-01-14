@@ -5,11 +5,12 @@ const previewBtn = player.querySelector('.video-player-preview-btn')
 const play = player.querySelector('.play-icon');
 const sliders = player.querySelectorAll('.player-slider');
 const speedRate = player.querySelector('.speed-rate');
+const speedIcon = player.querySelector('.speed-icon');
+const speed = player.querySelector('.speed');
 
 
 const progress = player.querySelector('.progress');
 // const volume = player.querySelector('.volume');
-// const speed = player.querySelector('.speed');
 
 function trackProgress() {
   const value = this.value;
@@ -54,6 +55,13 @@ function handleRangeUpdate() {
   }
 }
 
+function speedNormalizer() {
+  video.playbackRate = 1;
+  speedRate.textContent = `x1`;
+  speed.value = 1;
+  speed.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 44%, #fff 44%, #fff 100%)`;
+}
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updatePlayButton);
 video.addEventListener('pause', updatePlayButton);
@@ -62,3 +70,4 @@ play.addEventListener('click', togglePlay);
 
 sliders.forEach(element => element.addEventListener('change', handleRangeUpdate))
 sliders.forEach(element => element.addEventListener('mousemove', handleRangeUpdate))
+speedIcon.addEventListener('click', speedNormalizer);
