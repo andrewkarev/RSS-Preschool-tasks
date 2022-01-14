@@ -19,12 +19,13 @@
   <div class="video-player-container">
     <div class="video-player">
       <div class="video-player-viewer">
-        <video class="viewer" src="./assets/video/video.mp4" <!--poster="./assets/img/video-player.jpg" --> ></video>
+        <video class="viewer" src="./assets/video/video.mp4" <!--poster="./assets/img/video-player.jpg" -->></video>
       </div>
       <div class="video-player-preview-btn"></div>
       <div class="video-player-controls">
         <div class="video-player-progress">
-          <input type="range" class="progress">
+          <!-- <input type="range" class="progress"> -->
+          <progress class="progress"></progress>
         </div>
         <div class="video-player-btns-container">
           <div class="controls-play">
@@ -32,7 +33,7 @@
           </div>
           <div class="controls-volume">
             <button class="controls-btn volume-icon" type="button" title="mute (m)"></button>
-            <input type="range" name="volumeRate" value="50" min="0" max="100" step="1" class="volume">
+            <input type="range" name="volume" value="0.5" min="0" max="1" step="0.01" class="player-slider volume">
           </div>
           <div class="controls-time-code">
             <span class="time-code time-code-current">00:00</span>
@@ -42,7 +43,7 @@
           <div class="controls-speed">
             <button class="controls-btn speed-icon" type="button" title="normal speed (r)"></button>
             <div class="speed-rate">x1</div>
-            <input type="range" name="playbackRate" value="1" min="0.2" max="2" step="0.2" class="speed">
+            <input type="range" name="playbackRate" value="1" min="0.2" max="2" step="0.2" class="player-slider speed">
           </div>
           <div class="controls-fullscreen">
             <button class="controls-btn fullscreen-icon" type="button" title="fullscreen (f)"></button>
