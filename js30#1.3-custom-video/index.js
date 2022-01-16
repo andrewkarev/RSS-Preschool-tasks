@@ -13,6 +13,7 @@ const progress = player.querySelector('.video-player-progress');
 const progressBar = player.querySelector('.progress-filled');
 const currentTimeCode = player.querySelector('.time-code-current');
 const durationTimeCode = player.querySelector('.time-code-duration');
+const fullscreen = player.querySelector('.fullscreen-icon');
 
 let previousVolumeValue
 let isMuted = false
@@ -124,6 +125,18 @@ function videoTimeCodeUpdate() {
   durationTimeCode.textContent = `0:${durationSeconds}`;
 }
 
+function toggleFullscreen() {
+  if (document.fullscreenElement) {
+    console.log(document.fullscreenElement)
+    document.exitFullscreen();
+    fullscreen.style.backgroundImage = 'url("./assets/svg/fullscreen.svg")'
+  } else {
+    player.requestFullscreen();
+    fullscreen.style.backgroundImage = 'url("./assets/svg/exit-fullscreen.svg")'
+  }
+}
+
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updatePlayButton);
 video.addEventListener('pause', updatePlayButton);
@@ -136,10 +149,12 @@ volumeIcon.addEventListener('click', mute);
 video.addEventListener('timeupdate', handleVideoProgress);
 progress.addEventListener('click', setVideoTime);
 video.addEventListener('timeupdate', videoTimeCodeUpdate);
-
+fullscreen.addEventListener('click', toggleFullscreen)
 
 
 // TODO
 // Добавить логику для fullscreen
 // Добавить функции клавишам
 // Добавить poster
+// Добавить Медиазапрос для hover button
+// refactor code

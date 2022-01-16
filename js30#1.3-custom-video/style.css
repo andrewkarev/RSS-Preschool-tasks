@@ -59,8 +59,18 @@ body {
   bottom: 0;
   width: 100%;
   background-color: rgb(0, 0, 0, 0.5);
-  /* transform: translateY(100%) translateY(-5px); */
+  transform: translateY(100%) translateY(-5px);
   transition: transform 0.5s ease-in-out;
+}
+
+.video-player:fullscreen {
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.video-player:fullscreen .video-player-viewer {
+  width: 100%;
 }
 
 .video-player:hover .video-player-controls {
