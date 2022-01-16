@@ -8,15 +8,15 @@ const speedRate = player.querySelector('.speed-rate');
 const speedIcon = player.querySelector('.speed-icon');
 const speed = player.querySelector('.speed');
 const volumeIcon = player.querySelector('.volume-icon');
-
-
-const progress = player.querySelector('.progress');
 const volume = player.querySelector('.volume');
+
+const progress = player.querySelector('.video-player-progress');
+const progressBar = player.querySelector('.progress-filled');
 
 let previousVolumeValue
 let isMuted = false
 
-function trackProgress() {
+function handleSlidersProgress() {
   const value = this.value;
   const maxValue = this.max;
   const minValue = this.min;
@@ -25,8 +25,8 @@ function trackProgress() {
   this.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${percent}%, #fff ${percent}%, #fff 100%)`;
 }
 
-progress.addEventListener('input', trackProgress);
-sliders.forEach(element => element.addEventListener('input', trackProgress))
+
+sliders.forEach(element => element.addEventListener('input', handleSlidersProgress))
 
 function togglePlay() {
   if (video.paused) {
@@ -77,7 +77,6 @@ function speedNormalizer() {
 }
 
 function mute() {
-  console.log(video.muted)
   if (video.muted && isMuted === false) {
     video.muted = true;
     isMuted = false;
@@ -106,6 +105,16 @@ function mute() {
   }
 }
 
+function handleVideoProgress() {
+  const percent = (video.currentTime / video.duration) * 100;
+  progressBar.style.width = `${percent}%`;
+}
+
+function setVideoTime(e) {
+  const videoCurrentTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = videoCurrentTime
+}
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updatePlayButton);
 video.addEventListener('pause', updatePlayButton);
@@ -114,10 +123,14 @@ play.addEventListener('click', togglePlay);
 sliders.forEach(element => element.addEventListener('change', handleRangeUpdate));
 sliders.forEach(element => element.addEventListener('mousemove', handleRangeUpdate));
 speedIcon.addEventListener('click', speedNormalizer);
-
 volumeIcon.addEventListener('click', mute);
+video.addEventListener('timeupdate', handleVideoProgress);
+progress.addEventListener('click', setVideoTime);
+
+
 
 // TODO
-// Добавить логику в progressBar
 // Добавить изменение currentTime
 // Добавить логику для fullscreen
+// Добавить функции клавишам
+// Добавить poster
