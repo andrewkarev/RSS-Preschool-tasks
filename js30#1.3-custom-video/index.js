@@ -9,9 +9,10 @@ const speedIcon = player.querySelector('.speed-icon');
 const speed = player.querySelector('.speed');
 const volumeIcon = player.querySelector('.volume-icon');
 const volume = player.querySelector('.volume');
-
 const progress = player.querySelector('.video-player-progress');
 const progressBar = player.querySelector('.progress-filled');
+const currentTimeCode = player.querySelector('.time-code-current');
+const durationTimeCode = player.querySelector('.time-code-duration');
 
 let previousVolumeValue
 let isMuted = false
@@ -112,7 +113,15 @@ function handleVideoProgress() {
 
 function setVideoTime(e) {
   const videoCurrentTime = (e.offsetX / progress.offsetWidth) * video.duration;
-  video.currentTime = videoCurrentTime
+  video.currentTime = videoCurrentTime;
+}
+
+function videoTimeCodeUpdate() {
+  let currentSeconds = Math.floor(video.currentTime);
+  let durationSeconds = Math.floor(video.duration);
+
+  currentTimeCode.textContent = `0:${currentSeconds < 10 ? '0' + currentSeconds : currentSeconds}`;
+  durationTimeCode.textContent = `0:${durationSeconds}`;
 }
 
 video.addEventListener('click', togglePlay);
@@ -126,11 +135,11 @@ speedIcon.addEventListener('click', speedNormalizer);
 volumeIcon.addEventListener('click', mute);
 video.addEventListener('timeupdate', handleVideoProgress);
 progress.addEventListener('click', setVideoTime);
+video.addEventListener('timeupdate', videoTimeCodeUpdate);
 
 
 
 // TODO
-// Добавить изменение currentTime
 // Добавить логику для fullscreen
 // Добавить функции клавишам
 // Добавить poster
