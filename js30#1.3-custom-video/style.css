@@ -226,3 +226,12 @@ body {
 .fullscreen-icon {
   background-image: url("./assets/svg/fullscreen.svg");
 }
+
+@media (max-width: 768px) {
+  .video-player-preview-btn {
+    top: calc(50% - 32px);
+    left: calc(50% - 32px);
+    width: 64px;
+    height: 64px;
+  }
+}
