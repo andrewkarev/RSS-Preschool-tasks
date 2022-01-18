@@ -38,7 +38,7 @@ body.light-theme {
   display: flex;
   align-items: center;
   height: 90px;
-  padding: 0 18px 0 20px;
+  padding: 0 21px 0 20px;
   background: url("./assets/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
@@ -93,7 +93,7 @@ body.light-theme {
 }
 
 .header-language-switch {
-  padding-left: 33px;
+  padding: 0 35px;
   font-weight: bold;
 }
 
@@ -130,7 +130,34 @@ body.light-theme {
 }
 
 .slash {
-  padding: 0 4px 0 5px;
+  padding: 0 11px 0 10px;
+}
+
+.theme-switcher {
+  width: 45px;
+  height: 45px;
+}
+
+.theme-switcher.light-theme {
+  width: 44px;
+  height: 40px;
+}
+
+.theme-switcher-btn {
+  display: block;
+  fill: #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-switcher-btn.light-theme {
+  width: 41px;
+  height: 40px;
+  fill: #1c1c1c;
+}
+
+.theme-switcher-btn:hover {
+  fill: #bdae82;
 }
 
 .hamburger {
@@ -213,29 +240,6 @@ body.light-theme {
 .btn-type-one.light-theme:hover {
   background-color: #1c1c1c;
   color: #bdae82;
-}
-
-.theme-switcher {
-  position: absolute;
-  bottom: 20px;
-  right: 18px;
-  width: 32px;
-  height: 32px;
-}
-
-.theme-switcher-btn {
-  display: block;
-  fill: #ffffff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.theme-switcher-btn.light-theme {
-  fill: #1c1c1c;
-}
-
-.theme-switcher-btn:hover {
-  fill: #bdae82;
 }
 
 .skills {
@@ -968,6 +972,7 @@ body.light-theme {
     justify-content: space-between;
     width: 50px;
     height: 28px;
+    margin-left: 30px;
     cursor: pointer;
     user-select: none;
     z-index: 4;
