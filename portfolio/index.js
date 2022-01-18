@@ -129,6 +129,12 @@ langSwitcher.addEventListener('click', setLocalStorageLang);
 function changeTheme() {
   lightThemeSingleElement.forEach(elem => elem.classList.toggle('light-theme'));
   lightThemeGroupsOfElements.forEach(elem => elem.forEach(e => e.classList.toggle('light-theme')));
+
+  if (themeSwitcherButton.classList.contains('light-theme')) {
+    themeSwitcherButton.innerHTML = '<use href="./assets/svg/sprite.svg#theme-switcher-light"></use>';
+  } else {
+    themeSwitcherButton.innerHTML = '<use href="./assets/svg/sprite.svg#theme-switcher"></use>';
+  }
 }
 
 function setLocalStorageTheme() {
