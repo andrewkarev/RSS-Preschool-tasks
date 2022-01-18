@@ -16,18 +16,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body id="body">
   <div class="wrapper">
     <header class="header">
       <div class="header-container">
         <div class="header-logo"></div>
         <nav class="header-navigation">
           <ul class="navigation-list">
-            <li class="navigation-item"><a href="#skills-section">Skills</a></li>
-            <li class="navigation-item"><a href="#portfolio-section">Portfolio</a></li>
-            <li class="navigation-item"><a href="#video-section">Video</a></li>
-            <li class="navigation-item"><a href="#price-section">Price</a></li>
-            <li class="navigation-item"><a href="#contacts-section">Contacts</a></li>
+            <li class="navigation-item"><a href="#skills-section" class="nav-link">Skills</a></li>
+            <li class="navigation-item"><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
+            <li class="navigation-item"><a href="#video-section" class="nav-link">Video</a></li>
+            <li class="navigation-item"><a href="#price-section" class="nav-link">Price</a></li>
+            <li class="navigation-item"><a href="#contacts-section" class="nav-link">Contacts</a></li>
           </ul>
         </nav>
         <div class="header-language-switch">
@@ -36,6 +36,11 @@
           <span class="slash">&sol;</span>
           <input type="radio" id="radio2" name="radios" value="russian">
           <label for="radio2">ru</label>
+        </div>
+        <div class="hamburger">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <div class="line line3"></div>
         </div>
       </div>
     </header>
@@ -172,11 +177,11 @@
           </div>
           <div class="contacts-form">
             <form action="#">
-              <div class="form-control-wrapper">
-                <input type="email" name="email-address" placeholder="E-mail" class="form-item control">
+              <div class="form-control-wrapper"><input type="email" name="email-address" placeholder="E-mail"
+                  class="form-item control">
               </div>
-              <div class="form-control-wrapper">
-                <input type="tel" name="telephone-number" placeholder="Phone" class="form-item control">
+              <div class="form-control-wrapper"><input type="tel" name="telephone-number" placeholder="Phone"
+                  class="form-item control">
               </div>
               <div class="form-control-wrapper">
                 <textarea name="message" placeholder="Message" class="form-item textarea"></textarea>
@@ -210,7 +215,7 @@
       </div>
     </footer>
   </div>
-  <script src="index.js"></script>
+  <script src="index.js" type="module"></script>
 </body>
 
 </html>
