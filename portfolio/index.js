@@ -1,47 +1,180 @@
-console.log(`
-Rolling Scopes School
-Stage 0 Portfolio #1 task
-Self-evaluation by Andrew Karev
+// SELF-EVALUATION
+import selfEvaluation from './selfeval.js';
+// INTERNATIONALIZATION ('i18n')
+import i18Obj from './translate.js';
+const langSwitcher = document.querySelector('.header-language-switch');
+// BURGER MENU
+const body = document.querySelector('#body');
+const hamburger = document.querySelector('.hamburger');
+const headerNav = document.querySelector('.header-navigation');
+const navMenu = document.querySelector('.navigation-list');
+const line1 = document.querySelector('.line1');
+const line2 = document.querySelector('.line2');
+const line3 = document.querySelector('.line3');
+// SHIFTING PHOTOS IN PORTFOLIO SECTION
+const portfolioBtn = document.querySelectorAll('.portfolio-btn');
+const portfolioImages = document.querySelectorAll('.portfolio-item img');
+const portfolioBtns = document.querySelector('.portfolio-buttons');
+const seasons = ['winter', 'spring', 'summer', 'autumn'];
+// CHANGINH THEME
+const headerContainer = document.querySelector('.header-container');
+const headerLogo = document.querySelector('.icon');
+const heroSection = document.querySelector('.hero');
+const themeSwitcher = document.querySelector('.theme-switcher');
+const themeSwitcherButton = document.querySelector('.theme-switcher-btn');
+const contactsSection = document.querySelector('.contacts');
+const footerContainer = document.querySelector('.footer-container');
+const navigationList = document.querySelector('.navigation-list');
+const sectionTitleContainer = document.querySelectorAll('.section-title-container');
+const navigationItem = document.querySelectorAll('.navigation-item');
+const radioButton = document.querySelectorAll('.radio-btn');
+const buttonTypeOne = document.querySelectorAll('.btn-type-one');
+const buttonTypeTwo = document.querySelectorAll('.btn-type-two');
+const sectionTitle = document.querySelectorAll('.section-title');
+const priceItemCost = document.querySelectorAll('.price-item-cost');
+const priceButton = document.querySelectorAll('.price-btn');
+const formItem = document.querySelectorAll('.form-item');
+const formControlWrapper = document.querySelectorAll('.form-control-wrapper');
+const footerIcon = document.querySelectorAll('.footer-icon');
+const burgerMenuLine = document.querySelectorAll('.line');
+const lightThemeSingleElement = [body, headerContainer, headerLogo, heroSection, themeSwitcher, themeSwitcherButton, contactsSection, footerContainer, navigationList];
+const lightThemeGroupsOfElements = [sectionTitleContainer, navigationItem, radioButton, buttonTypeOne, buttonTypeTwo, sectionTitle, priceItemCost, priceButton, formItem, formControlWrapper, footerIcon, burgerMenuLine];
 
-✓ The markup is valid - 10 points
+// BURGER MENU
+function toggleMenu() {
+  hamburger.classList.toggle('-open');
+  headerNav.classList.toggle('-open');
+  body.classList.toggle("-lock");
+}
 
-✓ The markup is semantic - 20 pointts
-    [+] header, main, footer - +2
-    [+] six sections - +2
-    [+] only one h1 - +2
-    [+] five h2 titles - +2
-    [+] only one nav - +2
-    [+] two ul>li lists - +2
-    [+] ten buttons - +2
-    [+] two inputs - +2
-    [+] one textarea - +2
-    [+] three placrholder atributes - +2
+function closeMenu(event) {
+  if (event.target.classList.contains('nav-link')) {
+    hamburger.classList.remove('-open');
+    headerNav.classList.remove('-open');
+    body.classList.remove("-lock");
+  }
+}
 
-✓ The markup matches template - 48 pointts
-    [+] header block - +6
-    [+] hero section - +6
-    [+] skills section - +6
-    [+] portfolio section - +6
-    [+] video section - +6
-    [+] price section - +6
-    [+] contacts section - +6
-    [+] footer block - +6
+function hoverButton() {
+  line1.classList.toggle('-active');
+  line2.classList.toggle('-active');
+  line3.classList.toggle('-active');
+}
 
-✓ Css requirements - 12 pointts
-    [+] was used flex-layout - +2
-    [+] the markup centered when zoom out - +2
-    [+] the background color stretches to the full width of the page - +2
-    [+] icons were added in .svg format - +2
-    [+] images were added in .jpg format - +2
-    [+] was added favicon - +2
+function stopHovering() {
+  line1.classList.remove('-active');
+  line2.classList.remove('-active');
+  line3.classList.remove('-active');
+}
 
-✓ Interactivity realized with css - 20 pointts
-    [+] smooth scrolling - +5
-    [+] links to the authors github and courses page in the footer block - +5
-    [+] changing in background color and font color on hover - +5
-    [+] smooth change in the appearance of an element on hover and click, which doesn't affect adjacent elements - +5
+hamburger.addEventListener('mouseover', hoverButton);
+hamburger.addEventListener('mouseout', stopHovering);
+hamburger.addEventListener('click', toggleMenu);
+navMenu.addEventListener("click", closeMenu);
 
-Total score: 110/100 points
+//SHIFTING PHOTOS IN PORTFOLIO SECTION
+function changeImage(event) {
+  if (event.target.classList.contains('portfolio-btn')) {
+    let target = event.target;
+    portfolioImages.forEach((img, index) => img.src = `./assets/img/${target.dataset.season}/${index + 1}.jpg`);
+  }
+}
 
-developed by andrewkarev - 2022
-`);
+function preloadImages() {
+  for (let season of seasons) {
+    for (let i = 1; i <= 6; i++) {
+      const img = new Image();
+      img.src = `./assets/img/${season}/${i}.jpg`;
+    }
+  }
+}
+
+function changeClassActive(event) {
+  if (event.target.classList.contains('portfolio-btn')) {
+    portfolioBtn.forEach(btn => btn.classList.remove('-active'));
+
+    let target = event.target;
+    target.classList.add('-active');
+  }
+}
+
+portfolioBtns.addEventListener('click', changeImage);
+portfolioBtns.addEventListener('click', changeClassActive);
+preloadImages();
+
+// INTERNATIONALIZATION ('i18n')
+function getTranslate(currLang) {
+  const textParam = document.querySelectorAll('[data-i18]');
+  textParam.forEach(elem => elem.textContent = i18Obj[currLang][elem.dataset.i18]);
+}
+
+function setLocalStorageLang(event) {
+  if (event.target.classList.contains('radio-btn')) {
+    let toLang = event.target.dataset.language;
+
+    if (event.target.classList.contains('radio-btn-2')) {
+      if (localStorage.getItem('lang') !== 'ru') {
+        localStorage.setItem('lang', 'ru');
+      }
+    } else {
+      localStorage.removeItem('lang');
+    }
+    getTranslate(toLang);
+  }
+}
+
+langSwitcher.addEventListener('click', setLocalStorageLang);
+
+// CHANGINH THEME
+function changeTheme() {
+  lightThemeSingleElement.forEach(elem => elem.classList.toggle('light-theme'));
+  lightThemeGroupsOfElements.forEach(elem => elem.forEach(e => e.classList.toggle('light-theme')));
+}
+
+function setLocalStorageTheme() {
+  if (localStorage.getItem('theme') === 'light') {
+    localStorage.removeItem('theme');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+  changeTheme();
+}
+
+themeSwitcher.addEventListener('click', setLocalStorageTheme);
+
+// SAVING USERS SETTINGS IN LOCAL STORAGE
+function getLocalStorage() {
+  if (localStorage.getItem('theme') === 'light') {
+    changeTheme();
+  }
+  if (localStorage.getItem('lang') === 'ru') {
+    const rafioBtn1 = document.querySelector('#radio1');
+    const rafioBtn2 = document.querySelector('#radio2');
+
+    rafioBtn1.removeAttribute('checked');
+    rafioBtn2.setAttribute('checked', 'checked');
+    getTranslate(localStorage.getItem('lang'));
+  }
+}
+
+window.addEventListener('load', getLocalStorage);
+
+// RTPPLE EFFECT FOR ACTIVE BUTTONS
+buttonTypeOne.forEach(elem => elem.addEventListener('click', addElement));
+priceButton.forEach(elem => elem.addEventListener('click', addElement));
+
+function addElement(event) {
+  const newElem = document.createElement('div');
+  const position = this.getBoundingClientRect();
+
+  newElem.style.left = event.clientX - position.left + 'px';
+  newElem.style.top = event.clientY - position.top + 'px';
+
+  newElem.classList.add('circle');
+  this.appendChild(newElem);
+
+  setTimeout(() => newElem.remove(), 500);
+}
+
+// LOG THE SELF-EVALUATION
+console.log(selfEvaluation);
