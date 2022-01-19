@@ -3,6 +3,8 @@ import selfEvaluation from './selfeval.js';
 // INTERNATIONALIZATION ('i18n')
 import i18Obj from './translate.js';
 const langSwitcher = document.querySelector('.header-language-switch');
+// SCROLL TO TOP BUTTON
+const scrollToTopButton = document.querySelector('.btn-to-top');
 // BURGER MENU
 const body = document.querySelector('#body');
 const hamburger = document.querySelector('.hamburger');
@@ -37,7 +39,7 @@ const formItem = document.querySelectorAll('.form-item');
 const formControlWrapper = document.querySelectorAll('.form-control-wrapper');
 const footerIcon = document.querySelectorAll('.footer-icon');
 const burgerMenuLine = document.querySelectorAll('.line');
-const lightThemeSingleElement = [body, headerContainer, headerLogo, heroSection, themeSwitcher, themeSwitcherButton, contactsSection, footerContainer, navigationList];
+const lightThemeSingleElement = [body, headerContainer, headerLogo, heroSection, themeSwitcher, themeSwitcherButton, contactsSection, footerContainer, navigationList, scrollToTopButton];
 const lightThemeGroupsOfElements = [sectionTitleContainer, navigationItem, radioButton, buttonTypeOne, buttonTypeTwo, sectionTitle, priceItemCost, priceButton, formItem, formControlWrapper, footerIcon, burgerMenuLine];
 
 // BURGER MENU
@@ -181,6 +183,23 @@ function addElement(event) {
 
   setTimeout(() => newElem.remove(), 500);
 }
+
+// SCROLL TO TOP BUTTON
+function handleScroll() {
+  if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
+    scrollToTopButton.style.display = "block";
+  } else {
+    scrollToTopButton.style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+window.addEventListener('scroll', handleScroll);
+scrollToTopButton.addEventListener('click', scrollToTop);
 
 // LOG THE SELF-EVALUATION
 console.log(selfEvaluation);
