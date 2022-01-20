@@ -20,7 +20,6 @@ body {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
 }
@@ -268,9 +267,8 @@ body {
   gap: 25px;
 }
 
-.portfolio-item {
-  width: 450px;
-  height: 560px;
+.portfolio-item img {
+  display: block;
 }
 
 .video {
@@ -523,6 +521,7 @@ body {
   .video {
     padding-top: 80px;
   }
+
   .price {
     padding: 80px 20px 80px;
   }
@@ -545,7 +544,6 @@ body {
 
   .header-container {
     padding: 0 64px 0 60px;
-
     background-size: auto 620px;
     background-position: -5px -30px;
   }
@@ -553,7 +551,6 @@ body {
   .hero {
     padding: 78px 64px 0 60px;
     height: 500px;
-
     background-size: auto 620px;
     background-position: -5px bottom;
   }
@@ -611,6 +608,7 @@ body {
 
   .video-player {
     background-image: url("assets/img/video-player768x418.jpg");
+    background-size: cover;
     height: 418px;
   }
 
@@ -646,7 +644,7 @@ body {
   }
 
   form .btn-wrapper:last-child {
-    padding: 0 115px;
+    padding: 0 calc((100% - 220px) / 2);
   }
 
   .footer-container {
@@ -820,16 +818,32 @@ body {
 }
 
 @media (max-width: 505px) {
+  body {
+    font-size: 18px;
+  }
+
   .wrapper {
     overflow: hidden;
   }
 
-  .section-title-container {
-    max-width: fit-content;
+  .header-container {
+    padding: 0 20px;
+  }
+
+  .header-language-switch {
+    padding-left: 9;
+  }
+
+  .hero {
+    padding: 20px 20px 0 20px;
   }
 
   .hero-text {
     max-width: fit-content;
+  }
+
+  .portfolio {
+    padding-top: 30px;
   }
 
   .portfolio-buttons {
@@ -838,33 +852,65 @@ body {
     gap: 15px;
   }
 
-  .portfolio-item {
-    position: relative;
+  .portfolio-item img {
+    max-width: 100%;
+    object-fit: cover;
   }
 
-  .portfolio-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  }
+
+  .video > .section-title-container {
+    max-width: calc(100% - 40px);
+  }
+
+  .video-player {
+    height: 300px;
+    background-size: cover;
+  }
+
+  .price-items {
+    gap: 30px;
   }
 
   .price-item {
-    max-width: 250px;
+    max-width: 100%;
+    height: 465px;
+    padding: 20px 0 0;
+  }
+
+  .price-item-title {
+    padding-bottom: 10px;
+  }
+
+  .price-item-cost {
+    padding-bottom: 10px;
   }
 
   .price-btn-wrapper {
-    padding: 0 10px;
+    padding: 0 calc((100% - 220px) / 2);
   }
 
   .form-control-wrapper {
-    padding: 0 100px 20px;
+    padding: 0 20px 20px;
   }
 
   .form-item {
-    width: 300px;
+    width: calc(100%);
+  }
+}
+
+@media (max-width: 430px) {
+  .section-title-container {
+    width: 100%;
+  }
+
+  .skills-items {
+    padding: 9px 0px 27px;
+  }
+
+  .skills-item {
+    width: 100%;
   }
 }
