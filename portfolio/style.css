@@ -1065,7 +1065,11 @@ body.light-theme {
   }
 
   .header-language-switch {
-    padding-left: 9;
+    padding: 0 15px 0 0;
+  }
+
+  .hamburger {
+    margin-left: 15px;
   }
 
   .hero {
