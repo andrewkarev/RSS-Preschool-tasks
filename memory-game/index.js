@@ -36,4 +36,12 @@ function spinCard() {
 
 }
 
+function mixCards() {
+  cards.forEach(card => {
+    let randomNumber = Math.floor(Math.random() * 12);
+    card.style.order = randomNumber;
+  })
+}
+
+mixCards()
 cards.forEach(card => card.addEventListener('click', spinCard));
