@@ -75,7 +75,9 @@ body {
   background-color: rgb(255, 255, 255, 0.5);
 }
 
-.game__card-cover {
+.game__card-cover.disable {
+  filter: grayscale(100%);
+  transition: all 1s ease-in-out;
 }
 
 .footer {

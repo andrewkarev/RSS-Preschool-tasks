@@ -29,6 +29,14 @@ function checkCards() {
 
 function disableCards() {
   cardIsSpinned = false;
+
+  setTimeout(() => {
+    let firstCardCover = firstCard.querySelector('.game__card-cover');
+    let secondCardCover = secondCard.querySelector('.game__card-cover');
+    firstCardCover.classList.add('disable');
+    secondCardCover.classList.add('disable');
+  }, 800);
+
   firstCard.removeEventListener('click', spinCard);
   secondCard.removeEventListener('click', spinCard);
 }
