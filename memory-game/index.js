@@ -35,6 +35,8 @@ function disableCards() {
     let secondCardCover = secondCard.querySelector('.game__card-cover');
     firstCardCover.classList.add('disable');
     secondCardCover.classList.add('disable');
+    firstCard.classList.add('disable');
+    secondCard.classList.add('disable');
   }, 800);
 
   firstCard.removeEventListener('click', spinCard);
