@@ -49,7 +49,7 @@ body {
   transition: transform 0.2s;
 }
 
-.game__card.invert {
+.game__card.spin {
   transform: rotateY(180deg);
 }
 
