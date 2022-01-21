@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+
+:root {
+  --footer-text: #f8f0e4;
+  --footer-hover: #f7d299;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -72,16 +79,48 @@ body {
 }
 
 .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 5%;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Ubuntu", sans-serif;
+  color: var(--footer-text, #f8f0e4);
+  font-size: 20px;
 }
+
 .footer__year {
+  width: 100%;
 }
+
 .footer__links {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
 }
-.footer__link {
-}
+
 .footer__github {
+  display: block;
+  color: var(--footer-text, #f8f0e4);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
 }
+
+.footer__github:hover {
+  color: var(--footer-hover);
+}
+
 .footer__rsschool {
+  margin-left: 80px;
 }
-.rsschool {
+
+.rsschool path {
+  transition: fill 0.3s ease-in-out;
+}
+
+.rsschool:hover path {
+  fill: var(--footer-hover);
 }
