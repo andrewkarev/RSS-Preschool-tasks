@@ -1,9 +1,10 @@
 // Scrypt file
 const cards = document.querySelectorAll('.game__card');
 
-function invertCard() {
-  this.classList.toggle('invert');
-  console.log(this)
+function spinCard() {
+  this.classList.add('spin');
+
+  setTimeout(() => this.classList.remove('spin'), 1500)
 }
 
-cards.forEach(card => card.addEventListener('click', invertCard));
+cards.forEach(card => card.addEventListener('click', spinCard));
