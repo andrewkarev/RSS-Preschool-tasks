@@ -60,6 +60,10 @@ body {
   transform: rotateY(180deg);
 }
 
+.game__card.spin.disable {
+  box-shadow: none;
+}
+
 .game__card-cover,
 .game__card-back {
   position: absolute;
@@ -72,12 +76,14 @@ body {
 
 .game__card-cover {
   transform: rotateY(180deg);
-  background-color: rgb(255, 255, 255, 0.5);
+  background: url("./assets/img/bg_card.jpg");
+  background-size: cover;
+  border: 2px solid #000000;
 }
 
 .game__card-cover.disable {
   filter: grayscale(100%);
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .footer {
