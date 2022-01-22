@@ -13,7 +13,7 @@
 :root {
   --footer-text: #f8f0e4;
   --footer-hover: #f7d299;
-  --font: "Belwe Bd BT", Arial, sans-serif;
+  --btn-text: #705329;
 }
 
 * {
@@ -26,7 +26,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: url();
   background: url("./assets/img/bg.jpg");
   background-size: cover;
   font-family: "Belwe Bd BT", Arial, sans-serif;
@@ -35,24 +34,26 @@ body {
 }
 
 .header {
+  visibility: hidden;
+  /*  */
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 690px;
   height: 12vh;
-  margin: 0 auto 15px;
+  margin: 20px auto 30px;
 }
 
 .header__item {
   margin-top: auto;
 }
 
-.header__item--btn {
+.btn-wrapper {
   transition: all 0.3s ease-in-out;
   transform: scale(1);
 }
 
-.header__item--btn:active {
+.btn-wrapper:active {
   transform: scale(0.9);
   transition: transform 0.2s;
 }
@@ -73,7 +74,7 @@ body {
 }
 
 .game-btn:hover {
-  -webkit-text-stroke: 1px #000000;
+  color: var(--btn-text);
 }
 
 .header__score-container {
@@ -100,10 +101,12 @@ body {
 }
 
 .game {
+  visibility: hidden;
+  /*  */
   display: flex;
   width: 690px;
   height: 690px;
-  margin: auto;
+  margin: 0 auto;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
@@ -170,6 +173,9 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+
+  width: 100%;
+
   height: 70px;
   padding: 0 5%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -211,4 +217,77 @@ body {
 
 .rsschool:hover path {
   fill: var(--footer-hover);
+}
+
+.main-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+
+  /* display: none; */
+  background-color: transparent;
+}
+
+.main-menu__container {
+  min-width: 70%;
+}
+
+.main-menu__title {
+  margin: 40px 0;
+  text-align: center;
+  color: var(--footer-text, #f8f0e4);
+}
+
+.main-menu__content {
+}
+
+.main-menu__items {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.main-menu__rules {
+  width: 490px;
+  height: 600px;
+  margin-right: 10px;
+  padding-top: 50px;
+  background: url("./assets/img/bg_lists.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.main-menu__leaderboard {
+  width: 490px;
+  height: 600px;
+  margin-left: 10px;
+  padding-top: 50px;
+  background: url("./assets/img/bg_lists.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.main-menu__subtitle {
+  text-align: center;
+}
+
+.main-menu__btns {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.game-btn--start {
+}
+
+.game-btn--leaderboard {
 }
