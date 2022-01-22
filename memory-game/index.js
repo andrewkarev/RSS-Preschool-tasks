@@ -18,12 +18,12 @@ function spinCard() {
     this.classList.add('spin');
     secondCard = this;
 
-    checkCards()
+    checkCardsMatch()
   }
 
 }
 
-function checkCards() {
+function checkCardsMatch() {
   firstCard.dataset.character === secondCard.dataset.character ? disableCards() : spinCardsBack();
 }
 
@@ -64,3 +64,14 @@ function mixCards() {
 
 mixCards()
 cards.forEach(card => card.addEventListener('click', spinCard));
+
+// Подобрать шрифт
+// Оформление хэдера game
+// Счет на табличке или фон прозрачный?
+// Блок стартового меню
+// Оформление секций с правилами игры и лидербордом
+// Оформление кнопки start
+// Переключение между меню и игровым полем. Сброс настроек до дефолтных при переходе в меню
+// Логика. Подсчет очков
+// Логика. Отображение ркзультата в лидерборде
+// Сохранение последних результатов в local storage
