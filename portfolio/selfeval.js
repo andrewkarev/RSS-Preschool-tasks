@@ -1,4 +1,6 @@
 const selfEvaluation = `
+Thanks for taking the time to check my work!
+
 Rolling Scopes School
 Stage 0 Portfolio #2 task
 Self-evaluation by Andrew Karev
@@ -14,12 +16,12 @@ Self-evaluation by Andrew Karev
     [+] footer block - +6
 
 ✓ There is no horizontal scroll bar on any screen resolution- 15 pointts
-    [+] there is no horizontal scroll bar on screen width from 1440px to 768px- +5
-    [+] there is no horizontal scroll bar on screen width from 768px to 480px- +5
-    [+] there is no horizontal scroll bar on screen width from 480px to 320px- +5
+    [+] there is no horizontal scroll bar on screen width from 1440px to 768px - +5
+    [+] there is no horizontal scroll bar on screen width from 768px to 480px - +5
+    [+] there is no horizontal scroll bar on screen width from 480px to 320px - +5
 
 ✓ Implemented an adaptive menu for screen width less then 768px - 22 pointts
-    [+] the navigation block hides and burger menu icon appear on screen width equal to 768px- +2
+    [+] the navigation block hides and burger menu icon appear on screen width equal to 768px - +2
     [+] when you click on the burger icon on the right, an adaptive menu appears smoothly, the burger icon changes to a cross - +4
     [+] the adaptive menu height equal to screen height. The menu markup matches template with a screen width of 768px. Menu will take up the full width of the screen for less then 620px screen width - +4
     [+] when you click on the cross, the adaptive menu smoothly disappears leaving the right side of the screen, the cross turns into a burger icon - +4
