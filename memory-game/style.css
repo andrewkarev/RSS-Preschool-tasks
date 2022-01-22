@@ -1,8 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 
+@font-face {
+  font-family: "Belwe Bd BT";
+  src: url("./assets/fonts/belwebdbtrusbyme_bold.eot");
+  src: local("☺"), url("./assets/fonts/belwebdbtrusbyme_bold.woff") format("woff"),
+    url("./assets/fonts/belwebdbtrusbyme_bold.ttf") format("truetype"),
+    url("./assets/fonts/belwebdbtrusbyme_bold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --footer-text: #f8f0e4;
   --footer-hover: #f7d299;
+  --font: "Belwe Bd BT", Arial, sans-serif;
 }
 
 * {
@@ -18,11 +29,74 @@ body {
   background: url();
   background: url("./assets/img/bg.jpg");
   background-size: cover;
+  font-family: "Belwe Bd BT", Arial, sans-serif;
+  font-size: 30px;
   cursor: url("./assets/img/cursor_arrow.jpg"), url("./assets/img/cursor_arrow2.jpg"), default;
 }
 
 .header {
-  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 690px;
+  height: 12vh;
+  margin: 0 auto 15px;
+}
+
+.header__item {
+  margin-top: auto;
+}
+
+.header__item--btn {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.header__item--btn:active {
+  transform: scale(0.9);
+  transition: transform 0.2s;
+}
+
+.game-btn {
+  background-image: url("./assets/img/bg_button.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 200px;
+  height: 80px;
+  border: none;
+  font-family: "Belwe Bd BT", Arial, sans-serif;
+  font-size: 20px;
+  cursor: url("./assets/img/arrow-left.jpg"), pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.game-btn:hover {
+  -webkit-text-stroke: 1px #000000;
+}
+
+.header__score-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("./assets/img/bg_score.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 200px;
+  height: 80px;
+  transition: 0.3s ease-in-out;
+}
+
+.header__text {
+  margin-left: 12%;
+  margin-bottom: 6px;
+}
+
+.header__score {
+  margin-right: 12%;
+  margin-bottom: 6px;
 }
 
 .game {
@@ -95,6 +169,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
   height: 70px;
   padding: 0 5%;
   background-color: rgba(0, 0, 0, 0.4);

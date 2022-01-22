@@ -6,15 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="assets/img/favicon.ico">
   <title>Memory game</title>
 </head>
 
 <body>
+
   <header class="header">
-
+    <div class="header__item header__item--btn">
+      <button class="game-btn" type="button">Main menu</button>
+    </div>
+    <div class="header__item">
+      <div class="header__score-container">
+        <p class="header__text">Score</p>
+        <p class="header__score">0</p>
+      </div>
+    </div>
   </header>
-  <main class="game">
 
+  <main class="game">
 
     <div class="game__card" data-character="Garrosh">
       <img class="game__card-cover" src="./assets/img/Garrosh_Hellscream.jpg" alt="Garrosh Hellscream" />
