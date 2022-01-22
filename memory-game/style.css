@@ -239,6 +239,10 @@ body.visually-hidden::before {
 }
 /* **************************************** */
 .main-menu {
+  display: none;
+}
+
+.main-menu.visually-hidden {
   position: absolute;
   display: flex;
   flex-direction: column;

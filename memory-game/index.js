@@ -3,6 +3,7 @@ const body = document.querySelector('body');
 const header = document.querySelector('header');
 const gameBoard = document.querySelector('.game');
 const startMenu = document.querySelector('.main-menu');
+const appearanceElements = [body, header, gameBoard, startMenu];
 
 const cards = document.querySelectorAll('.game__card');
 const score = document.querySelector('.header__score');
@@ -87,17 +88,11 @@ function mixCards() {
 }
 
 function startGame() {
-  body.classList.remove('visually-hidden');
-  header.classList.remove('visually-hidden');
-  gameBoard.classList.remove('visually-hidden');
-  startMenu.style.display = 'none';
+  appearanceElements.forEach((element) => element.classList.remove('visually-hidden'));
 }
 
 function refreshGame() {
-  body.classList.add('visually-hidden');
-  header.classList.add('visually-hidden');
-  gameBoard.classList.add('visually-hidden');
-  startMenu.style.display = 'flex';
+  appearanceElements.forEach((element) => element.classList.add('visually-hidden'));
 }
 
 mixCards()
@@ -111,7 +106,7 @@ refreshBtn.addEventListener('click', refreshGame);
 
 
 // Оформление секций с правилами игры и лидербордом
-// Переключение между меню и игровым полем. Сброс настроек до дефолтных при переходе в меню
+// Сброс настроек до дефолтных при переходе в меню
 // Логика. Подсчет очков
 // Логика. Отображение ркзультата в лидерборде
 // Сохранение последних результатов в local storage
