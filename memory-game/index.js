@@ -37,8 +37,15 @@ function checkCardsMatch() {
 }
 
 function disableCards() {
+  isLoced = true;
   cardIsSpinned = false;
+  removeCards();
 
+  firstCard.removeEventListener('click', spinCard);
+  secondCard.removeEventListener('click', spinCard);
+}
+
+function removeCards() {
   setTimeout(() => {
     let firstCardCover = firstCard.querySelector('.game__card-cover');
     let secondCardCover = secondCard.querySelector('.game__card-cover');
@@ -46,10 +53,9 @@ function disableCards() {
     secondCardCover.classList.add('disable');
     firstCard.classList.add('disable');
     secondCard.classList.add('disable');
-  }, 800);
 
-  firstCard.removeEventListener('click', spinCard);
-  secondCard.removeEventListener('click', spinCard);
+    isLoced = false;
+  }, 800);
 }
 
 function spinCardsBack() {
