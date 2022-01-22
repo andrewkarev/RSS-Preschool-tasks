@@ -89,13 +89,39 @@ function mixCards() {
 
 function startGame() {
   appearanceElements.forEach((element) => element.classList.remove('visually-hidden'));
+
+  if (leaderboard.classList.contains('rotate')) {
+    leaderboard.classList.remove('rotate');
+  }
+
+  mixCards();
 }
 
 function refreshGame() {
-  appearanceElements.forEach((element) => element.classList.add('visually-hidden'));
+  appearanceElements.forEach(element => element.classList.add('visually-hidden'));
+  resetGameSettings();
 }
 
-mixCards()
+function resetGameSettings() {
+  const cardsCover = document.querySelectorAll('.game__card-cover');
+  cardsCover.forEach(cover => cover.classList.remove('disable'));
+
+  cards.forEach(card => {
+    card.classList.remove('spin');
+    card.classList.remove('disable');
+
+    card.addEventListener('click', spinCard);
+  });
+
+  counter = 0;
+  cardIsSpinned = false;
+  isLoced = false;
+  firstCard = null;
+  secondCard = null;
+
+  scoreChanging();
+}
+
 cards.forEach(card => card.addEventListener('click', spinCard));
 
 leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
