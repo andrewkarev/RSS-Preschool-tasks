@@ -1,7 +1,14 @@
 // Scrypt file
+const body = document.querySelector('body');
+const header = document.querySelector('header');
+const gameBoard = document.querySelector('.game');
+const startMenu = document.querySelector('.main-menu');
+
 const cards = document.querySelectorAll('.game__card');
 const score = document.querySelector('.header__score');
 const leaderboardBtn = document.querySelector('.game-btn--leaderboard');
+const startBtn = document.querySelector('.game-btn--start');
+const refreshBtn = document.querySelector('.game-btn--refresh');
 const leaderboard = document.querySelector('.main-menu__items');
 
 let counter = 0;
@@ -79,10 +86,28 @@ function mixCards() {
   })
 }
 
+function startGame() {
+  body.classList.remove('visually-hidden');
+  header.classList.remove('visually-hidden');
+  gameBoard.classList.remove('visually-hidden');
+  startMenu.style.display = 'none';
+}
+
+function refreshGame() {
+  body.classList.add('visually-hidden');
+  header.classList.add('visually-hidden');
+  gameBoard.classList.add('visually-hidden');
+  startMenu.style.display = 'flex';
+}
+
 mixCards()
 cards.forEach(card => card.addEventListener('click', spinCard));
 
 leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
+
+startBtn.addEventListener('click', startGame);
+
+refreshBtn.addEventListener('click', refreshGame);
 
 
 // Оформление секций с правилами игры и лидербордом
