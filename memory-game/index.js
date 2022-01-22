@@ -1,6 +1,8 @@
 // Scrypt file
 const cards = document.querySelectorAll('.game__card');
+const score = document.querySelector('.header__score');
 
+let counter = 0;
 let cardIsSpinned = false;
 let isLoced = false;
 let firstCard, secondCard;
@@ -17,10 +19,17 @@ function spinCard() {
   } else if (this !== firstCard) {
     this.classList.add('spin');
     secondCard = this;
+    counter++;
 
-    checkCardsMatch()
+    scoreChanging();
+    checkCardsMatch();
   }
+}
 
+function scoreChanging() {
+  setTimeout(() => {
+    score.textContent = counter;
+  }, 500);
 }
 
 function checkCardsMatch() {
@@ -65,9 +74,6 @@ function mixCards() {
 mixCards()
 cards.forEach(card => card.addEventListener('click', spinCard));
 
-// Подобрать шрифт
-// Оформление хэдера game
-// Счет на табличке или фон прозрачный?
 // Блок стартового меню
 // Оформление секций с правилами игры и лидербордом
 // Оформление кнопки start
