@@ -12,7 +12,7 @@
 
 <body>
 
-  <header class="header">
+  <header class="header" style="visibility: hidden;">
     <div class="header__item btn-wrapper">
       <button class="game-btn" type="button">Main menu</button>
     </div>
@@ -24,7 +24,7 @@
     </div>
   </header>
 
-  <main class="game">
+  <main class="game" style="visibility: hidden;">
 
     <div class="game__card" data-character="Garrosh">
       <img class="game__card-cover" src="./assets/img/Garrosh_Hellscream.jpg" alt="Garrosh Hellscream" />
@@ -88,11 +88,23 @@
       <h1 class="main-menu__title">Check your memory</h1>
       <div class="main-menu__content">
         <div class="main-menu__items">
-          <section class="main-menu__rules">
+          <section class="main-menu__information main-menu__rules">
             <h2 class="main-menu__subtitle">About game</h2>
           </section>
-          <section class="main-menu__leaderboard">
+          <section class="main-menu__information main-menu__leaderboard">
             <h2 class="main-menu__subtitle">Leaderboard</h2>
+            <ul class='main-menu__position-list'>
+              <li class="main-menu__list-item">1</li>
+              <li class="main-menu__list-item">2</li>
+              <li class="main-menu__list-item">3</li>
+              <li class="main-menu__list-item">4</li>
+              <li class="main-menu__list-item">5</li>
+              <li class="main-menu__list-item">6</li>
+              <li class="main-menu__list-item">7</li>
+              <li class="main-menu__list-item">8</li>
+              <li class="main-menu__list-item">9</li>
+              <li class="main-menu__list-item">10</li>
+            </ul>
           </section>
         </div>
         <div class="main-menu__btns">

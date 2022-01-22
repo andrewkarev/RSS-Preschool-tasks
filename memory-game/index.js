@@ -1,6 +1,8 @@
 // Scrypt file
 const cards = document.querySelectorAll('.game__card');
 const score = document.querySelector('.header__score');
+const leaderboardBtn = document.querySelector('.game-btn--leaderboard');
+const leaderboard = document.querySelector('.main-menu__items');
 
 let counter = 0;
 let cardIsSpinned = false;
@@ -80,10 +82,14 @@ function mixCards() {
 mixCards()
 cards.forEach(card => card.addEventListener('click', spinCard));
 
-// Блок стартового меню
+leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
+
+
 // Оформление секций с правилами игры и лидербордом
-// Оформление кнопки start
 // Переключение между меню и игровым полем. Сброс настроек до дефолтных при переходе в меню
 // Логика. Подсчет очков
 // Логика. Отображение ркзультата в лидерборде
 // Сохранение последних результатов в local storage
+
+
+

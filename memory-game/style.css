@@ -11,6 +11,7 @@
 }
 
 :root {
+  --main: #1c1c1c;
   --footer-text: #f8f0e4;
   --footer-hover: #f7d299;
   --btn-text: #705329;
@@ -30,12 +31,11 @@ body {
   background-size: cover;
   font-family: "Belwe Bd BT", Arial, sans-serif;
   font-size: 30px;
+  color: var(--main);
   cursor: url("./assets/img/cursor_arrow.jpg"), url("./assets/img/cursor_arrow2.jpg"), default;
 }
 
 .header {
-  visibility: hidden;
-  /*  */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,6 +69,7 @@ body {
   border: none;
   font-family: "Belwe Bd BT", Arial, sans-serif;
   font-size: 20px;
+  color: var(--main);
   cursor: url("./assets/img/arrow-left.jpg"), pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -101,8 +102,6 @@ body {
 }
 
 .game {
-  visibility: hidden;
-  /*  */
   display: flex;
   width: 690px;
   height: 690px;
@@ -173,9 +172,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
-
   width: 100%;
-
   height: 70px;
   padding: 0 5%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -218,7 +215,7 @@ body {
 .rsschool:hover path {
   fill: var(--footer-hover);
 }
-
+/* **************************************** */
 .main-menu {
   position: absolute;
   display: flex;
@@ -237,7 +234,7 @@ body {
 }
 
 .main-menu__title {
-  margin: 40px 0;
+  margin: 35px 0;
   text-align: center;
   color: var(--footer-text, #f8f0e4);
 }
@@ -246,16 +243,27 @@ body {
 }
 
 .main-menu__items {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
+  position: relative;
+  width: 490px;
+  height: 600px;
+  margin: 0 auto 25px;
+  transform-style: preserve-3d;
+  transition: transform 2s;
+}
+
+.main-menu__items.rotate {
+  transform: rotateY(180deg);
+}
+
+.main-menu__information {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 50px 70px;
 }
 
 .main-menu__rules {
-  width: 490px;
-  height: 600px;
-  margin-right: 10px;
-  padding-top: 50px;
   background: url("./assets/img/bg_lists.jpg");
   background-color: transparent;
   background-repeat: no-repeat;
@@ -264,30 +272,43 @@ body {
 }
 
 .main-menu__leaderboard {
-  width: 490px;
-  height: 600px;
-  margin-left: 10px;
-  padding-top: 50px;
   background: url("./assets/img/bg_lists.jpg");
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  /*  */
+  transform: rotateY(180deg);
 }
 
 .main-menu__subtitle {
+  padding-bottom: 10px;
   text-align: center;
 }
 
 .main-menu__btns {
   display: flex;
   justify-content: space-between;
-  width: 700px;
+  width: 490px;
   margin: 0 auto;
+  padding: 0 30px;
 }
 
 .game-btn--start {
+  cursor: url("./assets/img/arrow-right.jpg"), pointer;
 }
 
 .game-btn--leaderboard {
+  cursor: url("./assets/img/refresh-icon.jpg"), pointer;
+}
+
+.main-menu__position-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.main-menu__list-item {
+  margin: 3px;
 }
