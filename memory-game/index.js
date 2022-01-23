@@ -12,6 +12,7 @@ const refreshBtn = document.querySelector('.game-btn--refresh');
 const leaderboard = document.querySelector('.main-menu__items');
 
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+const highScoreList = document.querySelector('.main-menu__position-list');
 
 let scoreCounter = 0;
 let cardsMatchCounter = 6;
@@ -59,7 +60,8 @@ function disableCards() {
   if (cardsMatchCounter === 0) {
     saveHighScore()
   }
-
+  // Testing leaderboard updating fuction
+  updateLeaderboard()
   removeCards();
 }
 
@@ -138,6 +140,10 @@ function saveHighScore() {
   localStorage.setItem('highScores', JSON.stringify(highScores));
 }
 
+function updateLeaderboard() {
+  highScoreList.innerHTML = highScores.map(score => `<li class='main-menu__list-item'>${score}</li>`).join('');
+}
+
 cards.forEach(card => card.addEventListener('click', spinCard));
 
 leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
@@ -146,13 +152,8 @@ startBtn.addEventListener('click', startGame);
 
 refreshBtn.addEventListener('click', refreshGame);
 
+window.addEventListener('load', updateLeaderboard);
 
 // Оформление секций с правилами игры и лидербордом
 // Добавить автоматическое увеличение очков на +1 каждые n-секунд?
-// Логика. Отображение ркзультата в лидерборде
-// Сохранение последних результатов в local storage
-
-const highScoreList = document.querySelector('.main-menu__position-list');
-console.log(highScoreList)
-
-highScoreList.innerHTML = highScores.map(score => `<li class='main-menu__list-item'>${score}</li>`);
+// Логика. Получать имя игрока и отображать его в лидерборде вместе с очками

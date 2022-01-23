@@ -337,4 +337,5 @@ body.visually-hidden::before {
 
 .main-menu__list-item {
   margin: 3px;
+  text-align: right;
 }
