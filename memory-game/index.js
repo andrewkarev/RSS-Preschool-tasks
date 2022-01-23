@@ -1,4 +1,3 @@
-// Scrypt file
 const body = document.querySelector('body');
 const header = document.querySelector('header');
 const gameBoard = document.querySelector('.game');
@@ -6,7 +5,7 @@ const startMenu = document.querySelector('.main-menu');
 const appearanceElements = [body, header, gameBoard, startMenu];
 
 const cards = document.querySelectorAll('.game__card');
-const score = document.querySelector('.header__score');
+const currentScore = document.querySelector('.header__score');
 const leaderboardBtn = document.querySelector('.game-btn--leaderboard');
 const startBtn = document.querySelector('.game-btn--start');
 const refreshBtn = document.querySelector('.game-btn--refresh');
@@ -38,7 +37,7 @@ function spinCard() {
 
 function scoreChanging() {
   setTimeout(() => {
-    score.textContent = counter;
+    currentScore.textContent = counter;
   }, 500);
 }
 
@@ -66,6 +65,8 @@ function removeCards() {
 
     isLoced = false;
   }, 800);
+  // Testing local storage function
+  saveHighScore()
 }
 
 function spinCardsBack() {
@@ -132,10 +133,17 @@ refreshBtn.addEventListener('click', refreshGame);
 
 
 // Оформление секций с правилами игры и лидербордом
-// Сброс настроек до дефолтных при переходе в меню
-// Логика. Подсчет очков
+// Добавить автоматическое увеличение очков на +1 каждые n-секунд?
 // Логика. Отображение ркзультата в лидерборде
 // Сохранение последних результатов в local storage
 
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
+function saveHighScore() {
 
+  highScores.push(Number(currentScore.textContent) + 1);
+  highScores.sort((a, b) => a - b);
+  highScores.splice(10);
+
+  localStorage.setItem('highScores', JSON.stringify(highScores));
+}
