@@ -7,12 +7,15 @@ const appearanceElements = [body, header, gameBoard, startMenu];
 const cards = document.querySelectorAll('.game__card');
 const currentScore = document.querySelector('.header__score');
 const leaderboardBtn = document.querySelector('.game-btn--leaderboard');
-const startBtn = document.querySelector('.game-btn--start');
-const refreshBtn = document.querySelector('.game-btn--refresh');
+const startBtn = document.querySelectorAll('.game-btn--start');
+const refreshBtn = document.querySelectorAll('.game-btn--refresh');
 const leaderboard = document.querySelector('.main-menu__items');
 
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 const highScoreList = document.querySelector('.main-menu__position-list');
+
+const endMenu = document.querySelector('.end-menu');
+const endMenupoints = document.querySelector('.end-menu__points');
 
 let scoreCounter = 0;
 let cardsMatchCounter = 6;
@@ -56,14 +59,16 @@ function disableCards() {
 
   firstCard.removeEventListener('click', spinCard);
   secondCard.removeEventListener('click', spinCard);
-  // Testing local storage function
+
   if (cardsMatchCounter === 0) {
+    // Connect to save function
     saveHighScore();
-    // Testing end-menu function
+
     setTimeout(showEndMenu, 1500);
   }
-  // Testing leaderboard updating fuction
+  // Connect to save function
   updateLeaderboard()
+
   removeCards();
 }
 
@@ -106,6 +111,10 @@ function startGame() {
     leaderboard.classList.remove('rotate');
   }
 
+  if (endMenu.classList.contains('visually-hidden')) {
+    resetGameSettings()
+  }
+
   mixCards();
 }
 
@@ -118,6 +127,10 @@ function resetGameSettings() {
   const cardsCover = document.querySelectorAll('.game__card-cover');
   cardsCover.forEach(cover => cover.classList.remove('disable'));
 
+  if (endMenu.classList.contains('visually-hidden')) {
+    endMenu.classList.remove('visually-hidden');
+  }
+
   cards.forEach(card => {
     card.classList.remove('spin');
     card.classList.remove('disable');
@@ -126,6 +139,7 @@ function resetGameSettings() {
   });
 
   scoreCounter = 0;
+  cardsMatchCounter = 6;
   cardIsSpinned = false;
   isLoced = false;
   firstCard = null;
@@ -146,13 +160,20 @@ function updateLeaderboard() {
   highScoreList.innerHTML = highScores.map(score => `<li class='main-menu__list-item'>${score}</li>`).join('');
 }
 
+function showEndMenu() {
+  endMenu.classList.add('visually-hidden');
+  header.classList.add('visually-hidden');
+  gameBoard.classList.add('visually-hidden');
+  endMenupoints.textContent = scoreCounter;
+}
+
 cards.forEach(card => card.addEventListener('click', spinCard));
 
 leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
 
-startBtn.addEventListener('click', startGame);
+startBtn.forEach(btn => btn.addEventListener('click', startGame));
 
-refreshBtn.addEventListener('click', refreshGame);
+refreshBtn.forEach(btn => btn.addEventListener('click', refreshGame));
 
 window.addEventListener('load', updateLeaderboard);
 
@@ -160,12 +181,7 @@ window.addEventListener('load', updateLeaderboard);
 // Добавить автоматическое увеличение очков на +1 каждые n-секунд?
 // Логика. Получать имя игрока и отображать его в лидерборде вместе с очками
 
-const endMenu = document.querySelector('.end-menu');
-const endMenupoints = document.querySelector('.end-menu__points');
 
-function showEndMenu() {
-  endMenu.classList.add('visually-hidden');
-  header.classList.add('visually-hidden');
-  gameBoard.classList.add('visually-hidden');
-  endMenupoints.textContent = scoreCounter;
-}
+const saveBtn = document.querySelector('.game-btn--save');
+
+

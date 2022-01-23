@@ -409,11 +409,11 @@ form > .btn-wrapper {
   cursor: url("./assets/img/arrow-right.jpg"), pointer;
 }
 
-.game-btn--play-again {
+.end-menu__container .btn-wrapper .game-btn--start {
   margin-top: 15px;
 }
 
-.game-btn--refresh {
+.end-menu__container .btn-wrapper .game-btn--refresh {
   margin-top: 15px;
   cursor: url("./assets/img/arrow-left.jpg"), pointer;
 }
