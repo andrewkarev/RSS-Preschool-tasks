@@ -335,8 +335,15 @@ body.visually-hidden::before {
 }
 
 .main-menu__list-item {
+  display: flex;
+  display: list-item;
+  justify-content: space-between;
   margin: 3px;
-  text-align: right;
+}
+
+.main-menu__score {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* End menu block */

@@ -17,6 +17,9 @@ const highScoreList = document.querySelector('.main-menu__position-list');
 const endMenu = document.querySelector('.end-menu');
 const endMenupoints = document.querySelector('.end-menu__points');
 
+const saveBtn = document.querySelector('.game-btn--save');
+const userName = document.querySelector('.end-menu__input');
+
 let scoreCounter = 0;
 let cardsMatchCounter = 6;
 let cardIsSpinned = false;
@@ -61,13 +64,8 @@ function disableCards() {
   secondCard.removeEventListener('click', spinCard);
 
   if (cardsMatchCounter === 0) {
-    // Connect to save function
-    // saveHighScore();
-
     setTimeout(showEndMenu, 1500);
   }
-  // Connect to save function
-  // updateLeaderboard();
 
   removeCards();
 }
@@ -148,18 +146,6 @@ function resetGameSettings() {
   scoreChanging();
 }
 
-// function saveHighScore() {
-//   highScores.push(Number(currentScore.textContent) + 1);
-//   highScores.sort((a, b) => a - b);
-//   highScores.splice(10);
-
-//   localStorage.setItem('highScores', JSON.stringify(highScores));
-// }
-
-// function updateLeaderboard() {
-//   highScoreList.innerHTML = highScores.map(score => `<li class='main-menu__list-item'>${score}</li>`).join('');
-// }
-
 function showEndMenu() {
   endMenu.classList.add('visually-hidden');
   header.classList.add('visually-hidden');
@@ -167,23 +153,9 @@ function showEndMenu() {
   endMenupoints.textContent = scoreCounter;
 }
 
-cards.forEach(card => card.addEventListener('click', spinCard));
-
-leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
-
-startBtn.forEach(btn => btn.addEventListener('click', startGame));
-
-refreshBtn.forEach(btn => btn.addEventListener('click', refreshGame));
-
-window.addEventListener('load', updateLeaderboard);
-
-// Оформление секций с правилами игры и лидербордом
-// Добавить автоматическое увеличение очков на +1 каждые n-секунд?
-// Логика. Получать имя игрока и отображать его в лидерборде вместе с очками
-
-
-const saveBtn = document.querySelector('.game-btn--save');
-const userName = document.querySelector('.end-menu__input')
+function updateLeaderboard() {
+  highScoreList.innerHTML = highScores.map(item => `<li class="main-menu__list-item"><p class="main-menu__score"><span>${item.name}</span><span>${item.playerScore}</span></p></li>`).join('');
+};
 
 function saveScore(e) {
   e.preventDefault();
@@ -199,16 +171,26 @@ function saveScore(e) {
 
   localStorage.setItem('highScores', JSON.stringify(highScores));
 
-  console.log(highScores)
+  leaderboard.classList.add('rotate');
+
+  updateLeaderboard();
+  refreshGame();
 }
+
+cards.forEach(card => card.addEventListener('click', spinCard));
+
+leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
+
+startBtn.forEach(btn => btn.addEventListener('click', startGame));
+
+refreshBtn.forEach(btn => btn.addEventListener('click', refreshGame));
+
+window.addEventListener('load', updateLeaderboard);
 
 saveBtn.addEventListener('click', saveScore);
 userName.addEventListener('keyup', () => saveBtn.disabled = !userName.value);
 
-
-// updateLeaderboard();
-
-
-function updateLeaderboard() {
-  highScoreList.innerHTML = highScores.map(score => `<li class='main-menu__list-item'>${score}</li>`).join('');
-}
+// Оформление секций с правилами игры и лидербордом
+// Добавить автоматическое увеличение очков на +1 каждые n-секунд?
+// Добавить музыкальное сопровождение?
+// Добавить случайный фон?
