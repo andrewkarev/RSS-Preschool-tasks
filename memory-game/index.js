@@ -62,12 +62,12 @@ function disableCards() {
 
   if (cardsMatchCounter === 0) {
     // Connect to save function
-    saveHighScore();
+    // saveHighScore();
 
     setTimeout(showEndMenu, 1500);
   }
   // Connect to save function
-  updateLeaderboard()
+  // updateLeaderboard();
 
   removeCards();
 }
@@ -148,17 +148,17 @@ function resetGameSettings() {
   scoreChanging();
 }
 
-function saveHighScore() {
-  highScores.push(Number(currentScore.textContent) + 1);
-  highScores.sort((a, b) => a - b);
-  highScores.splice(10);
+// function saveHighScore() {
+//   highScores.push(Number(currentScore.textContent) + 1);
+//   highScores.sort((a, b) => a - b);
+//   highScores.splice(10);
 
-  localStorage.setItem('highScores', JSON.stringify(highScores));
-}
+//   localStorage.setItem('highScores', JSON.stringify(highScores));
+// }
 
-function updateLeaderboard() {
-  highScoreList.innerHTML = highScores.map(score => `<li class='main-menu__list-item'>${score}</li>`).join('');
-}
+// function updateLeaderboard() {
+//   highScoreList.innerHTML = highScores.map(score => `<li class='main-menu__list-item'>${score}</li>`).join('');
+// }
 
 function showEndMenu() {
   endMenu.classList.add('visually-hidden');
@@ -183,5 +183,32 @@ window.addEventListener('load', updateLeaderboard);
 
 
 const saveBtn = document.querySelector('.game-btn--save');
+const userName = document.querySelector('.end-menu__input')
+
+function saveScore(e) {
+  e.preventDefault();
+
+  const result = {
+    playerScore: currentScore.textContent,
+    name: userName.value,
+  };
+
+  highScores.push(result);
+  highScores.sort((a, b) => a.playerScore - b.playerScore);
+  highScores.splice(10);
+
+  localStorage.setItem('highScores', JSON.stringify(highScores));
+
+  console.log(highScores)
+}
+
+saveBtn.addEventListener('click', saveScore);
+userName.addEventListener('keyup', () => saveBtn.disabled = !userName.value);
 
 
+// updateLeaderboard();
+
+
+function updateLeaderboard() {
+  highScoreList.innerHTML = highScores.map(score => `<li class='main-menu__list-item'>${score}</li>`).join('');
+}
