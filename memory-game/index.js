@@ -11,6 +11,8 @@ const startBtn = document.querySelector('.game-btn--start');
 const refreshBtn = document.querySelector('.game-btn--refresh');
 const leaderboard = document.querySelector('.main-menu__items');
 
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+
 let scoreCounter = 0;
 let cardsMatchCounter = 6;
 let cardIsSpinned = false;
@@ -128,6 +130,14 @@ function resetGameSettings() {
   scoreChanging();
 }
 
+function saveHighScore() {
+  highScores.push(Number(currentScore.textContent) + 1);
+  highScores.sort((a, b) => a - b);
+  highScores.splice(10);
+
+  localStorage.setItem('highScores', JSON.stringify(highScores));
+}
+
 cards.forEach(card => card.addEventListener('click', spinCard));
 
 leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
@@ -142,13 +152,7 @@ refreshBtn.addEventListener('click', refreshGame);
 // Логика. Отображение ркзультата в лидерборде
 // Сохранение последних результатов в local storage
 
-const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+const highScoreList = document.querySelector('.main-menu__position-list');
+console.log(highScoreList)
 
-function saveHighScore() {
-
-  highScores.push(Number(currentScore.textContent) + 1);
-  highScores.sort((a, b) => a - b);
-  highScores.splice(10);
-
-  localStorage.setItem('highScores', JSON.stringify(highScores));
-}
+highScoreList.innerHTML = highScores.map(score => `<li class='main-menu__list-item'>${score}</li>`);
