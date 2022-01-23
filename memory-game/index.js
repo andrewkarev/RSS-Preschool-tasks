@@ -11,7 +11,8 @@ const startBtn = document.querySelector('.game-btn--start');
 const refreshBtn = document.querySelector('.game-btn--refresh');
 const leaderboard = document.querySelector('.main-menu__items');
 
-let counter = 0;
+let scoreCounter = 0;
+let cardsMatchCounter = 6;
 let cardIsSpinned = false;
 let isLoced = false;
 let firstCard, secondCard;
@@ -28,7 +29,7 @@ function spinCard() {
   } else if (this !== firstCard) {
     this.classList.add('spin');
     secondCard = this;
-    counter++;
+    scoreCounter++;
 
     scoreChanging();
     checkCardsMatch();
@@ -37,7 +38,7 @@ function spinCard() {
 
 function scoreChanging() {
   setTimeout(() => {
-    currentScore.textContent = counter;
+    currentScore.textContent = scoreCounter;
   }, 500);
 }
 
@@ -48,10 +49,16 @@ function checkCardsMatch() {
 function disableCards() {
   isLoced = true;
   cardIsSpinned = false;
-  removeCards();
+  cardsMatchCounter -= 1;
 
   firstCard.removeEventListener('click', spinCard);
   secondCard.removeEventListener('click', spinCard);
+  // Testing local storage function
+  if (cardsMatchCounter === 0) {
+    saveHighScore()
+  }
+
+  removeCards();
 }
 
 function removeCards() {
@@ -65,8 +72,6 @@ function removeCards() {
 
     isLoced = false;
   }, 800);
-  // Testing local storage function
-  saveHighScore()
 }
 
 function spinCardsBack() {
@@ -114,7 +119,7 @@ function resetGameSettings() {
     card.addEventListener('click', spinCard);
   });
 
-  counter = 0;
+  scoreCounter = 0;
   cardIsSpinned = false;
   isLoced = false;
   firstCard = null;
