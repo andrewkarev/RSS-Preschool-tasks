@@ -58,7 +58,9 @@ function disableCards() {
   secondCard.removeEventListener('click', spinCard);
   // Testing local storage function
   if (cardsMatchCounter === 0) {
-    saveHighScore()
+    saveHighScore();
+    // Testing end-menu function
+    setTimeout(showEndMenu, 1500);
   }
   // Testing leaderboard updating fuction
   updateLeaderboard()
@@ -157,3 +159,13 @@ window.addEventListener('load', updateLeaderboard);
 // Оформление секций с правилами игры и лидербордом
 // Добавить автоматическое увеличение очков на +1 каждые n-секунд?
 // Логика. Получать имя игрока и отображать его в лидерборде вместе с очками
+
+const endMenu = document.querySelector('.end-menu');
+const endMenupoints = document.querySelector('.end-menu__points');
+
+function showEndMenu() {
+  endMenu.classList.add('visually-hidden');
+  header.classList.add('visually-hidden');
+  gameBoard.classList.add('visually-hidden');
+  endMenupoints.textContent = scoreCounter;
+}
