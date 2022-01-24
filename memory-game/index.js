@@ -22,6 +22,9 @@ const userName = document.querySelector('.end-menu__input');
 
 const backgroundImages = ['url("./assets/img/bg1.jpg")', 'url("./assets/img/bg2.webp")', 'url("./assets/img/bg3.jpg")'];
 
+const backgroundMusic = document.querySelector('.background-music');
+const soundBtn = document.querySelector('.sound__sound-btn');
+
 let scoreCounter = 0;
 let cardsMatchCounter = 6;
 let cardIsSpinned = false;
@@ -183,10 +186,20 @@ function setBackground() {
   const background = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
 
   if (localStorage.getItem('background') === background) {
-    return setBackground();
+    setBackground();
   } else {
     body.style.setProperty('--bg', background);
     localStorage.setItem('background', background);
+  }
+}
+
+function playMusic() {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    soundBtn.textContent = 'on';
+  } else {
+    backgroundMusic.pause();
+    soundBtn.textContent = 'off';
   }
 }
 
@@ -204,6 +217,7 @@ window.addEventListener('load', setBackground);
 saveBtn.addEventListener('click', saveScore);
 userName.addEventListener('keyup', () => saveBtn.disabled = !userName.value);
 
+soundBtn.addEventListener('click', playMusic);
+
 // Оформление секций с правилами игры и лидербордом
 // Добавить автоматическое увеличение очков на +1 каждые n-секунд?
-// Добавить музыкальное сопровождение?

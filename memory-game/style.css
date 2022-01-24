@@ -93,6 +93,7 @@ body.visually-hidden::before {
   width: 200px;
   height: 80px;
   border: none;
+  outline: none;
   font-family: "Belwe Bd BT", Arial, sans-serif;
   font-size: 20px;
   color: var(--main);
@@ -265,6 +266,7 @@ body.visually-hidden::before {
   margin: 35px 0;
   text-align: center;
   color: var(--footer-text, #f8f0e4);
+  -webkit-text-stroke: 2px #1c1c1c;
 }
 
 .main-menu__content {
@@ -428,7 +430,51 @@ form > .btn-wrapper {
   cursor: url("./assets/img/arrow-left.jpg"), pointer;
 }
 
+/* Sound button*/
+.sound {
+  position: absolute;
+  right: 40px;
+  top: 50px;
+}
+
+.sound__sound-btn {
+  background-image: url("./assets/img/bg_sound_button.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 70px;
+  height: 70px;
+  border: none;
+  outline: none;
+  font-family: "Belwe Bd BT", Arial, sans-serif;
+  font-size: 16px;
+  padding: 0 2px 7px 0;
+  color: var(--main);
+  cursor: url("./assets/img/cursor_sword.jpg"), pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.sound__sound-btn:hover {
+  color: var(--btn-text);
+}
+
 /* Media settings */
+@media (max-width: 900px) {
+  .sound {
+    top: 5px;
+    right: calc(50% - 25px);
+  }
+
+  .sound__sound-btn {
+    width: 50px;
+    height: 50px;
+
+    font-size: 12px;
+    padding: 0 0 3px;
+  }
+}
+
 @media (max-width: 750px) {
   body {
     font-size: var(--font-low-res);
@@ -447,6 +493,10 @@ form > .btn-wrapper {
   .game__card {
     width: calc(25% - 12px);
     height: calc(33.333% - 5px);
+  }
+
+  .main-menu__title {
+    margin: 45px 0 25px;
   }
 
   .main-menu__items {
