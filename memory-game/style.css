@@ -16,6 +16,8 @@
   --footer-hover: #f7d299;
   --btn-text: #705329;
   --bg: url("./assets/img/bg3.jpg");
+  --font: 30px;
+  --font-low-res: 20px;
 }
 
 * {
@@ -30,8 +32,9 @@ body {
   height: 100vh;
   background-image: var(--bg);
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Belwe Bd BT", Arial, sans-serif;
-  font-size: 30px;
+  font-size: var(--font);
   color: var(--main);
   cursor: url("./assets/img/cursor_arrow.jpg"), url("./assets/img/cursor_arrow2.jpg"), default;
 }
@@ -423,4 +426,41 @@ form > .btn-wrapper {
 .end-menu__container .btn-wrapper .game-btn--refresh {
   margin-top: 15px;
   cursor: url("./assets/img/arrow-left.jpg"), pointer;
+}
+
+/* Media settings */
+@media (max-width: 750px) {
+  body {
+    font-size: var(--font-low-res);
+  }
+
+  .header {
+    width: 90%;
+    margin: 30px auto 30px;
+  }
+
+  .game {
+    width: 90%;
+    height: 65%;
+  }
+
+  .game__card {
+    width: calc(25% - 12px);
+    height: calc(33.333% - 5px);
+  }
+
+  .main-menu__items {
+    width: 398px;
+    height: 480px;
+  }
+}
+
+@media all and (display-mode: fullscreen) {
+  .header {
+    margin-top: 80px;
+  }
+
+  .main-menu__container {
+    margin-top: 80px;
+  }
 }
