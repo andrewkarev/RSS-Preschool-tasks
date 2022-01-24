@@ -37,6 +37,11 @@ body {
   font-size: var(--font);
   color: var(--main);
   cursor: url("./assets/img/cursor_arrow.jpg"), url("./assets/img/cursor_arrow2.jpg"), default;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body.visually-hidden::before {
@@ -145,11 +150,6 @@ body.visually-hidden::before {
   transform-style: preserve-3d;
   transition: all 0.5s;
   border-radius: 13px;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .game__card:hover {
