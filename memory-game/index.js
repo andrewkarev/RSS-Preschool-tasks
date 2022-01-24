@@ -20,6 +20,8 @@ const endMenupoints = document.querySelector('.end-menu__points');
 const saveBtn = document.querySelector('.game-btn--save');
 const userName = document.querySelector('.end-menu__input');
 
+const images = ['url("./assets/img/bg1.jpg")', 'url("./assets/img/bg2.webp")', 'url("./assets/img/bg3.jpg")'];
+
 let scoreCounter = 0;
 let cardsMatchCounter = 6;
 let cardIsSpinned = false;
@@ -177,6 +179,11 @@ function saveScore(e) {
   refreshGame();
 }
 
+function setBackground() {
+  const background = images[Math.floor(Math.random() * images.length)];
+  body.style.setProperty('--bg', background);
+}
+
 cards.forEach(card => card.addEventListener('click', spinCard));
 
 leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
@@ -186,6 +193,7 @@ startBtn.forEach(btn => btn.addEventListener('click', startGame));
 refreshBtn.forEach(btn => btn.addEventListener('click', refreshGame));
 
 window.addEventListener('load', updateLeaderboard);
+window.addEventListener('load', setBackground);
 
 saveBtn.addEventListener('click', saveScore);
 userName.addEventListener('keyup', () => saveBtn.disabled = !userName.value);
@@ -193,4 +201,5 @@ userName.addEventListener('keyup', () => saveBtn.disabled = !userName.value);
 // Оформление секций с правилами игры и лидербордом
 // Добавить автоматическое увеличение очков на +1 каждые n-секунд?
 // Добавить музыкальное сопровождение?
-// Добавить случайный фон?
+// Добавить кэширование изображений
+// Добавить медиазапросы для fullscreen и low screen resolution devices
