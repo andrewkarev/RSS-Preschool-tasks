@@ -20,7 +20,7 @@ const endMenupoints = document.querySelector('.end-menu__points');
 const saveBtn = document.querySelector('.game-btn--save');
 const userName = document.querySelector('.end-menu__input');
 
-const images = ['url("./assets/img/bg1.jpg")', 'url("./assets/img/bg2.webp")', 'url("./assets/img/bg3.jpg")'];
+const backgroundImages = ['url("./assets/img/bg1.jpg")', 'url("./assets/img/bg2.webp")', 'url("./assets/img/bg3.jpg")'];
 
 let scoreCounter = 0;
 let cardsMatchCounter = 6;
@@ -180,8 +180,14 @@ function saveScore(e) {
 }
 
 function setBackground() {
-  const background = images[Math.floor(Math.random() * images.length)];
-  body.style.setProperty('--bg', background);
+  const background = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+
+  if (localStorage.getItem('background') === background) {
+    return setBackground();
+  } else {
+    body.style.setProperty('--bg', background);
+    localStorage.setItem('background', background);
+  }
 }
 
 cards.forEach(card => card.addEventListener('click', spinCard));
@@ -201,5 +207,3 @@ userName.addEventListener('keyup', () => saveBtn.disabled = !userName.value);
 // Оформление секций с правилами игры и лидербордом
 // Добавить автоматическое увеличение очков на +1 каждые n-секунд?
 // Добавить музыкальное сопровождение?
-// Добавить кэширование изображений
-// Добавить медиазапросы для fullscreen и low screen resolution devices
