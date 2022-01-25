@@ -299,6 +299,8 @@ body.visually-hidden::before {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+
+  overflow: auto;
 }
 
 .main-menu__leaderboard {
@@ -314,6 +316,15 @@ body.visually-hidden::before {
 .main-menu__subtitle {
   padding-bottom: 10px;
   text-align: center;
+}
+
+.main-menu__description {
+  font-size: 24px;
+}
+
+.main-menu__sound-controls {
+  padding-top: 20px;
+  font-size: 24px;
 }
 
 .main-menu__btns {
@@ -462,16 +473,13 @@ form > .btn-wrapper {
 /* Media settings */
 @media (max-width: 900px) {
   .sound {
-    top: 5px;
-    right: calc(50% - 25px);
+    right: 0px;
   }
+}
 
-  .sound__sound-btn {
-    width: 50px;
-    height: 50px;
-
-    font-size: 12px;
-    padding: 0 0 3px;
+@media (max-width: 830px) {
+  .header {
+    justify-content: space-evenly;
   }
 }
 
@@ -502,6 +510,12 @@ form > .btn-wrapper {
   .main-menu__items {
     width: 398px;
     height: 480px;
+  }
+}
+
+@media (max-width: 580px) {
+  .header {
+    justify-content: left;
   }
 }
 
