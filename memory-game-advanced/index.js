@@ -43,9 +43,7 @@ function spinCard() {
   } else if (this !== firstCard) {
     this.classList.add('spin');
     secondCard = this;
-    scoreCounter++;
 
-    scoreChanging();
     checkCardsMatch();
   }
 }
@@ -53,7 +51,7 @@ function spinCard() {
 function scoreChanging() {
   setTimeout(() => {
     currentScore.textContent = scoreCounter;
-  }, 500);
+  }, 100);
 }
 
 function checkCardsMatch() {
@@ -64,14 +62,17 @@ function disableCards() {
   isLoced = true;
   cardIsSpinned = false;
   cardsMatchCounter -= 1;
+  scoreCounter--;
 
   firstCard.removeEventListener('click', spinCard);
   secondCard.removeEventListener('click', spinCard);
 
   if (cardsMatchCounter === 0) {
+    stopInterval();
     setTimeout(showEndMenu, 1500);
   }
 
+  scoreChanging();
   removeCards();
 }
 
@@ -119,11 +120,13 @@ function startGame() {
   }
 
   mixCards();
+  startInterval();
 }
 
 function refreshGame() {
   appearanceElements.forEach(element => element.classList.add('visually-hidden'));
   resetGameSettings();
+  stopInterval();
 }
 
 function resetGameSettings() {
@@ -219,5 +222,20 @@ userName.addEventListener('keyup', () => saveBtn.disabled = !userName.value);
 
 soundBtn.addEventListener('click', playMusic);
 
-// Оформление секций с правилами игры и лидербордом
+// Оформление секций с правилами игры
 // Добавить автоматическое увеличение очков на +1 каждые n-секунд?
+
+let timer
+
+function startInterval() {
+  timer = setInterval(increaseScore, 2500);
+}
+
+function increaseScore() {
+  scoreCounter++;
+  scoreChanging();
+}
+
+function stopInterval() {
+  clearInterval(timer);
+}
