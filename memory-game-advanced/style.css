@@ -114,9 +114,6 @@ body.visually-hidden::before {
   }
 }
 
-.header__win-streak.show {
-}
-
 .btn-wrapper {
   transition: all 0.3s ease-in-out;
   transform: scale(1);
@@ -220,7 +217,6 @@ body.visually-hidden::before {
   width: 100%;
   height: 100%;
   border-radius: 13px;
-  /* display: block; */
   backface-visibility: hidden;
 }
 
@@ -312,9 +308,6 @@ body.visually-hidden::before {
   -webkit-text-stroke: 2px #1c1c1c;
 }
 
-.main-menu__content {
-}
-
 .main-menu__items {
   position: relative;
   width: 490px;
@@ -342,7 +335,6 @@ body.visually-hidden::before {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-
   overflow: auto;
 }
 
@@ -352,7 +344,6 @@ body.visually-hidden::before {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  /*  */
   transform: rotateY(180deg);
 }
 
