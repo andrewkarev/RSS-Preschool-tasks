@@ -115,7 +115,7 @@ function startGame() {
   }
 
   if (endMenu.classList.contains('visually-hidden')) {
-    resetGameSettings()
+    resetGameSettings();
   }
 
   mixCards();
@@ -218,6 +218,3 @@ saveBtn.addEventListener('click', saveScore);
 userName.addEventListener('keyup', () => saveBtn.disabled = !userName.value);
 
 soundBtn.addEventListener('click', playMusic);
-
-// Оформление секций с правилами игры и лидербордом
-// Добавить автоматическое увеличение очков на +1 каждые n-секунд?
