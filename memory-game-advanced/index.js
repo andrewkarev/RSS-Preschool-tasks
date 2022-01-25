@@ -25,16 +25,17 @@ const backgroundImages = ['url("./assets/img/bg1.jpg")', 'url("./assets/img/bg2.
 const backgroundMusic = document.querySelector('.background-music');
 const soundBtn = document.querySelector('.sound__sound-btn');
 
+const winStreakText = document.querySelector('.header__win-streak');
+
 let scoreCounter = 0;
 let cardsMatchCounter = 6;
 let cardIsSpinned = false;
 let isLoced = false;
 let firstCard, secondCard;
 let timer;
-// Test
 let winStreak = false;
 let winStreakMultiplier = 1;
-const winStreakText = document.querySelector('.header__win-streak');
+
 
 function spinCard() {
   if (isLoced) {
@@ -61,8 +62,7 @@ function disableCards() {
   isLoced = true;
   cardIsSpinned = false;
   cardsMatchCounter -= 1;
-  // scoreCounter -= winStreakMultiplier;
-  // Test
+
   if (winStreak) {
     winStreakMultiplier += 1;
     scoreCounter -= winStreakMultiplier;
@@ -71,9 +71,8 @@ function disableCards() {
     winStreakMultiplier = 1;
     scoreCounter -= winStreakMultiplier;
   }
-  // Test
-  showWinStreak()
-  console.log(winStreakMultiplier);
+
+  showWinStreak();
 
   firstCard.removeEventListener('click', spinCard);
   secondCard.removeEventListener('click', spinCard);
@@ -108,7 +107,6 @@ function removeCards() {
 
 function spinCardsBack() {
   isLoced = true;
-  // Test
   winStreak = false;
   winStreakMultiplier = 1;
 
@@ -136,7 +134,7 @@ function startGame() {
   }
 
   if (endMenu.classList.contains('visually-hidden')) {
-    resetGameSettings()
+    resetGameSettings();
   }
 
   mixCards();
@@ -170,7 +168,6 @@ function resetGameSettings() {
   isLoced = false;
   firstCard = null;
   secondCard = null;
-  // Test
   winStreak = false;
   winStreakMultiplier = 1;
 
@@ -242,6 +239,13 @@ function stopInterval() {
   clearInterval(timer);
 }
 
+function showWinStreak() {
+  winStreakText.textContent = `x${winStreakMultiplier}`;
+
+  winStreakText.classList.add('pulse');
+  setTimeout(() => winStreakText.classList.remove('pulse'), 1500);
+}
+
 cards.forEach(card => card.addEventListener('click', spinCard));
 
 leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
@@ -260,12 +264,3 @@ soundBtn.addEventListener('click', playMusic);
 
 // Оформление секций с правилами игры
 // Добавить автоматическое увеличение очков на +1 каждые n-секунд?
-
-
-
-function showWinStreak() {
-  winStreakText.textContent = `x${winStreakMultiplier}`
-
-  winStreakText.classList.add('pulse');
-  setTimeout(() => winStreakText.classList.remove('pulse'), 1500);
-}
