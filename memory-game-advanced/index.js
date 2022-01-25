@@ -11,7 +11,7 @@ const startBtn = document.querySelectorAll('.game-btn--start');
 const refreshBtn = document.querySelectorAll('.game-btn--refresh');
 const leaderboard = document.querySelector('.main-menu__items');
 
-const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+const highScoresAdvanced = JSON.parse(localStorage.getItem('highScores-advanced')) || [];
 const highScoreList = document.querySelector('.main-menu__position-list');
 
 const endMenu = document.querySelector('.end-menu');
@@ -182,7 +182,7 @@ function showEndMenu() {
 }
 
 function updateLeaderboard() {
-  highScoreList.innerHTML = highScores.map(item => `<li class="main-menu__list-item"><p class="main-menu__score"><span>${item.name}</span><span>${item.playerScore}</span></p></li>`).join('');
+  highScoreList.innerHTML = highScoresAdvanced.map(item => `<li class="main-menu__list-item"><p class="main-menu__score"><span>${item.name}</span><span>${item.playerScore}</span></p></li>`).join('');
 };
 
 function saveScore(e) {
@@ -193,11 +193,11 @@ function saveScore(e) {
     name: userName.value,
   };
 
-  highScores.push(result);
-  highScores.sort((a, b) => a.playerScore - b.playerScore);
-  highScores.splice(10);
+  highScoresAdvanced.push(result);
+  highScoresAdvanced.sort((a, b) => a.playerScore - b.playerScore);
+  highScoresAdvanced.splice(10);
 
-  localStorage.setItem('highScores', JSON.stringify(highScores));
+  localStorage.setItem('highScores-advanced', JSON.stringify(highScoresAdvanced));
 
   leaderboard.classList.add('rotate');
 
