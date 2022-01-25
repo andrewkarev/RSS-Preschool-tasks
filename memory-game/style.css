@@ -290,7 +290,7 @@ body.visually-hidden::before {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  padding: 50px 70px;
+  padding: 50px 60px;
 }
 
 .main-menu__rules {
@@ -322,9 +322,40 @@ body.visually-hidden::before {
   font-size: 24px;
 }
 
+.main-menu__description::first-letter {
+  font-size: 32px;
+  color: var(--btn-text);
+}
+
 .main-menu__sound-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-top: 20px;
-  font-size: 24px;
+  font-size: 28px;
+}
+
+/* Sound button*/
+.sound__sound-btn {
+  background-image: url("./assets/img/bg_sound_button.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 70px;
+  height: 70px;
+  border: none;
+  outline: none;
+  font-family: "Belwe Bd BT", Arial, sans-serif;
+  font-size: 16px;
+  padding: 0 2px 7px 0;
+  color: var(--main);
+  cursor: url("./assets/img/cursor_sword.jpg"), pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.sound__sound-btn:hover {
+  color: var(--btn-text);
 }
 
 .main-menu__btns {
@@ -441,48 +472,7 @@ form > .btn-wrapper {
   cursor: url("./assets/img/arrow-left.jpg"), pointer;
 }
 
-/* Sound button*/
-.sound {
-  position: absolute;
-  right: 40px;
-  top: 50px;
-}
-
-.sound__sound-btn {
-  background-image: url("./assets/img/bg_sound_button.jpg");
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 70px;
-  height: 70px;
-  border: none;
-  outline: none;
-  font-family: "Belwe Bd BT", Arial, sans-serif;
-  font-size: 16px;
-  padding: 0 2px 7px 0;
-  color: var(--main);
-  cursor: url("./assets/img/cursor_sword.jpg"), pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.sound__sound-btn:hover {
-  color: var(--btn-text);
-}
-
 /* Media settings */
-@media (max-width: 900px) {
-  .sound {
-    right: 0px;
-  }
-}
-
-@media (max-width: 830px) {
-  .header {
-    justify-content: space-evenly;
-  }
-}
-
 @media (max-width: 750px) {
   body {
     font-size: var(--font-low-res);
@@ -511,11 +501,13 @@ form > .btn-wrapper {
     width: 398px;
     height: 480px;
   }
-}
 
-@media (max-width: 580px) {
-  .header {
-    justify-content: left;
+  .main-menu__description {
+    font-size: 18px;
+  }
+
+  .main-menu__sound-controls {
+    font-size: 22px;
   }
 }
 

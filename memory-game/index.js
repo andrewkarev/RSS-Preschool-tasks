@@ -196,10 +196,10 @@ function setBackground() {
 function playMusic() {
   if (backgroundMusic.paused) {
     backgroundMusic.play();
-    soundBtn.textContent = 'on';
+    soundBtn.textContent = 'off';
   } else {
     backgroundMusic.pause();
-    soundBtn.textContent = 'off';
+    soundBtn.textContent = 'on';
   }
 }
 

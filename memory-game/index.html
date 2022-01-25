@@ -96,9 +96,12 @@
               point. Your goal is get the lowest possible final score. Hope this game will entertain you and bring
               some fun. Good luck!
             </p>
-            <p class="main-menu__sound-controls">
-              Turn sound
-            </p>
+            <div class="main-menu__sound-controls">
+              <p>Turn sound</p>
+              <div class="btn-wrapper">
+                <button class="sound__sound-btn" type="button">off</button>
+              </div>
+            </div>
           </section>
           <section class="main-menu__information main-menu__leaderboard">
             <h2 class="main-menu__subtitle">Leaderboard</h2>
@@ -170,9 +173,6 @@
   </div>
 
   <div class="sound">
-    <div class="btn-wrapper">
-      <button class="sound__sound-btn" type="button">on</button>
-    </div>
     <audio class="background-music" autoplay loop>
       <source src="assets/sounds/Collection-Manager.ogg" type="audio/ogg">
       Your browser does not support the audio element.
