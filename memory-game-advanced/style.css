@@ -472,27 +472,6 @@ form > .btn-wrapper {
   cursor: url("./assets/img/arrow-left.jpg"), pointer;
 }
 
-.end-menu__message {
-  padding-top: 25px;
-  font-size: 34px;
-  text-align: center;
-  -webkit-text-stroke: 2px #1c1c1c;
-}
-
-.end-menu__link {
-  color: #26aee0;
-
-  text-decoration: none;
-  font-weight: 700;
-  -webkit-text-stroke: 2px #1c1c1c;
-  transition: color 0.3s ease-in-out;
-}
-
-.end-menu__link:hover {
-  color: #e7a650;
-  transition: color 0.3s ease-in-out;
-}
-
 /* Media settings */
 @media (max-width: 750px) {
   body {
