@@ -30,6 +30,11 @@ let cardsMatchCounter = 6;
 let cardIsSpinned = false;
 let isLoced = false;
 let firstCard, secondCard;
+let timer;
+// Test
+let winStreak = false;
+let winStreakMultiplier = 1;
+const winStreakText = document.querySelector('.header__win-streak');
 
 function spinCard() {
   if (isLoced) {
@@ -48,12 +53,6 @@ function spinCard() {
   }
 }
 
-function scoreChanging() {
-  setTimeout(() => {
-    currentScore.textContent = scoreCounter;
-  }, 100);
-}
-
 function checkCardsMatch() {
   firstCard.dataset.character === secondCard.dataset.character ? disableCards() : spinCardsBack();
 }
@@ -62,7 +61,19 @@ function disableCards() {
   isLoced = true;
   cardIsSpinned = false;
   cardsMatchCounter -= 1;
-  scoreCounter--;
+  // scoreCounter -= winStreakMultiplier;
+  // Test
+  if (winStreak) {
+    winStreakMultiplier += 1;
+    scoreCounter -= winStreakMultiplier;
+  } else {
+    winStreak = true;
+    winStreakMultiplier = 1;
+    scoreCounter -= winStreakMultiplier;
+  }
+  // Test
+  showWinStreak()
+  console.log(winStreakMultiplier);
 
   firstCard.removeEventListener('click', spinCard);
   secondCard.removeEventListener('click', spinCard);
@@ -74,6 +85,12 @@ function disableCards() {
 
   scoreChanging();
   removeCards();
+}
+
+function scoreChanging() {
+  setTimeout(() => {
+    currentScore.textContent = scoreCounter;
+  }, 100);
 }
 
 function removeCards() {
@@ -91,6 +108,9 @@ function removeCards() {
 
 function spinCardsBack() {
   isLoced = true;
+  // Test
+  winStreak = false;
+  winStreakMultiplier = 1;
 
   setTimeout(() => {
     firstCard.classList.remove('spin');
@@ -150,6 +170,9 @@ function resetGameSettings() {
   isLoced = false;
   firstCard = null;
   secondCard = null;
+  // Test
+  winStreak = false;
+  winStreakMultiplier = 1;
 
   scoreChanging();
 }
@@ -206,6 +229,19 @@ function playMusic() {
   }
 }
 
+function startInterval() {
+  timer = setInterval(increaseScore, 2500);
+}
+
+function increaseScore() {
+  scoreCounter++;
+  scoreChanging();
+}
+
+function stopInterval() {
+  clearInterval(timer);
+}
+
 cards.forEach(card => card.addEventListener('click', spinCard));
 
 leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
@@ -225,17 +261,11 @@ soundBtn.addEventListener('click', playMusic);
 // Оформление секций с правилами игры
 // Добавить автоматическое увеличение очков на +1 каждые n-секунд?
 
-let timer
 
-function startInterval() {
-  timer = setInterval(increaseScore, 2500);
-}
 
-function increaseScore() {
-  scoreCounter++;
-  scoreChanging();
-}
+function showWinStreak() {
+  winStreakText.textContent = `x${winStreakMultiplier}`
 
-function stopInterval() {
-  clearInterval(timer);
+  winStreakText.classList.add('pulse');
+  setTimeout(() => winStreakText.classList.remove('pulse'), 1500);
 }
