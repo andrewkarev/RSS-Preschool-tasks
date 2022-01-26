@@ -268,9 +268,6 @@ body.visually-hidden::before {
   -webkit-text-stroke: 2px #1c1c1c;
 }
 
-.main-menu__content {
-}
-
 .main-menu__items {
   position: relative;
   width: 490px;
