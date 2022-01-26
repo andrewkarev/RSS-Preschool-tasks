@@ -227,7 +227,7 @@ function playMusic() {
 }
 
 function startInterval() {
-  timer = setInterval(increaseScore, 2500);
+  timer = setInterval(increaseScore, 1500);
 }
 
 function increaseScore() {
