@@ -314,6 +314,7 @@ body.visually-hidden::before {
 
 .main-menu__description {
   font-size: 24px;
+  text-indent: 20px;
 }
 
 .main-menu__description::first-letter {
