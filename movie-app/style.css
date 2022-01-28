@@ -1,1 +1,131 @@
-/* Style */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #141414;
+  --secondary-color: #1f1f1f;
+  --text-color: #e7e7e7;
+  --additional-color: #a5a5a5;
+  --text-hover: #f09c12;
+}
+
+.wrapper {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  height: 8vh;
+  /* Delete after adding media quares */
+  min-height: 58px;
+  background-color: var(--secondary-color);
+}
+
+.title {
+  color: var(--text-color);
+}
+
+.title::first-letter {
+  color: var(--text-hover);
+}
+
+.header__genre {
+  margin-left: auto;
+  color: var(--additional-color);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.header__genre:hover {
+  color: var(--text-hover);
+}
+
+.header__form {
+  padding-left: 2rem;
+}
+
+.header__search {
+  width: 15rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: 2px solid var(--additional-color);
+  border-radius: 1.25rem;
+  outline: none;
+  padding: 0 1rem;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.header__search:focus {
+  background-color: var(--primary-color);
+  border: 2px solid var(--text-hover);
+}
+
+.main {
+}
+.main__item {
+}
+.main__about {
+}
+.main__movie-title {
+}
+.main__movie-rating {
+}
+.main__movie-overview {
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  height: 8vh;
+  padding: 0 5%;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.footer__year {
+  width: 100%;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+
+.footer__github {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer__github:hover {
+  color: var(--text-hover);
+}
+
+.footer__rsschool {
+  margin-left: 80px;
+}
+
+.rsschool path {
+  transition: fill 0.3s ease-in-out;
+}
+
+.rsschool:hover path {
+  fill: var(--text-hover);
+}
