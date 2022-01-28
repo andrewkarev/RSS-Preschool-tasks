@@ -2,32 +2,24 @@ const selfEvaluation = `
 Thanks for taking the time to check my work!
 
 Rolling Scopes School
-Stage 0 Portfolio #2 task
+
+Stage 0 Portfolio #3 task
 Self-evaluation by Andrew Karev
 
-✓ The markup matches template with a screen width of 768px - 48 pointts
-    [+] header block - +6
-    [+] hero section - +6
-    [+] skills section - +6
-    [+] portfolio section - +6
-    [+] video section - +6
-    [+] price section - +6
-    [+] contacts section - +6
-    [+] footer block - +6
-
-✓ There is no horizontal scroll bar on any screen resolution- 15 pointts
-    [+] there is no horizontal scroll bar on screen width from 1440px to 768px - +5
-    [+] there is no horizontal scroll bar on screen width from 768px to 480px - +5
-    [+] there is no horizontal scroll bar on screen width from 480px to 320px - +5
-
-✓ Implemented an adaptive menu for screen width less then 768px - 22 pointts
-    [+] the navigation block hides and burger menu icon appear on screen width equal to 768px - +2
-    [+] when you click on the burger icon on the right, an adaptive menu appears smoothly, the burger icon changes to a cross - +4
-    [+] the adaptive menu height equal to screen height. The menu markup matches template with a screen width of 768px. Menu will take up the full width of the screen for less then 620px screen width - +4
-    [+] when you click on the cross, the adaptive menu smoothly disappears leaving the right side of the screen, the cross turns into a burger icon - +4
-    [+] burger-icon was created with css animation without using images - +2
-    [+] links in adaptive menu work and provide smooth scrolling through the anchors - +2
-    [+] when you click on a link in the adaptive menu, the adaptive menu smoothly disappears, the cross turns into a burger icon - +4
+Self-evaluation by Andrew Karev
+✓ Image changing in portfolio section - 25 points
+    [+] clicking on 'Winter', 'Spring', 'Summer', 'Autumn' buttons changes images to the relevant - +20
+    [+] button which was clicked became active and all remaining buttons became non-active - +5
+✓ Ability to change web-page language - 25 points
+    [+] clicking on 'ru' button, change web-page language to russian - +10
+    [+] clicking on 'en' button, change web-page language to english - +10
+    [+] buttons 'en', 'ru' became active and highlighted with appropriate style - +5
+✓ Ability to change web-page theme - 25 points
+    [+] dark theme replaces light theme - +10
+    [+] light theme replaces dark theme - +10
+    [+] after theme changing all interactive elements workes correctly - +5
+✓ User settings are stored in local storage - 5 points
+✓ Implemented ripple effect for buttons in 'hero', 'price' and 'contacts' sections' - 5 points
 
 Total score: 85/75 points
 
