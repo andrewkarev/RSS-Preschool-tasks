@@ -43,7 +43,6 @@ const lightThemeSingleElement = [body, headerContainer, headerLogo, heroSection,
 const lightThemeGroupsOfElements = [sectionTitleContainer, navigationItem, radioButton, buttonTypeOne, buttonTypeTwo, sectionTitle, priceItemCost, priceButton, formItem, formControlWrapper, footerIcon, burgerMenuLine];
 
 // BURGER MENU
-
 function toggleMenu() {
   hamburger.classList.toggle('-open');
   headerNav.classList.toggle('-open');
