@@ -6,7 +6,8 @@ const search = form.querySelector('.header__search');
 const API_KEY = 'api_key=6f835e6610ba8bc0c78dd19839a3fe0c';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const START_PAGE_URL = `${BASE_URL}/discover/movie?sort_by=popularity.desc&${API_KEY}`;
-const IMG_PATH = 'https://image.tmdb.org/t/p/w500'
+const IMG_PATH = 'https://image.tmdb.org/t/p/w500';
+const SEARCH_URL = `${BASE_URL}/search/movie?${API_KEY}&query=`
 
 function getMovies(url) {
   fetch(url).then(response => response.json())
@@ -53,3 +54,17 @@ function highlightRating(rate) {
 }
 
 getMovies(START_PAGE_URL);
+
+
+form.addEventListener('submit', findMovie)
+
+function findMovie(e) {
+  e.preventDefault();
+
+  main.innerHTML = '';
+
+  const searchQuery = search.value;
+  const requestURL = SEARCH_URL + searchQuery;
+
+  searchQuery ? getMovies(requestURL) : getMovies(START_PAGE_URL);
+}
