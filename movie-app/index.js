@@ -19,6 +19,7 @@ function getMovies(url) {
         const about = document.createElement('div');
         about.classList.add('main__about');
         const title = document.createElement('h2');
+        title.classList.add('.main__movie-title');
         const rating = document.createElement('div')
         rating.classList.add('main__movie-rating');
         const overview = document.createElement('div');
@@ -29,6 +30,14 @@ function getMovies(url) {
         rating.textContent = element.vote_average;
         overview.textContent = element.overview;
 
+        if (rating.textContent >= 7) {
+          rating.classList.add('perfect');
+        } else if (rating.textContent >= 5.5) {
+          rating.classList.add('fine');
+        } else {
+          rating.classList.add('bad');
+        }
+
         main.appendChild(item);
         item.appendChild(image);
         item.appendChild(about);
@@ -38,7 +47,5 @@ function getMovies(url) {
       });
     })
 }
-
-
 
 getMovies(START_PAGE_URL);
