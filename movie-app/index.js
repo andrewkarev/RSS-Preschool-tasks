@@ -43,6 +43,8 @@ function getMovies(url) {
     })
 }
 
+getMovies(START_PAGE_URL);
+
 function highlightRating(rate) {
   if (rate >= 7) {
     return 'perfect';
@@ -53,11 +55,6 @@ function highlightRating(rate) {
   }
 }
 
-getMovies(START_PAGE_URL);
-
-
-form.addEventListener('submit', findMovie)
-
 function findMovie(e) {
   e.preventDefault();
 
@@ -67,4 +64,8 @@ function findMovie(e) {
   const requestURL = SEARCH_URL + searchQuery;
 
   searchQuery ? getMovies(requestURL) : getMovies(START_PAGE_URL);
+
+  // search.value = searchQuery
 }
+
+form.addEventListener('submit', findMovie);
