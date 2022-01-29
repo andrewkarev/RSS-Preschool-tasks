@@ -2,9 +2,7 @@ const selfEvaluation = `
 Thanks for taking the time to check my work!
 
 Rolling Scopes School
-
 Stage 0 Portfolio #3 task
-Self-evaluation by Andrew Karev
 
 Self-evaluation by Andrew Karev
 ✓ Image changing in portfolio section - 25 points
