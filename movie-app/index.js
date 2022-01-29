@@ -19,7 +19,7 @@ function getMovies(url) {
         const about = document.createElement('div');
         about.classList.add('main__about');
         const title = document.createElement('h2');
-        title.classList.add('.main__movie-title');
+        title.classList.add('main__movie-title');
         const rating = document.createElement('div')
         rating.classList.add('main__movie-rating');
         const overview = document.createElement('div');
