@@ -44,11 +44,11 @@ function getMovies(url) {
 
 function highlightRating(rate) {
   if (rate >= 7) {
-    return 'perfect'
+    return 'perfect';
   } else if (rate >= 5.5) {
-    return "fine"
+    return "fine";
   } else {
-    return 'bad'
+    return 'bad';
   }
 }
 
