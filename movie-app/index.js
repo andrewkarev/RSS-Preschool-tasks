@@ -1,6 +1,6 @@
 // Script
 const main = document.querySelector('.main');
-const form = document.querySelector('form');
+const form = document.querySelector('.header__form');
 const search = form.querySelector('.header__search');
 
 const API_KEY = 'api_key=6f835e6610ba8bc0c78dd19839a3fe0c';

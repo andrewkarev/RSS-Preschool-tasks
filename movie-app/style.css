@@ -52,6 +52,7 @@
 }
 
 .header__form {
+  position: relative;
   padding-left: 2rem;
 }
 
@@ -62,7 +63,7 @@
   border: 2px solid var(--additional-color);
   border-radius: 1.25rem;
   outline: none;
-  padding: 0 1rem;
+  padding: 0 3rem 0 1rem;
   font-family: "Ubuntu", sans-serif;
   font-size: 1.2rem;
   color: var(--text-color);
@@ -78,11 +79,42 @@
   color: var(--additional-color);
 }
 
+.header__reset-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1.1rem;
+  width: 1.5rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--additional-color);
+}
+
+.line-1 {
+  transform: rotate(-45deg);
+  transform: rotate(-45deg) translate(0px, 1.5px);
+}
+
+.line-2 {
+  transform: rotate(45deg);
+  transform: rotate(45deg) translate(0px, -1.5px);
+}
+
+.header__search:focus + .header__reset-btn:hover .line {
+  background-color: var(--text-hover);
+}
+
 .main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0 5%;
+  padding: 0 5% 2rem;
   background-color: var(--primary-color);
 }
 
