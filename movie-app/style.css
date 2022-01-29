@@ -61,10 +61,11 @@
   top: 0;
   right: 0;
   width: 100%;
-  z-index: 10;
+  padding-top: 1.5rem;
   border-radius: 0 0 0.5rem 0.5rem;
   background-color: #333333;
   list-style-type: none;
+  z-index: 10;
   transform: translateY(-120%);
   transition: all 0.3s ease-in;
 }
