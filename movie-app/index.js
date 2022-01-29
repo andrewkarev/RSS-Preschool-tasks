@@ -30,13 +30,7 @@ function getMovies(url) {
         rating.textContent = element.vote_average;
         overview.textContent = element.overview;
 
-        if (rating.textContent >= 7) {
-          rating.classList.add('perfect');
-        } else if (rating.textContent >= 5.5) {
-          rating.classList.add('fine');
-        } else {
-          rating.classList.add('bad');
-        }
+        rating.classList.add(highlightRating(rating.textContent));
 
         main.appendChild(item);
         item.appendChild(image);
@@ -46,6 +40,16 @@ function getMovies(url) {
         about.appendChild(overview);
       });
     })
+}
+
+function highlightRating(rate) {
+  if (rate >= 7) {
+    return 'perfect'
+  } else if (rate >= 5.5) {
+    return "fine"
+  } else {
+    return 'bad'
+  }
 }
 
 getMovies(START_PAGE_URL);
