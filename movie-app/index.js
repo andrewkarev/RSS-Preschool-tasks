@@ -8,7 +8,8 @@ const API_KEY = 'api_key=6f835e6610ba8bc0c78dd19839a3fe0c';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const START_PAGE_URL = `${BASE_URL}/discover/movie?sort_by=popularity.desc&${API_KEY}`;
 const IMG_PATH = 'https://image.tmdb.org/t/p/w500';
-const SEARCH_URL = `${BASE_URL}/search/movie?${API_KEY}&query=`
+const SEARCH_URL = `${BASE_URL}/search/movie?${API_KEY}&query=`;
+const GENRE_URL = '&with_genres=';
 
 const genres = [
   {
@@ -162,4 +163,18 @@ function findMovie(e) {
   // search.value = searchQuery
 }
 
+function getMoviesByGenre(e) {
+  const selectedGenre = e.target.textContent;
+  const selectedGenreID = (genres.find(genre => genre.name === selectedGenre
+  )).id;
+  const moviesByGenre = START_PAGE_URL + GENRE_URL + selectedGenreID;
+
+  main.innerHTML = '';
+
+  getMovies(moviesByGenre);
+}
+
 form.addEventListener('submit', findMovie);
+
+genreList.addEventListener('click', getMoviesByGenre);
+
