@@ -3,6 +3,7 @@ const main = document.querySelector('.main');
 const form = document.querySelector('.header__form');
 const search = form.querySelector('.header__search');
 const genreList = document.querySelector('.header__genre-list');
+const scrollToTopButton = document.querySelector('.btn-to-top');
 
 const API_KEY = 'api_key=6f835e6610ba8bc0c78dd19839a3fe0c';
 const BASE_URL = 'https://api.themoviedb.org/3';
@@ -165,8 +166,7 @@ function findMovie(e) {
 
 function getMoviesByGenre(e) {
   const selectedGenre = e.target.textContent;
-  const selectedGenreID = (genres.find(genre => genre.name === selectedGenre
-  )).id;
+  const selectedGenreID = (genres.find(genre => genre.name === selectedGenre)).id;
   const moviesByGenre = START_PAGE_URL + GENRE_URL + selectedGenreID;
 
   main.innerHTML = '';
@@ -174,7 +174,14 @@ function getMoviesByGenre(e) {
   getMovies(moviesByGenre);
 }
 
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 form.addEventListener('submit', findMovie);
 
 genreList.addEventListener('click', getMoviesByGenre);
+
+scrollToTopButton.addEventListener('click', scrollToTop);
 
