@@ -430,7 +430,7 @@ body.light-theme {
 .portfolio-item img {
   display: block;
 }
-
+/* ************************************** */
 .video {
   padding: 100px 20px 0;
 }
@@ -457,7 +457,7 @@ body.light-theme {
 .btn-type-three:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
-
+/* ************************************** */
 .price {
   padding: 100px 20px;
 }
@@ -727,11 +727,11 @@ body.light-theme {
   .portfolio {
     padding-top: 80px;
   }
-
+  /* ************************************** */
   .video {
     padding-top: 80px;
   }
-
+  /* ************************************** */
   .price {
     padding: 80px 20px 80px;
   }
@@ -820,7 +820,7 @@ body.light-theme {
   .skills-item-text {
     line-height: 22px;
   }
-
+  /* ************************************** */
   .video {
     padding: 80px 0 0;
   }
@@ -835,7 +835,7 @@ body.light-theme {
     width: 64px;
     height: 64px;
   }
-
+  /* ************************************** */
   .price-item {
     width: 420px;
   }
@@ -1094,7 +1094,7 @@ body.light-theme {
     max-width: 100%;
     object-fit: cover;
   }
-
+  /* ************************************** */
   .video {
     width: 100%;
   }
@@ -1107,7 +1107,7 @@ body.light-theme {
     height: 300px;
     background-size: cover;
   }
-
+  /* ************************************** */
   .price-items {
     gap: 30px;
   }
