@@ -442,7 +442,6 @@ body.light-theme {
 
 .video-player {
   position: relative;
-  max-height: 644px;
   border: 2px solid #bdae82;
   overflow: hidden;
 }
@@ -452,6 +451,7 @@ body.light-theme {
 }
 
 .viewer {
+  display: block;
   width: 100%;
   cursor: pointer;
 }
