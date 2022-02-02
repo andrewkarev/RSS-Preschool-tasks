@@ -78,6 +78,7 @@ body.light-theme {
 }
 
 .navigation-item a {
+  position: relative;
   text-decoration: none;
   color: #ffffff;
   transition: all 0.3s ease-in-out;
@@ -90,6 +91,10 @@ body.light-theme {
 .navigation-item a:hover {
   text-decoration: none;
   color: #bdae82;
+}
+
+.navigation-item.light-theme a:hover {
+  color: #ffffff;
 }
 
 .header-language-switch {
@@ -176,6 +181,7 @@ body.light-theme {
   border: 2px solid #ffffff;
   outline: none;
   border-radius: 50%;
+  box-shadow: 0px 0px 5px 1px #ffffff;
   background-color: transparent;
   color: #ffffff;
   transition: all 0.3s ease-in-out;
@@ -185,11 +191,13 @@ body.light-theme {
 .btn-to-top.light-theme {
   color: #000000;
   border-color: #000000;
+  box-shadow: 0px 0px 5px 1px #000000;
 }
 
 .btn-to-top:hover {
   color: #bdae82;
   border-color: #bdae82;
+  box-shadow: none;
 }
 
 .main-content {
@@ -427,8 +435,17 @@ body.light-theme {
   gap: 25px;
 }
 
+.portfolio-item {
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
 .portfolio-item img {
   display: block;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
 }
 
 .video {
@@ -864,6 +881,7 @@ body.light-theme {
 
 .footer-icon:hover {
   fill: #bdae82;
+  transform: translateY(-6px);
 }
 
 @media (max-width: 1440px) {
