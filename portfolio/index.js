@@ -314,6 +314,10 @@ function mute() {
 function handleVideoProgress() {
   const percent = (video.currentTime / video.duration) * 100;
   progressBar.style.width = `${percent}%`;
+
+  if (video.currentTime === video.duration) {
+    previewBtn.style.display = 'block';
+  }
 }
 
 function setVideoTime(e) {
