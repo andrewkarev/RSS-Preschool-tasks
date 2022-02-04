@@ -442,6 +442,7 @@ body.light-theme {
 
 .portfolio-item img {
   display: block;
+  transition: all 0.4s ease-in-out;
 }
 
 .portfolio-item:hover {

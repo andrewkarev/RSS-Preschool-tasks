@@ -97,7 +97,16 @@ navMenu.addEventListener("click", closeMenu);
 function changeImage(event) {
   if (event.target.classList.contains('portfolio-btn')) {
     let target = event.target;
-    portfolioImages.forEach((img, index) => img.src = `./assets/img/${target.dataset.season}/${index + 1}.jpg`);
+    portfolioImages.forEach((img, index) => {
+      img.style.opacity = 0.05;
+      img.addEventListener('transitionend', changeImgSrc);
+
+      function changeImgSrc() {
+        img.src = `./assets/img/${target.dataset.season}/${index + 1}.jpg`;
+        img.style.opacity = 1;
+        img.removeEventListener('transitionend', changeImgSrc);
+      }
+    })
   }
 }
 
