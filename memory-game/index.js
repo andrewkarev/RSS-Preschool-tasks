@@ -204,6 +204,7 @@ function playMusic() {
 }
 
 cards.forEach(card => card.addEventListener('click', spinCard));
+cards.forEach(card => card.addEventListener('touchstart', spinCard));
 
 leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
 

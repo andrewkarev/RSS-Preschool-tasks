@@ -247,6 +247,7 @@ function showWinStreak() {
 }
 
 cards.forEach(card => card.addEventListener('click', spinCard));
+cards.forEach(card => card.addEventListener('touchstart', spinCard));
 
 leaderboardBtn.addEventListener('click', () => leaderboard.classList.toggle('rotate'));
 
@@ -261,6 +262,3 @@ saveBtn.addEventListener('click', saveScore);
 userName.addEventListener('keyup', () => saveBtn.disabled = !userName.value);
 
 soundBtn.addEventListener('click', playMusic);
-
-// Оформление секций с правилами игры
-// Добавить автоматическое увеличение очков на +1 каждые n-секунд?
