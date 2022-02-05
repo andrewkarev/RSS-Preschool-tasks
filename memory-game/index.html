@@ -5,83 +5,83 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../memory-game-advanced/style.css">
   <link rel="icon" type="image/x-icon" sizes="32x32" href="assets/img/favicon.ico">
   <title>Memory game</title>
 </head>
 
 <body class="visually-hidden">
 
-  <header class="header visually-hidden">
-    <div class="header__item btn-wrapper">
-      <button class="game-btn game-btn--refresh" type="button">Main menu</button>
-    </div>
-    <div class="header__item">
-      <div class="header__score-container">
-        <p class="header__text">Score</p>
-        <p class="header__score">0</p>
+  <div class="wrapper">
+    <header class="header visually-hidden">
+      <div class="header__item btn-wrapper">
+        <button class="game-btn game-btn--refresh" type="button">Main menu</button>
       </div>
-    </div>
-  </header>
+      <div class="header__item">
+        <div class="header__score-container">
+          <p class="header__text">Score</p>
+          <p class="header__score">0</p>
+        </div>
+      </div>
+    </header>
+    <main class="game visually-hidden">
 
-  <main class="game visually-hidden">
+      <div class="game__card" data-character="Garrosh">
+        <img class="game__card-cover" src="./assets/img/Garrosh_Hellscream.jpg" alt="Garrosh Hellscream" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
+      <div class="game__card" data-character="Garrosh">
+        <img class="game__card-cover" src="./assets/img/Garrosh_Hellscream.jpg" alt="Garrosh Hellscream" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
 
-    <div class="game__card" data-character="Garrosh">
-      <img class="game__card-cover" src="./assets/img/Garrosh_Hellscream.jpg" alt="Garrosh Hellscream" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
-    <div class="game__card" data-character="Garrosh">
-      <img class="game__card-cover" src="./assets/img/Garrosh_Hellscream.jpg" alt="Garrosh Hellscream" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
+      <div class="game__card" data-character="Illidan">
+        <img class="game__card-cover" src="./assets/img/Illidan_Stormrage.jpg" alt="Illidan Stormrage" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
+      <div class="game__card" data-character="Illidan">
+        <img class="game__card-cover" src="./assets/img/Illidan_Stormrage.jpg" alt="Illidan Stormrage" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
 
-    <div class="game__card" data-character="Illidan">
-      <img class="game__card-cover" src="./assets/img/Illidan_Stormrage.jpg" alt="Illidan Stormrage" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
-    <div class="game__card" data-character="Illidan">
-      <img class="game__card-cover" src="./assets/img/Illidan_Stormrage.jpg" alt="Illidan Stormrage" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
+      <div class="game__card" data-character="Jaina">
+        <img class="game__card-cover" src="./assets/img/Jaina_Proudmoore.jpg" alt="Jaina Proudmoore" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
+      <div class="game__card" data-character="Jaina">
+        <img class="game__card-cover" src="./assets/img/Jaina_Proudmoore.jpg" alt="Jaina Proudmoore" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
 
-    <div class="game__card" data-character="Jaina">
-      <img class="game__card-cover" src="./assets/img/Jaina_Proudmoore.jpg" alt="Jaina Proudmoore" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
-    <div class="game__card" data-character="Jaina">
-      <img class="game__card-cover" src="./assets/img/Jaina_Proudmoore.jpg" alt="Jaina Proudmoore" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
+      <div class="game__card" data-character="Rexxar">
+        <img class="game__card-cover" src="./assets/img/Rexxar.jpg" alt="Rexxar" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
+      <div class="game__card" data-character="Rexxar">
+        <img class="game__card-cover" src="./assets/img/Rexxar.jpg" alt="Rexxar" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
 
-    <div class="game__card" data-character="Rexxar">
-      <img class="game__card-cover" src="./assets/img/Rexxar.jpg" alt="Rexxar" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
-    <div class="game__card" data-character="Rexxar">
-      <img class="game__card-cover" src="./assets/img/Rexxar.jpg" alt="Rexxar" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
+      <div class="game__card" data-character="Uther ">
+        <img class="game__card-cover" src="./assets/img/Uther_Lightbringer.jpg" alt="Uther Lightbringer" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
+      <div class="game__card" data-character="Uther ">
+        <img class="game__card-cover" src="./assets/img/Uther_Lightbringer.jpg" alt="Uther Lightbringer" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
 
-    <div class="game__card" data-character="Uther ">
-      <img class="game__card-cover" src="./assets/img/Uther_Lightbringer.jpg" alt="Uther Lightbringer" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
-    <div class="game__card" data-character="Uther ">
-      <img class="game__card-cover" src="./assets/img/Uther_Lightbringer.jpg" alt="Uther Lightbringer" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
+      <div class="game__card" data-character="Valeera ">
+        <img class="game__card-cover" src="./assets/img/Valeera_Sanguinar.jpg" alt="Valeera Sanguinar" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
+      <div class="game__card" data-character="Valeera ">
+        <img class="game__card-cover" src="./assets/img/Valeera_Sanguinar.jpg" alt="Valeera Sanguinar" />
+        <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
+      </div>
 
-    <div class="game__card" data-character="Valeera ">
-      <img class="game__card-cover" src="./assets/img/Valeera_Sanguinar.jpg" alt="Valeera Sanguinar" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
-    <div class="game__card" data-character="Valeera ">
-      <img class="game__card-cover" src="./assets/img/Valeera_Sanguinar.jpg" alt="Valeera Sanguinar" />
-      <img class="game__card-back" src="./assets/img/card_reverse.jpg" alt="Card back side" />
-    </div>
-
-  </main>
-
+    </main>
+  </div>
 
   <div class="main-menu visually-hidden">
     <div class="main-menu__container">
@@ -108,16 +108,17 @@
             <ol class='main-menu__position-list'></ol>
           </section>
         </div>
-        <div class="main-menu__btns">
-          <div class="btn-wrapper">
-            <button class="game-btn game-btn--start" type="button">Start game</button>
-          </div>
-          <div class="btn-wrapper">
-            <button class="game-btn game-btn--leaderboard" type="button">Leaderboard</button>
-          </div>
+      </div>
+      <div class="main-menu__btns">
+        <div class="btn-wrapper">
+          <button class="game-btn game-btn--start" type="button">Start game</button>
+        </div>
+        <div class="btn-wrapper">
+          <button class="game-btn game-btn--leaderboard" type="button">Leaderboard</button>
         </div>
       </div>
     </div>
+
     <footer class="footer">
       <div class="footer__year">
         <p>&copy; 2022</p>
