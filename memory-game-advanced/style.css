@@ -57,13 +57,16 @@ body.visually-hidden::before {
   filter: blur(5px);
 }
 
+.wrapper {
+  margin: auto;
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 690px;
-  height: 12vh;
-  margin: 20px auto 30px;
+  width: 70vmin;
+  margin-bottom: 2vmin;
 }
 
 .header.visually-hidden {
@@ -170,9 +173,9 @@ body.visually-hidden::before {
 
 .game {
   display: flex;
-  width: 690px;
-  height: 690px;
-  margin: 0 auto;
+  width: 70vmin;
+  height: 70vmin;
+  margin: auto;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
@@ -185,12 +188,13 @@ body.visually-hidden::before {
 
 .game__card {
   position: relative;
-  width: calc(25% - 24px);
-  height: calc(33.333% - 10px);
+  width: calc(21%);
+  height: calc(30%);
   transform: scale(1);
   transform-style: preserve-3d;
   transition: all 0.5s;
   border-radius: 13px;
+  margin: 1vmin;
 }
 
 .game__card:hover {
@@ -299,6 +303,7 @@ body.visually-hidden::before {
 
 .main-menu__container {
   min-width: 70%;
+  margin: auto;
 }
 
 .main-menu__title {
@@ -308,10 +313,16 @@ body.visually-hidden::before {
   -webkit-text-stroke: 2px #1c1c1c;
 }
 
-.main-menu__items {
-  position: relative;
+.main-menu__content {
   width: 490px;
   height: 600px;
+  margin: 0 auto;
+}
+
+.main-menu__items {
+  position: relative;
+  width: 100%;
+  height: 100%;
   margin: 0 auto 20px;
   transform-style: preserve-3d;
   transition: transform 2s;
@@ -437,9 +448,12 @@ body.visually-hidden::before {
   position: absolute;
   display: flex;
   width: 100%;
-  height: 100vh;
+  min-height: 100%;
+  margin: auto;
   color: var(--footer-text, #f8f0e4);
-  background-color: transparent;
+  background-image: var(--bg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .end-menu__container {
@@ -447,7 +461,6 @@ body.visually-hidden::before {
   flex-direction: column;
   align-items: center;
   margin: auto;
-  padding-bottom: 180px;
 }
 
 .end-menu__title {
@@ -525,53 +538,4 @@ form > .btn-wrapper {
 .end-menu__link:hover {
   color: #e7a650;
   transition: color 0.3s ease-in-out;
-}
-
-/* Media settings */
-@media (max-width: 750px) {
-  body {
-    font-size: var(--font-low-res);
-  }
-
-  .header {
-    width: 90%;
-    margin: 30px auto 30px;
-  }
-
-  .game {
-    width: 90%;
-    height: 65%;
-  }
-
-  .game__card {
-    width: calc(25% - 12px);
-    height: calc(33.333% - 5px);
-  }
-
-  .main-menu__title {
-    margin: 45px 0 25px;
-  }
-
-  .main-menu__items {
-    width: 398px;
-    height: 480px;
-  }
-
-  .main-menu__description {
-    font-size: 18px;
-  }
-
-  .main-menu__sound-controls {
-    font-size: 22px;
-  }
-}
-
-@media all and (display-mode: fullscreen) {
-  .header {
-    margin-top: 80px;
-  }
-
-  .main-menu__container {
-    margin-top: 80px;
-  }
 }
