@@ -1,4 +1,5 @@
-// Script
+import selfEvaluation from './selfeval.js';
+
 const main = document.querySelector('.main');
 const form = document.querySelector('.header__form');
 const search = form.querySelector('.header__search');
@@ -185,3 +186,4 @@ genreList.addEventListener('click', getMoviesByGenre);
 
 scrollToTopButton.addEventListener('click', scrollToTop);
 
+console.log(selfEvaluation);
