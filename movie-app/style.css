@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #141414;
+  --secondary-color: #1f1f1f;
+  --text-color: #e7e7e7;
+  --additional-color: #a5a5a5;
+  --additional-color-2: #333333;
+  --text-hover: #f09c12;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  height: 8vh;
+  min-height: 58px;
+  background-color: var(--secondary-color);
+}
+
+.title {
+  user-select: none;
+}
+
+.title::first-letter {
+  color: var(--text-hover);
+}
+
+.header__genre {
+  position: relative;
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+  color: var(--additional-color);
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.header__genre:hover {
+  color: var(--text-hover);
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: var(--additional-color-2);
+  transition: color 0.3s ease-in-out;
+}
+
+.header__genre-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding-top: 1.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-color: var(--additional-color-2);
+  list-style-type: none;
+  z-index: 10;
+  transform: translateY(-120%);
+  transition: all 0.3s ease-in;
+}
+
+.header__genre:hover .header__genre-list {
+  transform: translateY(calc(0% + 2rem));
+}
+
+.header__list-item {
+  padding: 0.6rem 0.8rem;
+  font-size: 1.1rem;
+  color: var(--additional-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.header__list-item:hover {
+  color: var(--text-color);
+}
+
+.header__form {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.header__search {
+  width: 15rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: 2px solid var(--additional-color);
+  border-radius: 1.25rem;
+  outline: none;
+  padding: 0 3rem 0 1rem;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.header__search:focus {
+  background-color: var(--primary-color);
+  border: 2px solid var(--text-hover);
+}
+
+.header__search::placeholder {
+  color: var(--additional-color);
+}
+
+.header__reset-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1.1rem;
+  width: 1.5rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--additional-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.line-1 {
+  transform: rotate(-45deg);
+  transform: rotate(-45deg) translate(0px, 1.5px);
+}
+
+.line-2 {
+  transform: rotate(45deg);
+  transform: rotate(45deg) translate(0px, -1.5px);
+}
+
+.header__search:focus + .header__reset-btn:hover .line {
+  background-color: var(--text-hover);
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 5% 2rem;
+  background-color: var(--primary-color);
+}
+
+.main__item {
+  position: relative;
+  width: 360px;
+  margin: 2rem 2rem 0;
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.47);
+  overflow: hidden;
+  transform: scale(0.98);
+  transition: transform 0.3s ease-in;
+}
+
+.main__item:hover {
+  transform: scale(1);
+  transition: transform 0.3s ease-in;
+}
+
+.main__img {
+  width: 100%;
+}
+
+.main__about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.main__movie-title {
+  font-size: 20px;
+}
+
+.main__movie-rating {
+  padding: 0.3rem 0.5rem;
+  margin-left: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  font-weight: 700;
+}
+
+.main__movie-rating.perfect {
+  background-color: #3bb33b;
+}
+
+.main__movie-rating.fine {
+  background-color: #666666;
+}
+
+.main__movie-rating.bad {
+  background-color: #ff0000;
+}
+
+.main__movie-overview {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  max-height: 50%;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  text-indent: 1rem;
+  transform: translateY(150%);
+  transition: transform 0.5s ease-in;
+  overflow: auto;
+}
+
+.main__item:hover .main__movie-overview {
+  transform: translateY(0);
+}
+
+.main__movie-overview::-webkit-scrollbar {
+  width: 10px;
+}
+
+.main__movie-overview::-webkit-scrollbar-track {
+  background: var(--primary-color);
+  opacity: 0.5;
+}
+
+.main__movie-overview::-webkit-scrollbar-thumb {
+  background: var(--additional-color);
+  border-radius: 0.5rem;
+}
+
+.main__movie-overview::-webkit-scrollbar-thumb:hover {
+  background: var(--additional-color-2);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  padding: 0 5%;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.footer__year {
+  width: 100%;
+}
+
+.btn-to-top {
+  width: 4rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-to-top__line {
+  width: 100%;
+  height: 5px;
+  background-color: var(--text-hover);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-to-top__line-1 {
+  transform: rotate(-45deg);
+  transform: rotate(-45deg) translate(-9.5px, 0px);
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.btn-to-top__line-2 {
+  transform: rotate(45deg);
+  transform: rotate(45deg) translate(9.5px, -7px);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.btn-to-top:hover .btn-to-top__line {
+  background-color: var(--additional-color);
+}
+
+.footer__links {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+
+.footer__github {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer__github:hover {
+  color: var(--text-hover);
+}
+
+.footer__rsschool {
+  margin-left: 80px;
+}
+
+.rsschool path {
+  transition: fill 0.3s ease-in-out;
+}
+
+.rsschool:hover path {
+  fill: var(--text-hover);
+}
