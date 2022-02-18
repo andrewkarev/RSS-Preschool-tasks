@@ -1,3 +1,5 @@
+import selfEvaluation from './selfeval.js';
+
 const body = document.querySelector('body');
 const header = document.querySelector('header');
 const gameBoard = document.querySelector('.game');
@@ -218,3 +220,5 @@ saveBtn.addEventListener('click', saveScore);
 userName.addEventListener('keyup', () => saveBtn.disabled = !userName.value);
 
 soundBtn.addEventListener('click', playMusic);
+
+console.log(selfEvaluation);
